@@ -9,6 +9,8 @@ fs.readFile('users.txt', 'utf-8', (err,data) =>{
 });
 */
 
+
+
 function toggleVis(){
 
     var password = document.getElementById("password-input")
@@ -30,7 +32,9 @@ function toggleVis(){
     }
 
 var loginfo = [];
+
 function login(){
+    
     var user = document.getElementById('admin-input').value
     var password = document.getElementById('password-input').value
 
@@ -42,8 +46,8 @@ function login(){
         loginfo.push(password) //[1] 
     }
 
-    var string_data = JSON.stringify(loginfo)
-    var file = new File([string_data], {type: "text"})
+    //var string_data = JSON.stringify(loginfo)
+    //var file = new Blob([string_data], {type: "text"})
 
     /*
     const link = document.createElement("a");
@@ -56,24 +60,56 @@ function login(){
     */
     
     //alert(loginfo)
-    console.log(loadFile('users.txt'))
-    //verifyLoginfo()
+    verifyLoginfo()
+}
+
+function changeCurrentLocation(target){
+    let url = window.location.href
+    let leftSlash = 0;
+    for (let i = 0; i < url.length; i++) {
+        if(url[i] == "/"){
+            leftSlash = i;
+        }
+        
+    }
+
+    url = url.slice(0, leftSlash+1)
+
+    targetPage = url + target
+    window.location.assign(targetPage);
+
 }
 
 function verifyLoginfo(){
-
+    /*
     //var file = File "user.txt"
     var reader = new FileReader();
-    file = URL("users.txt")
     console.log(file.length)
 
     reader.onloadend = function(){
         
         var load = JSON.parse(reader.result)[0];
+        var load = JSON.parse(reader.result)[1];
         alert(load)
     }
 
     reader.readAsText(load)
+    */
+    
+    var user = document.getElementById('admin-input').value
+    var password = document.getElementById('password-input').value
+    
+    storedData = loadFile('users.txt')
+    console.log(storedData)
+
+    s1 = JSON.parse(storedData)[0]
+    s2 = JSON.parse(storedData)[1]
+    
+    console.log(s1,s2)
+    if((user == s1) && (password == s2)){
+        changeCurrentLocation("admin.html")
+    }
+
 
 }
 
