@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WP Admin Site</title>
+    <link rel="stylesheet" href="login.css?v2">
+    <script src="https://kit.fontawesome.com/7fa1774645.js" crossorigin="anonymous"></script>
+    <script src="admin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script src="users.txt"></script>
+    
+</head>
+    <body>
+
+        <div class="form-box">
+
+            <h1>Login</h1>
+
+            <div class="input-box">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+                <input type="Admin" placeholder="Admin" id="admin-input">
+            </div>
+            
+            <div class="input-box">
+                <i class="fa fa-key" aria-hidden="true"></i>
+
+                <input type="password" placeholder="Password" id="password-input">
+
+                
+
+                <span class="eye" onclick="toggleVis()">
+                     <i class="fa-solid fa-eye" id="hide"></i>
+                     <i class="fa-solid fa-eye-slash" id="unhide"></i>
+                </span>
+            </div>
+            <button type="button" class="login-btn" onclick="login()">SUBMIT</button>
+        </div>
+        
+    </body>
+</html>

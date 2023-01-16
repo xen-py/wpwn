@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Lobster&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img#section-photo{
+    width: 600px;
+    object-fit: contain;
+    border-radius: 1%;
+    padding-bottom: 1%;
+    max-width: 90vw;
+    margin: auto;
+
+}
+
+.date{
+    color: gray;
+    padding-bottom: 4%;
+    align-self: flex-start  ;
+}
+
+p{
+    max-width: 600px;
+    font-size: 1.2rem;
+    align-self: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 1%;
+
+}
+
+.read-more, a{
+    max-width: 600px;
+    font-size: 1.2rem;
+    padding: 0%;
+    color: blue;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration:none;
+    white-space: nowrap;
+}
+
+h2, h3, h4, h5{
+    max-width: 600px;
+    font-size: 30px;
+    font-family: "Montserrat", sans-serif;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 1%;
+    color: darkblue;    
+}
+
+img#icon{
+    width: 50px;
+    
+}
+
+img#wnn{
+    width: 100px;
+    height: 50;
+    object-fit: contain;
+}
+
+.wag-logo{
+    display:inline-block;
+    width:70px;
+    margin-right: auto;
+}
+
+li, a, button{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    white-space: nowrap;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+h1{
+    color: #edf0f1;
+    white-space: nowrap;
+    font-size: 2.7rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Cormorant Garamond', serif;
+
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 8%;
+    background-color: #111c55;
+}
+
+header#head2{
+    display: flex;
+    align-items: center;
+    background-color:#030615;
+    align-self: stretch;
+}
+
+
+
+div#section-sports, div#section-pop, div#section-voices, div#section-events{
+    width: 610px;
+    padding-top: 5%;
+    margin: auto;
+    background-color: white;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+}
+
+div#section-events{
+    padding-bottom: 10%;
+}
+
+div#main{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.nav-links li, a{
+    display: inline-block;
+    padding: 2px 20px;
+    white-space: nowrap;
+    align-self: center;
+}
+
+.nav-links li, a:hover{
+    color: #0088a9;
+}
+
+.socials li,a{
+    display: inline-block;
+    padding: 2px 30px;
+    white-space: nowrap;
+    align-self: center;
+    text-decoration: none;
+}
+
+button {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button :hover{
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+
+th{
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: #edf0f1;
+    text-decoration: none;
+    white-space: nowrap;
+    align-self: center;
+    max-width: 650px;
+    object-fit: scale-down;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+    background-color: #24252a;
+    padding-top: 2%;
+}
+
+td,th,tr,table{
+    max-width: 600px;
+}
+
+/* if device has a touch screen */
+@media (any-pointer: coarse) or (hover: none) or (handheld){
+    html {zoom: 140%;} 
+    #my{ zoom: 140%; }
+    .socials li,a{
+        padding: 2px 20px;
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+    /* CSS specific to iOS devices */ 
+    html {zoom: 140%;} 
+    #my{ zoom: 140%; }
+    .socials li,a{
+        padding: 2px 20px;
+    }
+  }

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <!--Austin Kabanda-->
+    <!--Created December 20smth 2022-->
+
+   <head>
+       <meta charset="UTF-8">
+       <meta name="description" content="The Leading source in unbiased news coverage at W.P Wagner Highschool">
+       <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+        <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+       <title>WP Wagner News</title>
+       <link rel="stylesheet" href="my_styles.css?refreshcss=14" type="text/css">
+       <link rel="icon" href="images/favicon.ico">
+       
+   </head>
+
+
+   <body>
+
+        <div>
+            <script>function openAdmin(){
+                let url = window.location.href
+                let leftSlash = 0;
+                for (let i = 0; i < url.length; i++) {
+                    if(url[i] == "/"){
+                        leftSlash = i;
+                    }
+                    
+                }
+
+                url = url.slice(0, leftSlash+1)
+
+                adminPage = url + "admin/index.html"
+                window.location.assign(adminPage);
+                //document.location.reload(true)
+                }
+
+                </script>
+            <header>
+                <h1 ondblclick="openAdmin()" oncontextmenu="openAdmin()">Wagner Press</h1>
+            </header>
+        </div>
+
+        <div>
+            <header id="head2">
+                <nav class="nav-links">
+                    <a href="#section-sports">Sports</a>
+                    <a href="#section-pop">Pop Culture</a>
+                    <a href="#section-voices">Student Voices</a>
+                    <a href="#section-events">Current Events</a>
+                </nav>
+            </header>
+        </div>
+
+        <div id="main" >
+
+            <div id="section-sports"> 
+
+                <div class="date">Issue: Jan.xx.2023</div>
+
+                <h2 >Sports News</h2>
+                <img src="images/sports.jpg" onclick="openArticle('article.html#1')" id="section-photo"  alt="Picture of Wagners Football Team">
+                <p>No time to watch the latest sports livestreams? No problem! Catch this weeks latest scores and interviews...  <a href="article.html#1" class="read-more">Read Article</a></p>
+            </div>
+
+            <div id="section-pop">
+                <h3>Pop Culture!</h3> 
+                <img src="images/culture.jpg?1" onclick="openArticle('article.html#2')" id="section-photo"  alt="Picture of scattered comic books">
+                <p>Learn what's hot, and what's not at Wagner.
+                This week we asked you... <a href="article.html#2" class="read-more">Read Article</a> </p>
+            </div>
+
+            <div id ="section-voices">
+                <h4>Student Voices</h4>
+                <img src="images/Voice.jpg" onclick="openArticle('article.html#3')" id="section-photo"  alt="Picture of a mic">
+                <p>Ever just looked at someone and wondered what was going on in their head. Listen to us tackle issues... <a href="article.html#3" class="read-more">Read Article</a> </p>
+            </div>
+
+            <div id="section-events">
+                <h5>Current Events</h5>
+                <img src="images/Events.jpg" onclick="openArticle('article.html#4')" id="section-photo" alt="Picture of protesters">
+                <p>Real topics, Real people, Real reporting, Its the world brought to your phone. Tune in, we do it better then CNN... <a href="article.html#4" class="read-more">Read Article</a> </p>
+            </div >
+
+        </div>
+    
+        <div>
+            <footer>
+                <table>
+                    <td>
+                        <th>
+                            <nav class="socials">
+                                <ul>
+                                    <li><a href="https://www.instagram.com/wagnerwarriors/?hl=en" target="_blank"><img id="icon"src="images/iconIG.png" alt="instagram icon"></a></li>
+                                    <li><a href="https://twitter.com/WagnerWarriors" target="_blank"><img id="icon" src="images/iconTW.png" alt="twitter icon"></a></li>
+                                    <li><a href="https://www.youtube.com/c/WagnerNewsNetwork" target="_blank"><img id="wnn" src="images/iconWNN.png" alt="Wagner News Network Icon"></a></li>
+                                </ul>
+                            </nav>
+                        </th>
+                    </td>
+                </table>
+            </footer>
+        </div>
+   </body>
+
+</html>
+

@@ -1,0 +1,120 @@
+
+div#background{
+    min-height: 100vh;
+    background-color: white;
+}
+
+img#article-photo{
+    width: 600px;
+    object-fit: contain;
+    border-radius: 1%;
+    padding-bottom: 6%;
+    max-width: 90vw;
+    margin: auto;
+
+}
+
+h1{
+    font-size: xx-large;
+}
+
+.spacer{
+    padding-top: 20%;
+}
+
+body{
+    background-image: none;
+}
+
+p#Genre{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    white-space: nowrap;
+    color: #edf0f1;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+div#foreground{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    width: 90vw;
+    min-height: 100vh;
+    margin: auto;
+    background-color: white;
+    padding-top: 13vh;
+    padding-bottom: 8%;
+}
+
+div#title{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#article-main{
+    
+    padding-top: 5%;
+}
+
+.socials li,a{
+    display: inline-block;
+    padding: 2px 25px;
+    white-space: nowrap;
+    align-self: center;
+    text-decoration: none;
+}
+
+footer#footer2{
+    background-color: black;
+    width: 100%;
+    padding: 1%;
+}
+
+
+@media (any-pointer: coarse) or (hover: none) or (handheld){
+    html {zoom: 100%;} 
+    #my{ zoom: 100%; }
+    div#article-main{
+        width: 100%;
+        margin: 0%;
+    }
+    .socials li,a{
+        padding: 2px 15px;
+    }
+    img#icon{
+        width: 25px;
+    }
+    
+    img#wnn{
+        width: 50px;
+        height: 50;
+        object-fit: contain;
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+    /* CSS specific to iOS devices */ 
+    html {zoom: 100%;} 
+    #my{ zoom: 100%; }
+    
+    div#article-main{
+        width: 100%;
+        margin: 0%;
+    }
+    .socials li,a{
+        padding: 2px 15px;
+    }
+    img#icon{
+        width: 35px;
+    }
+    
+    img#wnn{
+        width: 70px;
+        height: 50;
+        object-fit: contain;
+    }
+  }
