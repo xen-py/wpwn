@@ -19,41 +19,31 @@ let end = url.substring(url.length-1)
     */
     let article = parseInt(end)
 
-    let titles= ['',''];
 function changeTitles(){
    
     let title = document.getElementById('title') 
-    let genre = document.getElementById('Genre')//document.querySelector('#Genre')
     let articleTitle = document.getElementById('article-title')
     
 
     switch(article){
         case 1:
             title.textContent = 'Sports'
-            genre.textContent = 'Sports'
-            articleTitle.textContent = 'Sr. Ball Team'
+            articleTitle.textContent = 'Sr. Boys and Jr/Sr. Girls Basketball'
             break;
         case 2:
             title.textContent = 'Pop Culture'
-            genre.textContent = 'Pop Culture'
             articleTitle.textContent = 'Favourite Holiday movies'
             break;
         case 3:
             title.textContent = 'Student Voices'
-            genre.textContent = 'Student Voices'
             articleTitle.textContent = 'Creating comfort in school bathrooms:\r\nHow to make students feel safe and secure'
             articleTitle.setAttribute('style', 'white-space: pre;');
             break
         case 4:
             title.textContent = 'Current Events'
-            genre.textContent = 'Current Events'
             articleTitle.textContent = '2022 FIFA World Cup'
             break;
     }
-
-    titles[0] = title.textContent
-    titles[1] = genre.textContent
-
 
     articleTitle.style.fontSize = '30px'
     articleTitle.style.fontFamily = '"Montserrat", sans-serif'
@@ -110,7 +100,7 @@ function content(){
     switch(article){
         case 1:
             //image
-            document.writeln('<img id="article-photo" src="images/Badminton.png" alt="a picture">');
+            document.writeln('<img id="article-photo" src="images/sportsArticle.jpg" alt="a picture">');
             //main content
             document.writeln('<p class="article-text">The Wagner Warriors basketball team secured a hard-fought 2-point victory over the Bellrose Bulldogs in their latest matchup, thanks in large part to improved teamwork and a clutch performance from new center Jobanpreet.</p><p class="article-text">Despite some early struggles to find their rhythm and execute as a cohesive unit, the Warriors eventually settled into a groove and put on a strong performance. Standout player Harbir led the charge with a stunning 35-point performance, and the team demonstrated a clear ability to support each other and play off of one another\'s strengths.</p><p class="article-text">In the closing minutes of the game, it was Jobanpreet who sealed the victory with a game-winning floater. The new center has quickly proven to be a valuable addition to the team, bringing size and skill to the court.</p><p class="article-text">The Warriors will have their work cut out for them in their next matchup, as they face a tough home game against the Strathcona Christian Eagles. If they can bring the same level of teamwork and determination that they displayed against the Bulldogs, however, there is no doubt that they have what it takes to come out on top and with hard work and determination, a long run in the playoffs are in sight for the Wagner Warriors.</p>')
             document.writeln('<div class="spacer"></div>')
@@ -127,6 +117,7 @@ function content(){
             document.writeln('<p class="article-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus officiis nemo explicabo recusandae earum ad distinctio aperiam voluptates saepe, nesciunt accusamus quasi ex nobis expedita ipsum doloribus ratione vel possimus?</p>')
             document.writeln('<div class="spacer"></div>')
             document.write('<h2 id = "red">Best Hangout Spots</h2>')
+            document.writeln('<img id="article-photo" src="images/cultureArticle2.jpg" alt="a picture">');
             document.writeln('<p class="article-text">Edmonton has a wide variety of great places to hang out with friends, depending on your interests. For those who enjoy the outdoors, the River Valley Parks system offers miles of hiking and biking trails, as well as parks, picnic areas and playgrounds. Whyte Avenue is another popular hangout spot for friends, with a variety of shops, restaurants, and bars. If you\'re interested in arts and culture, the Royal Alberta Museum is an excellent destination for spending time with friends, featuring exhibits on the history and culture of Alberta. The Old Strathcona district is another popular spot with a great atmosphere, home to a variety of restaurants, bars, and shops, as well as a farmer\'s market and several festivals throughout the year. Another fun spot for friends to hangout would be to explore the food scene, trying out different and unique restaurants or even food trucks on Whyte Avenue or 124 street.</p>')
             document.writeln('<div class="spacer"></div>')
             document.writeln("<p class = 'date' >Editors: "+editors[2]+'</p>')
@@ -177,14 +168,9 @@ window.onhashchange = function() {
 
  function isPageDif(){
     let title = document.getElementById('title') 
-    let genre = document.getElementById('Genre')
 
     if((contentLoaded != 0) && (contentLoaded != article)){
         console.log(contentLoaded,article)
-        window.open(self.location, '_self');
-        document.location.reload(true)
-    } else if (title.textContent != genre.textContent){
-        console.log(title.textContent, genre.textContent)
         window.open(self.location, '_self');
         document.location.reload(true)
     } else if(nextPage != window.location.href){
@@ -206,6 +192,10 @@ window.onhashchange = function() {
         }, 1000);
     
     
+ }
+
+ function reloadPage(){
+    setTimeout('document.location.reload(true)', 150);
  }
 
  load()
