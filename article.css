@@ -5,7 +5,7 @@ div#background{
 }
 
 img#article-photo{
-    width: 600px;
+    max-width: 600px;
     object-fit: contain;
     border-radius: 1%;
     padding-bottom: 6%;
@@ -23,26 +23,12 @@ h2{
     white-space: normal;
 }
 
-p{
-    font-size: 1.5rem;
-}
-
 .spacer{
     padding-top: 20%;
 }
 
 body{
     background-image: none;
-}
-
-p#Genre{
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 15px;
-    white-space: nowrap;
-    color: #edf0f1;
-    text-decoration: none;
-    display: inline-block;
 }
 
 
@@ -86,6 +72,14 @@ footer#footer2{
 
 
 @media (any-pointer: coarse) or (hover: none) or (handheld){
+    img#article-photo{
+        max-width: 600px;
+        object-fit: contain;
+        border-radius: 1%;
+        padding-bottom: 6%;
+        margin: auto;
+    
+    }
     html {zoom: 100%;} 
     #my{ zoom: 100%; }
     div#article-main{
@@ -104,6 +98,10 @@ footer#footer2{
         height: 50;
         object-fit: contain;
     }
+
+    img#article-photo{
+        max-width: 90vw;
+        }
 }
 
 @supports (-webkit-touch-callout: none) {
@@ -127,6 +125,14 @@ footer#footer2{
         height: 50;
         object-fit: contain;
     }
+
+    img#article-photo{
+        max-width: 90vw;
+        }
+        
+        p{
+            font-size: 1.2rem;
+        }
   }
 
   @media screen and (min-width: 1000px) {
@@ -143,6 +149,10 @@ footer#footer2{
         max-width: 800px;
         word-wrap: break-word;
         white-space: normal;
+    }
+
+    p{
+        font-size: 1.5rem;
     }
     
 }

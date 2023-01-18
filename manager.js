@@ -37,7 +37,6 @@ function changeTitles(){
         case 3:
             title.textContent = 'Student Voices'
             articleTitle.textContent = 'Creating comfort in school bathrooms:\r\nHow to make students feel safe and secure'
-            articleTitle.setAttribute('style', 'white-space: pre;');
             break
         case 4:
             title.textContent = 'Current Events'
