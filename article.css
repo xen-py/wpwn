@@ -9,13 +9,22 @@ img#article-photo{
     object-fit: contain;
     border-radius: 1%;
     padding-bottom: 6%;
-    max-width: 90vw;
     margin: auto;
 
 }
 
 h1{
     font-size: xx-large;
+}
+
+h2{
+    max-width: 600px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+p{
+    font-size: ;
 }
 
 .spacer{
@@ -58,6 +67,7 @@ div#title{
 div#article-main{
     
     padding-top: 5%;
+    max-width: 600px;
 }
 
 .socials li,a{
@@ -118,3 +128,21 @@ footer#footer2{
         object-fit: contain;
     }
   }
+
+  @media screen and (min-width: 1000px) {
+    /*this css will only be used when the screen size is min 1000px*/
+    div#article-main{
+        max-width: 800px;
+    }
+    img#article-photo{
+        width: 800px;
+    
+    }
+
+    h2{
+        max-width: 800px;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+    
+}

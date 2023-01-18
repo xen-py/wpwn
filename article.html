@@ -15,13 +15,13 @@
     <!--<script src = "manager.js"></script>-->
     <script>document.write('<script src="manager.js?dev=4'+ Math.floor(Math.random() * 1000) +'"\><\/script>');</script>
 
-    <link rel="stylesheet" href="my_styles.css?refreshcss=3" type="text/css"> <!-- Don't Touch -->
+    <link rel="stylesheet" href="my_styles.css?refreshcss=4" type="text/css"> <!-- Don't Touch -->
 
     <!--<link rel="stylesheet" href="article.css?refreshcss=10" type="text/css">  -->
-    <script>document.write('<link rel="stylesheet" href="article.css?dev=2' + Math.floor(Math.random() * 1000) + 'type="text/css">');</script>
+    <script>document.write('<link rel="stylesheet" href="article.css?dev=5' + Math.floor(Math.random() * 1000) + 'type="text/css">');</script>
 
     <link rel="icon" href="images/favicon.ico">
-    <title id = 'title'></title>
+    <title id = 'title'>JavaScript Error</title>
         
 </head>
 
@@ -47,12 +47,12 @@
 
             <div id="foreground">
 
-                <div id="article-title">
-                    <h2>Title</h2>
+                <div >
+                    <h2 id="article-title">Title</h2>
                 </div>
                 
                 <div id="article-main">
-                    <script>changeTitles();content();</script>
+                    <script>changeTitles();content()</script>
                 </div>
 
             </div>
