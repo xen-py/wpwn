@@ -5,7 +5,7 @@ div#background{
 }
 
 img#article-photo{
-    max-width: 600px;
+    width: 600px;
     object-fit: contain;
     border-radius: 1%;
     padding-bottom: 6%;
