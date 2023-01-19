@@ -51,6 +51,9 @@ function changeTitles(){
 
 
 }
+
+let changingPage = false;
+
 let nextPage = url
 function nextArticle(){
 
@@ -68,8 +71,10 @@ function nextArticle(){
     //window.open(nextPage, '_self');
     //window.open(nextPage)
     //window.location.href = nextPage;
+    changingPage = true;
     window.location.assign(nextPage);
     //caches.keys().then(list => list.map(key => caches.delete(key)))
+    //reloadPage(100)
     document.location.reload(true)
 }
 
@@ -88,8 +93,11 @@ function lastArticle(){
     //window.open(nextPage)
     //window.location.href = nextPage;
     //caches.keys().then(list => list.map(key => caches.delete(key)))
+    changingPage = true;
     window.location.assign(nextPage);
     document.location.reload(true)
+    //reloadPage(100)
+
 }
 
 let contentLoaded = 0;
@@ -99,7 +107,7 @@ function content(){
     switch(article){
         case 1:
             //image
-            document.writeln('<img id="article-photo" src="images/sportsArticle.jpg" alt="a picture">');
+            document.writeln('<img id="article-photo" src="images/sportsArticle.jpg" alt="a picture" title="https://www.reddeeradvocate.com/sports/photos-lightning-tip-off-at-scott-doan-memorial-tournament/">');
             //main content
             document.writeln('<p class="article-text">The Wagner Warriors basketball team secured a hard-fought 2-point victory over the Bellrose Bulldogs in their latest matchup, thanks in large part to improved teamwork and a clutch performance from new center Jobanpreet.</p><p class="article-text">Despite some early struggles to find their rhythm and execute as a cohesive unit, the Warriors eventually settled into a groove and put on a strong performance. Standout player Harbir led the charge with a stunning 35-point performance, and the team demonstrated a clear ability to support each other and play off of one another\'s strengths.</p><p class="article-text">In the closing minutes of the game, it was Jobanpreet who sealed the victory with a game-winning floater. The new center has quickly proven to be a valuable addition to the team, bringing size and skill to the court.</p><p class="article-text">The Warriors will have their work cut out for them in their next matchup, as they face a tough home game against the Strathcona Christian Eagles. If they can bring the same level of teamwork and determination that they displayed against the Bulldogs, however, there is no doubt that they have what it takes to come out on top and with hard work and determination, a long run in the playoffs are in sight for the Wagner Warriors.</p>')
             document.writeln('<div class="spacer"></div>')
@@ -111,19 +119,19 @@ function content(){
             break;
         case 2:
             //image
-            document.writeln('<img id="article-photo" src="images/santa.jpg" alt="a picture">');
+            document.writeln('<img id="article-photo" src="images/santa.jpg" alt="a picture" title="https://unsplash.com/photos/liT5AlTmC8I">');
             //main content
-            document.writeln('<p class="article-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus officiis nemo explicabo recusandae earum ad distinctio aperiam voluptates saepe, nesciunt accusamus quasi ex nobis expedita ipsum doloribus ratione vel possimus?</p>')
+            document.writeln('<p class="article-text">What\'s your favorite holiday movie? To get students into a Holiday mood, we asked the students at Wagner to choose their favorite holiday movie between three classics, the Grinch, Home alone and The Nightmare before Christmas. Out of the three classics, the top movie watched by the warriors is Home Alone. Why you might ask, let\'s ask the students of Wagner. “I love the setting and the pranks” “I loved it when the man got an iron to his face.” To those who haven’t watched home alone, it’s about an eight year old troublemaker who was mistakenly left home alone. He must defend his home against burglars on Christmas eve. In my opinion the winner should’ve been the Grinch. Lets be for real, the Grinch is an original and the best movie to watch on the holiday. It has so many different things going on and the set is colorful. </p>')
             document.writeln('<div class="spacer"></div>')
             document.write('<h2 id = "red">Best Hangout Spots</h2>')
-            document.writeln('<img id="article-photo" src="images/cultureArticle2.jpg" alt="a picture">');
+            document.writeln('<img id="article-photo" src="images/cultureArticle2.jpg" alt="a picture" title="https://unsplash.com/photos/KnAhRJHeI7A">');
             document.writeln('<p class="article-text">Edmonton has a wide variety of great places to hang out with friends, depending on your interests. For those who enjoy the outdoors, the River Valley Parks system offers miles of hiking and biking trails, as well as parks, picnic areas and playgrounds. Whyte Avenue is another popular hangout spot for friends, with a variety of shops, restaurants, and bars. If you\'re interested in arts and culture, the Royal Alberta Museum is an excellent destination for spending time with friends, featuring exhibits on the history and culture of Alberta. The Old Strathcona district is another popular spot with a great atmosphere, home to a variety of restaurants, bars, and shops, as well as a farmer\'s market and several festivals throughout the year. Another fun spot for friends to hangout would be to explore the food scene, trying out different and unique restaurants or even food trucks on Whyte Avenue or 124 street.</p>')
             document.writeln('<div class="spacer"></div>')
             document.writeln("<p class = 'date' >Editors: "+editors[2]+'</p>')
             contentLoaded = 2;
             break;
         case 3:
-            document.writeln('<img id="article-photo" src="images/voiceArticle.jpg" alt="a picture">');
+            document.writeln('<img id="article-photo" src="images/voiceArticle.jpg" alt="a picture" title ="https://unsplash.com/photos/UcUROHSJfRA">');
             document.writeln('<p class="article-text">“At W.P. Wagner High School, we believe that safety is our collective responsibility. Together, we must all take measures to protect one another" —Safety is a collective responsibility. We must all do what we can to make sure staff and students feel safe and comfortable during their time at school.Creating a comfortable and secure school bathroom space is essential for students. A school bathroom should be an inviting and safe place for students to not only use the facilities but also to socialize and relax. It can be difficult for students to feel comfortable in a school bathroom, especially if it is not well-maintained or if it is filled with bullying or disrespectful behavior. To ensure that students feel safe and secure in school bathrooms, there are a few steps that schools can take to create a comfortable and inviting atmosphere. This includes keeping the bathrooms clean, having strict policies in place regarding bullying, and providing resources for students who may need additional support. With these simple steps, schools can create a safe and secure environment in their bathrooms and ensure that all students feel comfortable and respected. Students have enough stress as it is and anxiety about using school bathrooms should not be one of them.  Bathrooms should not be overcrowded. Most students have stated that the majority of their bathroom anxiety stems from overcrowded bathrooms. “Walking into an overcrowded bathroom filled with students broken into conversation is scary , I feel judged doing something as simple as fixing my hair. Most students believe that the school does an exceptional job maintaining bathroom facilities but the amount of students using the bathroom needs to be limited. Creating a safe and secure environment for students in school washroom facilities is important because it allows for students to feel safe and it allows for students to feel like they matter. Coming to school should be an enjoyable experience. Students have the right to feel safe and comfortable while at school. Staff and students all need to do their part in ensuring that students feel safe and comfortable whilst using school restrooms</p>');
             document.writeln('<div class="spacer"></div>')
             document.writeln("<p class = 'date' >Editors: "+editors[3]+'</p>')
@@ -166,18 +174,18 @@ window.onhashchange = function() {
  */
 
  function isPageDif(){
-    let title = document.getElementById('title') 
+    
 
     if((contentLoaded != 0) && (contentLoaded != article)){
         console.log(contentLoaded,article)
         window.open(self.location, '_self');
         document.location.reload(true)
-    } else if(nextPage != window.location.href){
+    } else if((nextPage != window.location.href)){
         console.log(nextPage, window.location.href)
         window.open(self.location, '_self');
         document.location.reload(true)
     }
-    else{
+    else if (changingPage == false){
         console.log('page is up to date')
         load()
     }
@@ -193,8 +201,8 @@ window.onhashchange = function() {
     
  }
 
- function reloadPage(){
-    setTimeout('document.location.reload(true)', 150);
+ function reloadPage(time){
+    setTimeout('document.location.reload(true)', time);
  }
 
  load()
