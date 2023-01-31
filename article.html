@@ -13,12 +13,13 @@
     <meta http-equiv='pragma' content='no-cache'>
 
     <!--<script src = "manager.js"></script>-->
-    <script>document.write('<script src="manager.js?dev=17'+ Math.floor(Math.random() * 1000) +'"\><\/script>');</script>
+    <script>document.write('<script src="manager.js?dev=19'+ Math.floor(Math.random() * 1000) +'"\><\/script>');</script>
 
-    <link rel="stylesheet" href="my_styles.css?refreshcss=8" type="text/css"> <!-- Don't Touch -->
+    <link rel="stylesheet" href="my_styles.css?refreshcss=12" type="text/css"> <!-- Don't Touch -->
 
     <!--<link rel="stylesheet" href="article.css?refreshcss=10" type="text/css">  -->
-    <script>document.write('<link rel="stylesheet" href="article.css?dev=10' + Math.floor(Math.random() * 1000) + 'type="text/css">');</script>
+    <script>document.write('<link rel="stylesheet" href="article.css?dev=16' + Math.floor(Math.random() * 1000) + 'type="text/css">');</script>
+    <script src="https://kit.fontawesome.com/7fa1774645.js" crossorigin="anonymous"></script>
 
     <link rel="icon" href="images/favicon.ico">
     <title id = 'title'>JavaScript Error</title>
@@ -30,17 +31,20 @@
 
         <div>
             <header>
-                <h1>Wagner Press</h1>
+                <div>
+                 <h1 onclick="home()" id="header">Wagner Press</h1>   
+                </div>
+                
             </header>
         </div>
 
         <div>
-            <header id="head2">
+            <header id="article-head2">
                 <nav class="nav-links">
-                    <a href="article.html#1" onclick="reloadPage(150)">Sports</a>
-                    <a href="article.html#2"onclick="reloadPage(150)">Pop Culture</a>
-                    <a href="article.html#3"onclick="reloadPage(150)">Student Voices</a>
-                    <a href="article.html#4"onclick="reloadPage(150)">Current Events</a>
+                    <a href="article.html#1"onclick="reloadPage(150)" id="navigation">Sports</a>
+                    <a href="article.html#2"onclick="reloadPage(150)" id="navigation">Pop Culture</a>
+                    <a href="article.html#3"onclick="reloadPage(150)" id="navigation">Student Voices</a>
+                    <a href="article.html#4"onclick="reloadPage(150)" id="navigation">Current Events</a>
                 </nav>
             </header>
         </div>
@@ -62,14 +66,13 @@
             
         </div>
 
-
+        
+        
         <div>
             <footer id="footer2">
-                <nav class="nav-links" id="footer2">
-                    <a href="#" onclick="lastArticle()">&leftarrow;</a>
-                    <a href="index.html">Back to Home Page</a>
-                    <a href="#" onclick="nextArticle()">&rightarrow;</a>
-                </nav>
+                <div>
+                    <a class="gray" onclick="jump()">Scroll to Top</a>
+                </div>
             </footer>
             <footer>
                 <table>

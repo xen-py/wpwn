@@ -1,0 +1,15 @@
+header{
+    display: inline;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 8%;
+    background-color: #111c55;
+}
+
+#sidebar{
+    display: inline-block;
+    background-color: #111c55;
+    padding: 10px;
+    height: 90vh;
+    width: 40vw;
+}

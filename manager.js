@@ -1,10 +1,10 @@
 
 
 let editors =  {
-    1 : "Eli",
-    2 : "Austin, Avni, Ysabella, Shaneel",
-    3 : "future editors",
-    4 : "Amon, Kai"
+    1 : "Eli C",
+    2 : "Austin K, Avni B, Ysabella A, Shaneel S",
+    3 : "Maryan M, Victor O",
+    4 : "Amon A, Kai C"
     }
 
 
@@ -28,7 +28,7 @@ function changeTitles(){
     switch(article){
         case 1:
             title.textContent = 'Sports'
-            articleTitle.textContent = 'Sr. Boys and Jr/Sr. Girls Basketball'
+            articleTitle.textContent = 'Sr. Boys and Jr/Sr Girls Basketball'
             break;
         case 2:
             title.textContent = 'Pop Culture'
@@ -50,6 +50,27 @@ function changeTitles(){
     articleTitle.style.fontWeight = 'bold'
 
 
+}
+
+function home(){
+    let url = window.location.href
+    let leftSlash = 0;
+    for (let i = 0; i < url.length; i++) {
+        if(url[i] == "/"){
+            leftSlash = i;
+        }
+        
+    }
+
+    url = url.slice(0, leftSlash+1)
+
+    targetPage = url + 'index.html'
+    window.location.assign(targetPage);
+
+}
+
+function jump(){
+    window.scrollTo(0, 0);
 }
 
 let changingPage = false;
@@ -112,7 +133,7 @@ function content(){
             document.writeln('<p class="article-text">The Wagner Warriors basketball team secured a hard-fought 2-point victory over the Bellrose Bulldogs in their latest matchup, thanks in large part to improved teamwork and a clutch performance from new center Jobanpreet.</p><p class="article-text">Despite some early struggles to find their rhythm and execute as a cohesive unit, the Warriors eventually settled into a groove and put on a strong performance. Standout player Harbir led the charge with a stunning 35-point performance, and the team demonstrated a clear ability to support each other and play off of one another\'s strengths.</p><p class="article-text">In the closing minutes of the game, it was Jobanpreet who sealed the victory with a game-winning floater. The new center has quickly proven to be a valuable addition to the team, bringing size and skill to the court.</p><p class="article-text">The Warriors will have their work cut out for them in their next matchup, as they face a tough home game against the Strathcona Christian Eagles. If they can bring the same level of teamwork and determination that they displayed against the Bulldogs, however, there is no doubt that they have what it takes to come out on top and with hard work and determination, a long run in the playoffs are in sight for the Wagner Warriors.</p>')
             document.writeln('<div class="spacer"></div>')
             document.writeln('<h2 id="red">GIRLS</h2>')
-            document.writeln('<p class="article-text">WP Wagner Warriors Girls Basketball Team Defeats Bell Rose Bulldogs 66-22, Eyes Playoffs with Hard Work</p><p class="article-text">The WP Wagner Warriors girls basketball team secured a decisive victory over the Bell Rose Bulldogs, with a final score of 66-22. The Warriors displayed a dominant performance on both offense and defense, showcasing their teamwork and chemistry on the court.</p><p class="article-text">Despite the impressive win, the team is not content with their current state and is determined to work hard to improve and secure a spot in the playoffs. "I think we could do it. We have the skill and attitude for it. We just need to push through it, keep our heads up and have some good games" said Alicia Rohlenhr.</p><p class="article-text">Alicia Rholenhr acknowledged that relationships and chemistry are vital to a good basketball team. ”Good relationships within the team matter a lot, it\'s called a team for a reason" she said.</p><p class="article-text">The Warriors are looking forward to their next game and are confident that with their hard work and dedication, they will secure a spot in the playoffs. The team encourages fans to come out and support them as they strive for success.</p><p class="article-text">The hard work of the warriors is paying off as they are showing great performance on the court. They are a team to watch out for in the playoffs. The team and the coach consider that the chemistry and the relationships in the team are vital for a good basketball team. Keep an eye on the WP Wagner Warriors as they continue their journey to the playoffs.</p>')
+            document.writeln('<p class="article-text">WP Wagner Warriors Girls Basketball Team Defeats Bell Rose Bulldogs 66-22, Eyes Playoffs with Hard Work</p><p class="article-text">The WP Wagner Warriors girls basketball team secured a decisive victory over the Bell Rose Bulldogs, with a final score of 66-22. The Warriors displayed a dominant performance on both offense and defense, showcasing their teamwork and chemistry on the court.</p><p class="article-text">Despite the impressive win, the team is not content with their current state and is determined to work hard to improve and secure a spot in the playoffs. "I think we could do it. We have the skill and attitude for it. We just need to push through it, keep our heads up and have some good games" said Alicia Rohlehr .</p><p class="article-text">Alicia Rohlehr acknowledged that relationships and chemistry are vital to a good basketball team. ”Good relationships within the team matter a lot, it\'s called a team for a reason" she said.</p><p class="article-text">The Warriors are looking forward to their next game and are confident that with their hard work and dedication, they will secure a spot in the playoffs. The team encourages fans to come out and support them as they strive for success.</p><p class="article-text">The hard work of the warriors is paying off as they are showing great performance on the court. They are a team to watch out for in the playoffs. The team and the coach consider that the chemistry and the relationships in the team are vital for a good basketball team. Keep an eye on the WP Wagner Warriors as they continue their journey to the playoffs.</p>')
             document.writeln('<div class="spacer"></div>')
             document.writeln("<p class = 'date' >Editors: "+editors[1]+'</p>')
             contentLoaded = 1;
@@ -139,7 +160,7 @@ function content(){
             break;
         case 4:
             document.writeln('<img id="article-photo" src="images/eventsArticle.jpg" alt="a picture of the current event">')
-            document.writeln('<p class="article-text">The 2022 World Cup was one for the ages. The World Cup began with some of the most bizarre matches, such as Argentina losing to Saudi Arabia and Japan defeating European giants Spain and Germany in blue lock kits. This year\'s World Cup had fans crying and cheering, and many supposedly "easy games" for some countries ended with the underdogs winning. The World Cup finals were one of, if not the, craziest matches in football history. Argentina had the lead 2-0 with Messi and Di Maria both scoring until the 80th minute when Kylian Mbappe scored a penalty, and then in the next minute, he scored another goal. During extra time, Messi was able to score one more goal, but shortly after Kylian Mbappe scored his third, making it a hat trick. It ended up being 3-3 and the game went to penalties. Argentina scored four times when France only scored twice, which finally closed the goat discussion. Messi is officially the Goat.</p>')
+            document.writeln('<p class="article-text">The 2022 World Cup was one for the ages. Years before the World Cup even took place, Critics had raised concerns about the treatment of migrant workers building the infrastructure for the event, as well as Qatar\'s human rights record more generally. Additionally, there were calls for the tournament to be moved or boycotted due to the country\'s alleged support for terrorism and the ongoing blockade imposed by several other Arab countries. Despite these controversies, FIFA and the Qatari government continued on with the tournament. The World Cup began with some of the most bizarre matches, such as Argentina losing to Saudi Arabia and Japan defeating European giants Spain and Germany in the blue lock kits. This year\'s World Cup had fans crying and cheering, and many supposedly "easy games" for some countries ended with the underdogs winning. The World Cup finals were one of the craziest matches in football history, if not the craziest. Argentina had the lead 2-0 with both Messi and Di Maria scoring. Then, in the 80th minute Kylian Mbappe scored a penalty, and then in the next minute, scored another goal. The score ended up being 3-3, and the game went to penalties. Argentina scored four times in the penalties, whilst France only scored twice. This Argentinian team led by Lionel Messi won the first world cup for Argentina since 1986. By leading his team, and country, to this International title, Messi officially became the Goat.</p>')
             document.writeln('<div class="spacer"></div>')
             document.writeln("<p class = 'date' >Editors: "+editors[4]+'</p>')
             contentLoaded = 4;

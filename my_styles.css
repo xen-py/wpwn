@@ -85,21 +85,21 @@ h1{
     padding-top: 5px;
     padding-bottom: 5px;
     font-family: 'Cormorant Garamond', serif;
-
 }
 
-header{
+#header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 8%;
     background-color: #111c55;
 }
 
 header#head2{
     display: flex;
+    flex-direction: column;
     align-items: center;
     background-color:#030615;
+    padding: 10px 8%;
     align-self: stretch;
 }
 
@@ -146,6 +146,7 @@ div#main{
     align-self: center;
     text-decoration: none;
 }
+
 
 button {
     padding: 9px 25px;

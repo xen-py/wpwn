@@ -98,17 +98,30 @@ function verifyLoginfo(){
     
     var user = document.getElementById('admin-input').value
     var password = document.getElementById('password-input').value
-    
-    storedData = loadFile('users.txt')
-    console.log(storedData)
 
-    s1 = JSON.parse(storedData)[0]
-    s2 = JSON.parse(storedData)[1]
+    var input = user + password + ''
+    storedData = loadFile('users.txt')
+    let arr = storedData.split(',')
+
+    //console.log(storedData)
+    //console.log(input)
+    //console.log(arr)
+
+
+    for(let i = 0; i < arr.length; i++){
+        let pass = arr[i]
+        if(pass == input){
+            changeCurrentLocation("admin.html")
+        }
+    } 
+
+    //s1 = JSON.parse(storedData)[0];
+    //s2 = JSON.parse(storedData)[1]
     
-    console.log(s1,s2)
-    if((user == s1) && (password == s2)){
-        changeCurrentLocation("admin.html")
-    }
+    //  console.log(s1,s2)
+    //if((user == s1) && (password == s2)){
+        //changeCurrentLocation("admin.html")
+    //}
 
 
 }
@@ -124,3 +137,6 @@ function loadFile(filePath) {
     return result;
   }
 
+function formatText(){
+
+}
