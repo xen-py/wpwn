@@ -14,6 +14,7 @@ img#section-photo{
     padding-bottom: 1%;
     max-width: 90vw;
     margin: auto;
+    align-self: center;
 
 }
 
@@ -29,10 +30,12 @@ p{
     align-self: center;
     font-family: 'Times New Roman', Times, serif;
     margin-top: 1%;
+    word-wrap: break-word;
+    white-space: normal;
 
 }
 
-.read-more, a{
+.read-more{
     max-width: 600px;
     font-size: 1.2rem;
     padding: 0%;
@@ -87,6 +90,7 @@ h1{
     font-family: 'Cormorant Garamond', serif;
 }
 
+
 #header{
     display: flex;
     flex-direction: column;
@@ -94,19 +98,21 @@ h1{
     background-color: #111c55;
 }
 
-header#head2{
+
+header#article-head2{
     display: flex;
-    flex-direction: column;
     align-items: center;
     background-color:#030615;
-    padding: 10px 8%;
     align-self: stretch;
+    flex-direction: column;
+    
+    padding: 10px, 8%;
 }
 
 
 
 div#section-sports, div#section-pop, div#section-voices, div#section-events{
-    width: 610px;
+    max-width: 610px;
     padding-top: 5%;
     margin: auto;
     background-color: white;
@@ -124,6 +130,8 @@ div#main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    
 }
 
 
@@ -141,7 +149,7 @@ div#main{
 
 .socials li,a{
     display: inline-block;
-    padding: 2px 30px;
+    padding: 5px 30px;
     white-space: nowrap;
     align-self: center;
     text-decoration: none;
@@ -188,18 +196,81 @@ td,th,tr,table{
 
 /* if device has a touch screen */
 @media (any-pointer: coarse) or (hover: none) or (handheld){
-    html {zoom: 140%;} 
-    #my{ zoom: 140%; }
+    html {zoom: 100%;} 
+     #my{ zoom: 100%; }
+
     .socials li,a{
         padding: 2px 20px;
     }
+    #article-head2, header{
+        padding: 7px, 3%;
+     }
+ 
+     div#section-sports, div#section-pop, div#section-voices, div#section-events{
+        max-width: 90vw;
+        padding-bottom: 12%;
+     }
+
+     #navigation{
+         padding: 10px 5px;
+         font-size: 13px;
+     }
+     img#icon{
+         width: 25px;
+     }
+     
+     img#wnn{
+         width: 50px;
+         height: 50;
+         object-fit: contain;
+     }
+ 
+     .date{
+         font-size: 1rem;
+         padding-top: 6%;
+         padding-bottom: 7%;
+     }
+ 
+     h1{
+         font-size:xx-large;
+     }
+     p{
+        font-size: 1.15rem;
+        line-height: 16pt;
+     }
+     .read-more{
+        font-size: 1.15rem;
+        word-wrap: break-word;
+        white-space: normal;
+     }
+     .readmore-div{
+        padding-top: 2%;
+     }
 }
 
-@supports (-webkit-touch-callout: none) {
-    /* CSS specific to iOS devices */ 
-    html {zoom: 140%;} 
-    #my{ zoom: 140%; }
-    .socials li,a{
-        padding: 2px 20px;
+@media screen and (min-width: 1000px) {
+    /*this css will only be used when the screen size is min 1000px*/
+    div#section-sports, div#section-pop, div#section-voices, div#section-events{
+        max-width: 810px;
     }
-  }
+    img#section-photo{
+        width: 700px;
+    
+    }
+
+    h2{
+        max-width: 800px;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+
+    p , .read-more{
+        font-size: 1.5rem;
+        max-width: 700px;
+    }
+
+    h1{
+        font-size: 2.7rem;
+    }
+    
+}
