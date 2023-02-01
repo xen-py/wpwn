@@ -226,7 +226,7 @@ td,th,tr,table{
      }
  
      .date{
-         font-size: 1rem;
+         font-size: 0.8rem;
          padding-top: 6%;
          padding-bottom: 7%;
      }
@@ -234,12 +234,9 @@ td,th,tr,table{
      h1{
          font-size:xx-large;
      }
-     p{
-        font-size: 1.15rem;
+     p, .read-more{
+        font-size: 1rem;
         line-height: 16pt;
-     }
-     .read-more{
-        font-size: 1.15rem;
         word-wrap: break-word;
         white-space: normal;
      }
