@@ -65,6 +65,9 @@ div#article-main{
     max-width: 600px;
 }
 
+#background{
+    width: 100vw;
+}
 
 .socials li,a{
     display: inline-block;
@@ -92,6 +95,8 @@ footer#footer2{
 
 @media (any-pointer: coarse) or (hover: none) or (handheld){
 
+    html {zoom: 100%;} 
+
     #article-head2, header{
        padding: 7px, 3%;
     }
@@ -101,15 +106,14 @@ footer#footer2{
     }
 
     img#article-photo{
-        max-width: 600px;
+        max-width: 90vw;
         object-fit: contain;
         border-radius: 1%;
         padding-bottom: 6%;
         margin: auto;
     
     }
-    html {zoom: 100%;} 
-    #my{ zoom: 100%; }
+
     div#article-main{
         width: 100%;
         margin: 0%;
@@ -128,9 +132,9 @@ footer#footer2{
         object-fit: contain;
     }
 
-    img#article-photo{
-        max-width: 90vw;
-        }
+    .socials li, a {
+        padding: 2px 20px;
+    }
 
     .gray{
         font-size:small;
