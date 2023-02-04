@@ -37,7 +37,7 @@ h1{
 
     width: 100%;
     min-height: 200vh; /*change back to 100%*/
-    background-color:rgb(227, 227, 227);
+    background-color:#f5f7f8;
     display: grid;
     margin-left:240px;
 }
