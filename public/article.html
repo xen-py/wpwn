@@ -15,10 +15,10 @@
     <!--<script src = "manager.js"></script>-->
     <script>document.write('<script src="manager.js?dev=19'+ Math.floor(Math.random() * 1000) +'"\><\/script>');</script>
 
-    <link rel="stylesheet" href="my_styles.css?refreshcss=14" type="text/css"> <!-- Don't Touch -->
+    <link rel="stylesheet" href="my_styles.css?refreshcss=15" type="text/css"> <!-- Don't Touch -->
 
     <!--<link rel="stylesheet" href="article.css?refreshcss=10" type="text/css">  -->
-    <script>document.write('<link rel="stylesheet" href="article.css?dev=20' + Math.floor(Math.random() * 1000) + 'type="text/css">');</script>
+    <script>document.write('<link rel="stylesheet" href="article.css?dev=21' + Math.floor(Math.random() * 1000) + 'type="text/css">');</script>
     <script src="https://kit.fontawesome.com/7fa1774645.js" crossorigin="anonymous"></script>
 
     <link rel="icon" href="images/favicon.ico">
@@ -30,9 +30,9 @@
 
 
         <div>
-            <header>
+            <header id="header">
                 <div>
-                 <h1 onclick="home()" id="header">Wagner Press</h1>   
+                 <h1 onclick="home()" >Wagner Press</h1>   
                 </div>
                 
             </header>
@@ -40,12 +40,17 @@
 
         <div>
             <header id="article-head2">
-                <nav class="nav-links">
-                    <a href="article.html#1"onclick="reloadPage(150)" id="navigation">Sports</a>
-                    <a href="article.html#2"onclick="reloadPage(150)" id="navigation">Pop Culture</a>
-                    <a href="article.html#3"onclick="reloadPage(150)" id="navigation">Student Voices</a>
-                    <a href="article.html#4"onclick="reloadPage(150)" id="navigation">Current Events</a>
+                <nav id="nav-text">
+                    <a href="article.html#1"onclick="reloadPage(150)" class="navigation">Sports</a>
+                    <a href="article.html#2"onclick="reloadPage(150)" class="navigation">Pop Culture</a>
+                    <a href="article.html#3"onclick="reloadPage(150)" class="navigation">Student Voices</a>
+                    <a href="article.html#4"onclick="reloadPage(150)" class="navigation">Current Events</a>
                 </nav>
+
+                    <a href="article.html#1" id="nav-icons"><img src="images/SportsIcon.png" alt="Sports" class="nav-icons"></a>
+                    <a href="article.html#2" id="nav-icons"><img src="images/PopIcon.png" alt="Pop Culture" class="nav-icons"></a>
+                    <a href="article.html#3" id="nav-icons"><img src="images/VoiceIcon.png" alt="Student Voices" class="nav-icons"></a>
+                    <a href="article.html#4" id="nav-icons"><img src="images/EventsIcon.png" alt="Current Events" class="nav-icons"></a>
             </header>
         </div>
 
@@ -74,21 +79,13 @@
                     <a class="gray" onclick="jump()">Scroll to Top</a>
                 </div>
             </footer>
-            <footer>
-                <table>
-                    <td>
-                        <th>
-                            <nav class="socials">
-                                <ul>
-                                    <li><a href="https://www.instagram.com/wagnerwarriors/?hl=en" target="_blank"><img id="icon"src="images/iconIG.png" alt="instagram icon"></a></li>
-                                    <li><a href="https://twitter.com/WagnerWarriors" target="_blank"><img id="icon" src="images/iconTW.png" alt="twitter icon"></a></li>
-                                    <li><a href="https://www.youtube.com/c/WagnerNewsNetwork" target="_blank"><img id="wnn" src="images/iconWNN.png" alt="Wagner News Network Icon"></a></li>
-                                </ul>
-                            </nav>
-                        </th>
-                    </td>
-                </table>
-            </footer>
+            <div>
+                <footer>
+                        <a href="https://www.instagram.com/wagnerwarriors/?hl=en" target="_blank" class="socials" > <i class="fa-brands fa-instagram" id="icon"></i> </a><!--<img id="icon"src="images/iconIG.png" alt="instagram icon">-->
+                        <a href="https://twitter.com/WagnerWarriors" target="_blank" class="socials"><i class="fa-brands fa-twitter" id="icon"></i> </a><!--<img id="icon" src="images/iconTW.png" alt="twitter icon">-->
+                        <a href="https://www.youtube.com/c/WagnerNewsNetwork" target="_blank" class="socials"><i class="fa-brands fa-youtube" id="icon"></i></a><!--<img id="wnn" src="images/iconWNN.png" alt="Wagner News Network Icon">-->
+                </footer>
+            </div>
         </div>
     </body>
 </html>

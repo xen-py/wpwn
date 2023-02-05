@@ -11,9 +11,9 @@
         <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <title>WP Wagner News</title>
-       <link rel="stylesheet" href="my_styles.css?refreshcss=30" type="text/css">
+       <link rel="stylesheet" href="my_styles.css?refreshcss=32" type="text/css">
+       <script src="https://kit.fontawesome.com/7fa1774645.js" crossorigin="anonymous"></script>
        <link rel="icon" href="images/favicon.ico">
-       
    </head>
 
 
@@ -45,12 +45,18 @@
 
         <div>
             <header id="article-head2">
-                <nav class="nav-links">
-                    <a href="article.html#1" id="navigation">Sports</a>
-                    <a href="article.html#2" id="navigation">Pop Culture</a>
-                    <a href="article.html#3" id="navigation">Student Voices</a>
-                    <a href="article.html#4" id="navigation">Current Events</a>
+                <nav id="nav-text">
+                    <a href="article.html#1" class="navigation">Sports</a>
+                    <a href="article.html#2" class="navigation">Pop Culture</a>
+                    <a href="article.html#3" class="navigation">Student Voices</a>
+                    <a href="article.html#4" class="navigation">Current Events</a>
                 </nav>
+
+                <a href="article.html#1" id="nav-icons"><img src="images/SportsIcon.png" alt="Sports" class="nav-icons"></a>
+                <a href="article.html#2" id="nav-icons"><img src="images/PopIcon.png" alt="Pop Culture" class="nav-icons"></a>
+                <a href="article.html#3" id="nav-icons"><img src="images/VoiceIcon.png" alt="Student Voices" class="nav-icons"></a>
+                <a href="article.html#4" id="nav-icons"><img src="images/EventsIcon.png" alt="Current Events" class="nav-icons"></a>
+                
             </header>
         </div>
 
@@ -91,21 +97,12 @@
     
         <div>
             <footer>
-                <table>
-                    <td>
-                        <th>
-                            <nav class="socials">
-                                <ul>
-                                    <li><a href="https://www.instagram.com/wagnerwarriors/?hl=en" target="_blank"><img id="icon"src="images/iconIG.png" alt="instagram icon"></a></li>
-                                    <li><a href="https://twitter.com/WagnerWarriors" target="_blank"><img id="icon" src="images/iconTW.png" alt="twitter icon"></a></li>
-                                    <li><a href="https://www.youtube.com/c/WagnerNewsNetwork" target="_blank"><img id="wnn" src="images/iconWNN.png" alt="Wagner News Network Icon"></a></li>
-                                </ul>
-                            </nav>
-                        </th>
-                    </td>
-                </table>
+                    <a href="https://www.instagram.com/wagnerwarriors/?hl=en" target="_blank" class="socials" > <i class="fa-brands fa-instagram" id="icon"></i> </a><!--<img id="icon"src="images/iconIG.png" alt="instagram icon">-->
+                    <a href="https://twitter.com/WagnerWarriors" target="_blank" class="socials"><i class="fa-brands fa-twitter" id="icon"></i> </a><!--<img id="icon" src="images/iconTW.png" alt="twitter icon">-->
+                    <a href="https://www.youtube.com/c/WagnerNewsNetwork" target="_blank" class="socials"><i class="fa-brands fa-youtube" id="icon"></i></a><!--<img id="wnn" src="images/iconWNN.png" alt="Wagner News Network Icon">-->
             </footer>
         </div>
+
    </body>
 
 </html>

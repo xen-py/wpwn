@@ -3,8 +3,8 @@
 
 *{
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 img#section-photo{
@@ -55,23 +55,6 @@ h2, h3, h4, h5{
     color: darkblue;    
 }
 
-img#icon{
-    width: 50px;
-    
-}
-
-img#wnn{
-    width: 100px;
-    height: 50;
-    object-fit: contain;
-}
-
-.wag-logo{
-    display:inline-block;
-    width:70px;
-    margin-right: auto;
-}
-
 li, a, button{
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
@@ -99,17 +82,26 @@ h1{
 }
 
 
-header#article-head2{
+
+header{
     display: flex;
     align-items: center;
     background-color:#030615;
     align-self: stretch;
     flex-direction: column;
-    
-    padding: 10px, 8%;
+    object-fit: scale-down;
+    padding: 7px 0.1p;
 }
 
-
+#article-head2{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color:#030615;
+    flex-direction: column;
+    padding: 7px 0.1p;
+    justify-content: space-around;
+}
 
 div#section-sports, div#section-pop, div#section-voices, div#section-events{
     max-width: 610px;
@@ -134,97 +126,107 @@ div#main{
     
 }
 
-
-
-.nav-links li, a{
-    display: inline-block;
-    padding: 2px 20px;
-    white-space: nowrap;
-    align-self: center;
+#nav-text{
+    max-width: 90%;
 }
 
-.nav-links li, a:hover{
+.navigation{
+    
+    padding: 5px 30px;
+    align-self: center;
+    max-width: 90%;
+}
+
+.nav-icons{
+    display: none;
+}
+
+.nav-icons:hover{
+    color: #0088a9;
+}
+
+
+i{
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.navigation:hover{
     color: #0088a9;
 }
 
 .socials li,a{
     display: inline-block;
-    padding: 5px 30px;
-    white-space: nowrap;
     align-self: center;
     text-decoration: none;
 }
 
-
-button {
-    padding: 9px 25px;
-    background-color: rgba(0, 136, 169, 1);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
+a.socials{
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
-button :hover{
-    background-color: rgba(0, 136, 169, 0.8);
+#icon{
+    font-size: 30px;
 }
 
-
-th{
-
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    color: #edf0f1;
-    text-decoration: none;
+nav{
+    display: inline-block;
     white-space: nowrap;
-    align-self: center;
-    max-width: 650px;
-    object-fit: scale-down;
 }
 
 footer{
     display: flex;
     justify-content: space-around;
-    padding: 1em;
     background-color: #24252a;
-    padding-top: 2%;
 }
 
-td,th,tr,table{
-    max-width: 600px;
+#foot{
+    width: 100%;
+    max-width: 700px;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 /* if device has a touch screen */
-@media (any-pointer: coarse) or (hover: none) or (handheld){
+@media ((any-pointer: coarse) or (hover: none)) or ((handheld) or (max-width: 707px)){
     html {zoom: 100%;} 
-     #my{ zoom: 100%; }
+    #my{ zoom: 100%;}
 
-    .socials li,a{
-        padding: 2px 20px;
-    }
-    #article-head2, header{
+    /*Header and Navigation*/
+    #article-head2{
+        flex-direction: row;
+        display: flex;
+        white-space: nowrap;
         padding: 7px, 3%;
-     }
- 
-     div#section-sports, div#section-pop, div#section-voices, div#section-events{
-        max-width: 90vw;
-        padding-bottom: 12%;
+    }
+
+    #nav-text{
+        display: none;
+    }
+
+    #nav-icons{
+        margin-top: 6px;
+        margin-bottom: 3px;
+
+    }
+    .nav-icons:hover{
+        filter: invert(44%) sepia(44%) saturate(7412%) hue-rotate(168deg) brightness(90%) contrast(104%);
+    }
+    .nav-icons{
+        width: 25px;
+        display: inline-block;  
+    }
+
+     .navigation{
+         padding: 5px 5px;
+         font-size: 13px;
+         
      }
 
-     #navigation{
-         padding: 10px 5px;
-         font-size: 13px;
-     }
-     img#icon{
-         width: 25px;
-     }
-     
-     img#wnn{
-         width: 50px;
-         height: 50;
-         object-fit: contain;
-     }
- 
+
+     /*Date and Title*/
      .date{
          font-size: 0.8rem;
          padding-top: 6%;
@@ -233,6 +235,13 @@ td,th,tr,table{
  
      h1{
          font-size:xx-large;
+     }
+
+
+     /*Text, Article and Article Links*/
+     div#section-sports, div#section-pop, div#section-voices, div#section-events{
+        max-width: 90vw;
+        padding-bottom: 12%;
      }
      p, .read-more{
         font-size: 1rem;
@@ -243,9 +252,27 @@ td,th,tr,table{
      .readmore-div{
         padding-top: 2%;
      }
+
+
+     /*Footer and Icons*/
+     a.socials{
+        padding-left: 7%;
+        padding-right: 7%;
+        display: inline-block;
+    }
+
+     #icon{
+        font-size: 25px;
+    }
+
+     footer{
+        padding-top: 3.5%;
+        padding-bottom: 3.5%;
+     }
+
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 707px) {
     /*this css will only be used when the screen size is min 1000px*/
     div#section-sports, div#section-pop, div#section-voices, div#section-events{
         max-width: 810px;
@@ -261,13 +288,17 @@ td,th,tr,table{
         white-space: normal;
     }
 
-    p , .read-more{
-        font-size: 1.5rem;
+    p , .read-more, #foot{
+        font-size: 1.3rem;
         max-width: 700px;
     }
 
     h1{
         font-size: 2.7rem;
+    }
+
+    footer{
+        padding: 1% 20%;
     }
     
 }
