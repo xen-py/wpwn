@@ -67,9 +67,7 @@ li, a, button{
 h1{
     color: #edf0f1;
     white-space: nowrap;
-    font-size: 2.7rem;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    font-size: 2.2rem;
     font-family: 'Cormorant Garamond', serif;
 }
 
@@ -80,8 +78,6 @@ h1{
     align-items: center;
     background-color: #111c55;
 }
-
-
 
 header{
     display: flex;
@@ -96,10 +92,11 @@ header{
 #article-head2{
     width: 100%;
     display: flex;
-    align-items: center;
-    background-color:#030615;
-    flex-direction: column;
+    /*background-color:#030615;*/
+    background-color:#181818;
+    flex-direction: row;
     padding: 7px 0.1p;
+    padding-top: 7px;
     justify-content: space-around;
 }
 
@@ -117,22 +114,91 @@ div#section-events{
     padding-bottom: 10%;
 }
 
+#name{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+#wpw-icon{
+    width: 50px;
+    margin-left: 15px;
+}
 div#main{
     align-self: center;
-    display: flex;
+    display: none; /*flex*/ 
     flex-direction: column;
     align-items: center;
     width: 100%;
     
 }
 
+body{
+    background-color: #e0e0e0;
+    
+}
+
+.gallery-container{
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 6%;
+    padding: 2%;
+    align-self: center;
+    align-items: center;
+    max-width: 90%;
+    height: 79vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-gap: 0px;
+    
+}
+
+div#first-section, div#last-section, div#mid-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.sub-container{
+    background-size: cover;
+    border-radius: 2%;
+    background-position: center;
+    padding: auto;
+    background-image: linear-gradient(#e66465, #9198e5);
+}
+
+.sub-container#bottom-container, .sub-container#top-container{
+    width: 93%;
+    height: 60%;
+}
+
+#bottom-container{
+    margin-top: 4%;
+}
+
+.sub-container:hover,
+.sub-container:focus{
+  transform: translate(-4px, -4px);
+  
+  /*box-shadow: 1px 1px black;*/
+}
+
+.gal-text{
+    align-self: center;
+    color: white;
+}
+
 #nav-text{
     max-width: 90%;
+    align-self: right;
+    margin-left: 10%;
 }
 
 .navigation{
     
-    padding: 5px 30px;
+    padding: 5px 20px;
     align-self: center;
     max-width: 90%;
 }
@@ -154,19 +220,10 @@ i{
     color: #0088a9;
 }
 
-.socials li,a{
-    display: inline-block;
-    align-self: center;
-    text-decoration: none;
-}
 
-a.socials{
-    padding-left: 1%;
-    padding-right: 1%;
-}
 
-#icon{
-    font-size: 30px;
+.socials{
+    font-size: 250px;
 }
 
 nav{
@@ -206,11 +263,6 @@ footer{
         display: none;
     }
 
-    #nav-icons{
-        margin-top: 6px;
-        margin-bottom: 3px;
-
-    }
     .nav-icons:hover{
         filter: invert(44%) sepia(44%) saturate(7412%) hue-rotate(168deg) brightness(90%) contrast(104%);
     }
@@ -255,11 +307,6 @@ footer{
 
 
      /*Footer and Icons*/
-     a.socials{
-        padding-left: 7%;
-        padding-right: 7%;
-        display: inline-block;
-    }
 
      #icon{
         font-size: 25px;
@@ -270,7 +317,38 @@ footer{
         padding-bottom: 3.5%;
      }
 
+     .gallery-container{
+    
+        display: grid;
+        grid-template-columns:none;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 0px;
+        /*border: 1px solid #000000;*/
+        
+    }
+    div#first-section, div#last-section, div#mid-section{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: fit-content;
+    }
+    #gallery-photo{
+        border-radius: 2%;
+        width: 48.5%;
+        height: 80%;
+        object-fit: cover;
+    
+    }
+
+    .bottom-photo{
+        margin-top: 0%;
+        margin-left: 2%;
+    }
+    
+
 }
+
+
 
 @media screen and (min-width: 707px) {
     /*this css will only be used when the screen size is min 1000px*/
@@ -291,10 +369,6 @@ footer{
     p , .read-more, #foot{
         font-size: 1.3rem;
         max-width: 700px;
-    }
-
-    h1{
-        font-size: 2.7rem;
     }
 
     footer{

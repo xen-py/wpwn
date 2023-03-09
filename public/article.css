@@ -76,6 +76,7 @@ footer#footer2{
     margin: auto;
 }
 
+
 @media ((any-pointer: coarse) or (hover: none)) or ((handheld) or (max-width: 707px)){
 
     html {zoom: 100%;} 
@@ -129,58 +130,62 @@ footer#footer2{
         padding-bottom: 3.5%;
      }
 }
-/*
+
 @supports (-webkit-touch-callout: none) {
-    / CSS specific to iOS devices / 
+    /* CSS specific to iOS devices */ 
     
-    #article-head2, header{
-        padding: 7px, 3%;
-     }
- 
-     img#article-photo{
-         max-width: 600px;
-         object-fit: contain;
-         border-radius: 1%;
-         padding-bottom: 6%;
-         margin: auto;
-     
-     }
-     html {zoom: 100%;} 
-     #my{ zoom: 100%; }
-     div#article-main{
-         width: 100%;
-         margin: 0%;
-     }
-     #navigation{
-         padding: 10px 5px;
-         font-size: 13px;
-     }
-     img#icon{
-         width: 25px;
-     }
-     
-     img#wnn{
-         width: 50px;
-         height: 50;
-         object-fit: contain;
-     }
- 
-     img#article-photo{
-         max-width: 90vw;
-         }
- 
-     .gray{
-         font-size:small;
-     }
-     .date{
-         font-size: 1.15rem;
-     }
- 
-     h1{
-         font-size:xx-large;
+    html {zoom: 100%;} 
+
+    div#foreground{
+        padding-top: 9vh;
+    }
+
+    img#article-photo{
+        max-width: 90vw;
+        object-fit: contain;
+        border-radius: 1%;
+        padding-bottom: 6%;
+        margin: auto;
+    
+    }
+
+    div#article-main{
+        width: 100%;
+        margin: 0%;
+    }
+
+    #nav-text{
+        display: none;
+    }
+
+    .gray{
+        font-size:small;
+    }
+    .date{
+        font-size: 1.15rem;
+    }
+
+    h1{
+        font-size:xx-large;
+    }
+
+    /*Footer and Icons*/
+    a.socials{
+        padding-left: 7%;
+        padding-right: 7%;
+        display: inline-block;
+    }
+
+     #icon{
+        font-size: 25px;
+    }
+
+     footer{
+        padding-top: 3.5%;
+        padding-bottom: 3.5%;
      }
   }
-*/
+
   @media screen and (min-width: 1000px) {
     /*this css will only be used when the screen size is min 1000px*/
     div#article-main{
@@ -199,10 +204,6 @@ footer#footer2{
 
     p{
         font-size: 1.5rem;
-    }
-
-    h1{
-        font-size: 2.7rem;
     }
     
 }
