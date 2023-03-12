@@ -11,16 +11,16 @@
         <meta HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <title>WP Wagner News</title>
-       <link rel="stylesheet" href="my_styles.css?refreshcss=33" type="text/css">
+       <link rel="stylesheet" href="my_styles.css?refreshcss=35" type="text/css">
        <script src="https://kit.fontawesome.com/7fa1774645.js" crossorigin="anonymous"></script>
        <link rel="icon" href="images/favicon.ico">
    </head>
 
 
    <body>
-
         <div>
-            <script>function openAdmin(){
+            <script>
+            function openAdmin(){
                 let url = window.location.href
                 let leftSlash = 0;
                 for (let i = 0; i < url.length; i++) {
@@ -37,115 +37,128 @@
                 //document.location.reload(true)
                 }
 
+
+                function openArticle(a){
+                    let url = window.location.href
+                let leftSlash = 0;
+                    for (let i = 0; i < url.length; i++) {
+                        if(url[i] == "/"){
+                            leftSlash = i;
+                        }
+                    
+                    }
+
+                url = url.slice(0, leftSlash+1)
+
+                    switch(a){
+                        case 1:
+                            articlePage = url + "article.html#1"
+                            break;
+                        case 2:
+                            articlePage = url + "article.html#2"
+                            break;
+                        case 3:
+                            articlePage = url + "article.html#3"
+                            break
+                        case 4:
+                        articlePage = url + "article.html#4"
+                            break;
+                    }
+                    window.location.assign(articlePage);
+                }   
+                
                 </script>
         </div>
 
         <div>
-            <header id="article-head2">
-                
-                
+            <header>
 
-                <div id="name">
-                  <h1 ondblclick="openAdmin()" oncontextmenu="openAdmin()">Wagner Press </h1>
-                <img src="images/favicon.png" alt="wagner logo" id="wpw-icon">  
+                <div id="header-content">
+                    <div id="title">
+                    <h1 ondblclick="openAdmin()" oncontextmenu="openAdmin()">Wagner Press </h1>
+                    <img src="images/favicon.png" alt="wagner logo" id="wpw-icon">  
+                    </div>
+
+                    <nav id="nav-text">
+                        <a href="article.html#1" class="navigation">Sports</a>
+                        <a href="article.html#2" class="navigation">Pop Culture</a>
+                        <a href="article.html#3" class="navigation">Student Voices</a>
+                        <a href="article.html#4" class="navigation">Current Events</a>
+                    </nav>
                 </div>
-
-                <nav id="nav-text">
-                    <a href="article.html#1" class="navigation">Sports</a>
-                    <a href="article.html#2" class="navigation">Pop Culture</a>
-                    <a href="article.html#3" class="navigation">Student Voices</a>
-                    <a href="article.html#4" class="navigation">Current Events</a>
-                    <!-- Media -->
-                    <a href="article.html#1"><img src="images/SportsIcon.png" alt="Sports" class="nav-icons"></a>
-                    <a href="article.html#2"><img src="images/PopIcon.png" alt="Pop Culture" class="nav-icons"></a>
-                    <a href="article.html#3"><img src="images/VoiceIcon.png" alt="Student Voices" class="nav-icons"></a>
-                    <a href="article.html#4"><img src="images/EventsIcon.png" alt="Current Events" class="nav-icons"></a>   
-                </nav>
-
-
-                
             </header>
         </div>
 
-        
-        <div class="gallery-container">
+        <div id="main" >
+
+            <div id="gal-wrapper">
+                <div class="gallery-container">
     
-            <div id="first-section">
-                <div class="sub-container" id="top-container" style="background-image:url(images/sports.jpg)" onclick="openArticle('article.html#1')">
-                    <!-- <img src="images/sports.jpg" onclick="openArticle('article.html#1')" alt="Picture of Wagners Football Team" title="https://wpwagneropenhouse.ca/our-story/"> -->
+                <div class="sub-container" id="sports"  onclick="openArticle(1)">
+                    <!-- https://wpwagneropenhouse.ca/our-story/ -->
+                    <div class="sub-content">
+                        <div class=" section-text">
+                            
+                                <a class="section-text" href="article.html#1">Cheer tournament and Wrestling championships</a>
+                            
+                        </div>
+                    </div>
                     
-                    
-                </div>
-                <div class="sub-container" id="bottom-container" style="background-image:url(images/culture.jpg)" onclick="openArticle('article.html#2')">
-                    <!-- <img src="images/culture.jpg?1" onclick="openArticle('article.html#2')" id="bottom-photo"  alt="Picture of scattered comic books" title="erik-mclean-27kCu7bXGEI-unsplash"> -->
                 </div>
 
+                <div class="sub-container" id="culture" onclick="openArticle(2)">
+                    <!-- erik-mclean-27kCu7bXGEI-unsplash -->
+                    <div class="sub-content">
+                        <div class=" section-text">
+                            <a class="section-text" href="article.html#2">Spring break ideas</a>
+                        </div>
+                    </div>
+                </div>
+
+            
+            <div id="mid" onclick="newsReel()" class="sub-container">
+                <!--https://www.reddeeradvocate.com/sports/photos-lightning-tip-off-at-scott-doan-memorial-tournament/ -->
+                
+            </div>
+
+
+                <div class="sub-container" id="voices" onclick="openArticle(3)">
+                    <!-- https://unsplash.com/photos/LETdkk7wHQk  -->
+                    <div class="sub-content">
+                        <div class=" section-text">
+                            <a class="section-text" href="article.html#3">Vandalism in school bathrooms</a>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="sub-container" id="events" onclick="openArticle(4)">
+                <!-- https://unsplash.com/photos/YeMFV8ndxrM -->
+                <div class="sub-content">
+                    <div class=" section-text">
+                        <a class="section-text" href="article.html#4">A Black History Month retrospective</a>
+                    </div>
+                </div>
+            </div>
+                
+
+                </div>
+            </div>
+        
+            
+
+        </div>
+
+        <footer>
+            <nav id="footer">
+                <a href="https://www.instagram.com/wagnerwarriors/?hl=en"  target="_blank" class="socials"> <i class="fa-brands fa-instagram"></i> </a><!--<img id="icon"src="icons/iconIG.png" alt="instagram icon">-->
+                <a href="https://twitter.com/WagnerWarriors" target="_blank"  class="socials"><i class="fa-brands fa-twitter" ></i> </a><!--<img id="icon" src="icons/iconTW.png" alt="twitter icon">-->
+                <a href="https://www.youtube.com/c/WagnerNewsNetwork" target="_blank"  class="socials"><i class="fa-brands fa-youtube" ></i></a><!--<img id="wnn" src="icons/iconWNN.png" alt="Wagner News Network Icon">--> 
+            </nav>
+            <div id="about-us">
+                <h1>About Us</h1>
             </div>
             
-            <div id="mid-section" style="background-image:url(images/sportsArticle.jpg)" onclick="openArticle('article.html#1')" class="sub-container">
-                <!-- <img id="gallery-photo-mid" src="images/sportsArticle.jpg" alt="a picture" title="https://www.reddeeradvocate.com/sports/photos-lightning-tip-off-at-scott-doan-memorial-tournament/"> -->
-            </div>
-
-            <div id="last-section">
-                <div class="sub-container" id="top-container" style="background-image:url(images/Voice.jpg)" onclick="openArticle('article.html#3')">
-                    <!-- <img src="images/Voice.jpg" onclick="openArticle('article.html#3')" class="gallery-photo"  alt="Picture of a mic" title="https://unsplash.com/photos/LETdkk7wHQk">  -->
-                </div>
-                <div class="sub-container" id="bottom-container" style="background-image:url(images/Events.jpg)" onclick="openArticle('article.html#4')">
-                    <!-- <img src="images/Events.jpg" onclick="openArticle('article.html#4')" class="gallery-photo" id="bottom-photo"  alt="Picture of protesters" title="https://unsplash.com/photos/YeMFV8ndxrM">  -->
-                    <p class="gal-text">Test</p>
-                </div>
-                
-                
-            </div>
-
-        </div>
-        
-
-        <div id="main" >
-                
-            <div id="section-sports"> 
-
-                <div class="date">Issue: Jan.30.2023</div>
-
-                <h2 >Sports News</h2>
-                <img src="images/sports.jpg" onclick="openArticle('article.html#1')" id="section-photo"  alt="Picture of Wagners Football Team" title="https://wpwagneropenhouse.ca/our-story/">
-                <p>No time to watch the latest sports livestreams? No problem! Catch the latest scores and interviews here...</p>
-                <div class="readmore-div"><p>This weeks exlusive: <a href="article.html#1" class="read-more">Sr. Boys and Girls Basketball</a></p></div>
-            </div>
-
-            <div id="section-pop">
-                <h3>Pop Culture!</h3> 
-                <img src="images/culture.jpg?1" onclick="openArticle('article.html#2')" id="section-photo"  alt="Picture of scattered comic books" title="erik-mclean-27kCu7bXGEI-unsplash">
-                <p>Learn what's hot, and what's not at Wagner...</p>
-                <div class="readmore-div"><p>This issue we found out: <a href="article.html#2" class="read-more">Your favourite Holiday movies/Hangout spots</a> </p></div>
-            </div>
-
-            <div id ="section-voices">
-                <h4>Student Voices</h4>
-                <img src="images/Voice.jpg" onclick="openArticle('article.html#3')" id="section-photo"  alt="Picture of a mic" title="https://unsplash.com/photos/LETdkk7wHQk">
-                <p>Ever just looked at someone and wondered what was going on in their head. Listen to us tackle issues...</p>
-                <div class="readmore-div"><p>This weeks scoop is on: <a href="article.html#3" class="read-more">Creating comfort in school bathrooms</a></p></div>  
-            </div>
-
-            <div id="section-events">
-                <h5>Current Events</h5>
-                <img src="images/Events.jpg" onclick="openArticle('article.html#4')" id="section-photo" alt="Picture of protesters" title="https://unsplash.com/photos/YeMFV8ndxrM">
-                <p>Real topics, Real people, Real reporting, Its the world brought to your phone. Tune in, we do it better then CNN...</p>
-                <div class="readmore-div"><p>Stay in the know about: <a href="article.html#4" class="read-more">The 2022 FIFA World Cup</a></p></div>
-            </div >
-
-        </div>
-    
-        <div>
-            <footer>
-
-                <h1>Meet Our Crew</h1>
-
-                <a href="https://www.instagram.com/wagnerwarriors/?hl=en" target="_blank"   > <i class="fa-brands fa-instagram" class="socials"></i> </a><!--<img id="icon"src="images/iconIG.png" alt="instagram icon">-->
-                <a href="https://twitter.com/WagnerWarriors" target="_blank"  ><i class="fa-brands fa-twitter" class="socials"></i> </a><!--<img id="icon" src="images/iconTW.png" alt="twitter icon">-->
-                <a href="https://www.youtube.com/c/WagnerNewsNetwork" target="_blank"  ><i class="fa-brands fa-youtube" class="socials"></i></a><!--<img id="wnn" src="images/iconWNN.png" alt="Wagner News Network Icon">-->
-            </footer>
-        </div>
+        </footer>
 
    </body>
 
