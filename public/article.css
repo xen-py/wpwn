@@ -1,4 +1,13 @@
 
+#header-content{
+    max-width: 85vw;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
 div#background{
     min-height: 100vh;
     background-color: white;
@@ -50,11 +59,6 @@ div#foreground{
     padding-bottom: 8%;
 }
 
-div#title{
-    margin-left: auto;
-    margin-right: auto;
-}
-
 div#article-main{
     
     padding-top: 5%;
@@ -69,6 +73,8 @@ footer#footer2{
     background-color: rgba(31, 35, 43, 0.875);
     width: 100%;
     padding: 0.5%;
+    display: flex;
+    justify-content: space-around;
 }
 
 .gray{

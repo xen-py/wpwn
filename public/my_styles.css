@@ -86,11 +86,12 @@ header{
     padding: 7px 0.1p;
     padding-top: 5px;
     padding-bottom: 5px;
+    border-bottom: #edf0f194 1px solid;
+
 }
 
-
 #header-content{
-    max-width: 90vw;
+    max-width: 85vw;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -125,6 +126,10 @@ div#section-events{
     align-self: center;
 }
 
+.navigation{
+    padding: 5px;
+}
+
 #nav-text{
     display: flex;
     width:500px;
@@ -132,7 +137,6 @@ div#section-events{
     margin-top: auto;
     margin-bottom: auto;
     height: fit-content;
-
 }
 
 .navigation:hover{
@@ -156,34 +160,31 @@ main{
 
 body{
     background: rgb(0,0,255);
-    background: radial-gradient(circle, rgb(0, 0, 194) 0%, rgba(37,37,37,1) 100%);
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-attachment: fixed;
-     background-position: center;
+    background: radial-gradient(circle, rgb(0, 0, 199) 0%, rgb(0, 0, 95) 100%);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 #gal-wrapper{
     align-items: center;
-    height: fit-content;
     width: 100%;
     max-width: 1824px;
-    backdrop-filter: blur(10px);
     border-radius: 2%;
     margin: auto;
-    margin-top:3.5% ;
-    margin-bottom:3.5% ;
+    margin-top:5% ;
+    margin-bottom:5% ;
 
 }
 
 .gallery-container{
     margin: auto;
-
+    backdrop-filter: blur(0px);
     align-self: center;
     align-items: center;
-    width: 90vw;
+    width: 85vw;
     max-width: 1824px;
-    height: 70vh;
+    height: fit-content;
     position: relative;
 
 
@@ -195,13 +196,13 @@ body{
 .sub-container{
     border-radius: 2%;
     margin: auto;
-    display: flex;
-    flex-direction: column;
     width: 100%;
     height: 100%;
     align-self: stretch;
     transition: all .2s ease-in-out;
     animation: fadeIn 1s; 
+    position: relative;
+    text-align: center;
 }
 
 @keyframes fadeIn {
@@ -217,9 +218,22 @@ body{
     grid-row-start: 2;
     grid-row-end: 3;
     
+}
 
-    position: relative;
-    
+#sports2, #voices2, #culture2, #events2{
+    transition: all .5s ease-in-out;
+    opacity: 0;
+    size: contain;
+    border-radius: 2%;
+    height: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin: auto; 
+    align-self: center;
+}
+
+#sports2:hover, #sports2:focus, #sports2:hover, #voices2:hover, #culture2:hover, #events2:hover, #sports2:focus, #voices2:focus, #culture2:focus, #events2:focus{
+    opacity: 1;
 }
 
 .sub-container#culture{
@@ -231,14 +245,14 @@ body{
 }
 
 .sub-container#mid{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.826) 0%, rgba(0, 0, 0, 0) 70%, rgba(0,0,0,0) 100%),url(images/sportsArticle.jpg);
+    background: /*linear-gradient(0deg, rgba(0, 0, 0, 0.826) 0%, rgba(0, 0, 0, 0) 70%, rgba(0,0,0,0) 100%),*/url(images/sportsArticle.jpg);
     grid-column: 2;
     grid-row-start: 1;
     grid-row-end: 3;
 }
 
 .sub-container#voices{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.826) 0%, rgba(0, 0, 0, 0) 70%, rgba(0,0,0,0) 100%),url(images/Voice.jpg);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.826) 0%, rgba(0, 0, 0, 0) 70%, rgba(0,0,0,0) 100%),url(images/voices.jpg);
     grid-column: 3;
     grid-row-start: 1;
     grid-row-end: 2;
@@ -256,7 +270,6 @@ body{
 /* Gallery Container Hover*/
 
 .sub-container#sports:hover, .sub-container#sports:focus{
-    background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%),url(images/sports2.jpg), url(images/sports2.jpg);  
     background-size: cover;
     background-position: center;
 }
@@ -268,13 +281,13 @@ body{
 }
 
 .sub-container#mid:hover, .sub-container#mid:focus{
-    background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%),url(images/sportsArticle.jpg);
+    background: /*linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%),*/url(images/sportsArticle.jpg);
     background-size: cover;
     background-position: center;
 }
 
 .sub-container#voices:hover, .sub-container#voices:focus{
-    background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%),url(images/Voice.jpg);
+    background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%),url(images/Voices.jpg);
     background-size: cover;  
     background-position: center;
 }
@@ -285,33 +298,19 @@ body{
     background-position: center;
 }
 
-.sub-container#sports, .sub-container#culture, .sub-container#voices, .sub-container#events, .sub-container#mid{
+ .sub-container#sports, .sub-container#culture,.sub-container#voices, .sub-container#events, .sub-container#mid{
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
     position: relative;
-
-
 }
 
 .sub-container:hover,
 .sub-container:focus{
-  transform: scale(1.018);
+  transform: scale(1.02);
   position: relative;
 
-}
-
-.sub-content{
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    width:95%;
-    position: absolute;
-    bottom: 11%;
-    left: auto;
-    right: auto;
-    padding-left: 5%;
 }
 
 .section-text{
@@ -320,8 +319,14 @@ body{
     font-family: montserrat;
     font-weight: 500;
     text-align: left;
-    word-wrap: break-word ;
     white-space: normal;
+    width: 95%;
+
+    position: absolute;
+    bottom: 10px;
+    left: 3%;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -332,35 +337,28 @@ body{
 }
 
 
-i{
+.socials i{
     padding-left: 3px;
     padding-right: 3px;
-}
-
-
-.socials{
     font-size: 30px;
 }
 
 nav#footer{
+    padding: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
-#about-us{
-    margin-top: 5%;
-    display: flex;
-    flex-direction: column;
-}
 
-footer{
-    left: auto;
-    right: auto;
+#footer1{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     background-color: #24252a;
+    border-top: #edf0f194 1px solid;
+    bottom: 0;
 }
 
 /* if device has a touch screen */
@@ -370,15 +368,19 @@ footer{
 
     /*Header and Navigation*/
     header{
-        flex-direction: row;
-        white-space: nowrap;
-        justify-content: space-around;
+    flex-direction: row;
+    white-space: nowrap;
+    position: fixed;
+    justify-content: space-around;
+    z-index: 1;
+
     }
     #header-content{
         justify-content: space-around;
     }
     #title{
         justify-content: space-around;
+        padding-left: 5%;
     }
     #nav-text{
         display: none;
@@ -391,8 +393,8 @@ footer{
      }
 
      #main{
-        padding-top: 10%;
-        padding-bottom: 10%;
+        padding-top: 15%;
+        padding-bottom: 15%;
      }
 
 
@@ -421,30 +423,21 @@ footer{
      }
 
      /*Footer and Icons*/
-     footer{
-        padding-top: 3.5%;
-        padding-bottom: 3.5%;
-     }
+     #gal-wrapper{
+        margin-top:20% ;
+        margin-bottom:5% ;
+    }
 
      .gallery-container{
-    
+        height: 70vh;
+        
         grid-template-columns: none;
         grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr;
         grid-gap: 3%;
         height: 370vw;
     }
 
-    body{
-        background: rgb(0,0,255);
-        background: radial-gradient(circle, rgb(0, 0, 194) 0%, rgba(37,37,37,1) 100%);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
-    }
-
-   /* Gallery Container Normal*/
-   
+   /* Sub-Container New Grid Positions*/
    .sub-container#mid{
         grid-column: 1;
         grid-row-start: 1;
@@ -456,28 +449,145 @@ footer{
         grid-row-end: 3;
     }
 
-    .sub-container#culture{
+    .sub-container#voices{
         grid-column: 1;
         grid-row-start: 3;
         grid-row-end: 4;
     }
 
-    .sub-container#voices{
+    .sub-container#events{
         grid-column: 1;
         grid-row-start: 4;
         grid-row-end: 5;
     }
 
-    .sub-container#events{
+    .sub-container#culture{
         grid-column: 1;
         grid-row-start: 5;
         grid-row-end: 6;
     }
 
-    
+    nav#footer{
+        padding-top: 5%;
+        padding-bottom: 5%;
+        width: 100%;
+        justify-content: space-around;
+    }
+
 }
 
+@supports (-webkit-touch-callout: none){    
+    html {zoom: 100%;} 
+    #my{ zoom: 100%;}
 
+    /*Header and Navigation*/
+    header{
+    flex-direction: row;
+    white-space: nowrap;
+    position: fixed;
+    justify-content: space-around;
+    z-index: 1;
+
+    }
+    #header-content{
+        justify-content: space-around;
+    }
+    #title{
+        justify-content: space-around;
+        padding-left: 5%;
+    }
+    #nav-text{
+        display: none;
+    }
+
+     .navigation{
+         padding: 5px 5px;
+         font-size: 13px;
+         
+     }
+
+     #main{
+        padding-top: 15%;
+        padding-bottom: 15%;
+     }
+
+
+     /*Date and Title*/
+     .date{
+         font-size: 0.8rem;
+         padding-top: 6%;
+         padding-bottom: 7%;
+     }
+ 
+     h1{
+         font-size:xx-large;
+         align-self: center;
+     }
+    
+     #wpw-icon{
+        width: 50px;
+    }
+
+     /*Text, Article and Article Links*/
+     p{
+        font-size: 1rem;
+        line-height: 16pt;
+        word-wrap: break-word;
+        white-space: normal;
+     }
+
+     /*Footer and Icons*/
+     #gal-wrapper{
+        margin-top:20% ;
+        margin-bottom:5% ;
+    }
+
+     .gallery-container{
+        height: 70vh;
+        
+        grid-template-columns: none;
+        grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr;
+        grid-gap: 3%;
+        height: 370vw;
+    }
+
+   /* Sub-Container New Grid Positions*/
+   .sub-container#mid{
+        grid-column: 1;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .sub-container#sports{
+        grid-column: 1;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .sub-container#voices{
+        grid-column: 1;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    .sub-container#events{
+        grid-column: 1;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+
+    .sub-container#culture{
+        grid-column: 1;
+        grid-row-start: 5;
+        grid-row-end: 6;
+    }
+
+    nav#footer{
+        padding-top: 5%;
+        padding-bottom: 5%;
+        width: 100%;
+        justify-content: space-around;
+    } 
+}
 
 @media screen and (min-width: 760px) {
     /*this css will only be used when the screen size is min 1000px*/
