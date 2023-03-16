@@ -172,3 +172,21 @@ url = url.slice(0, leftSlash+1)
     }
     window.location.assign(articlePage);
 }
+
+/**
+ * This function focus the gallery element
+ * pre: gallery element is near middle of screen, device is in portrait mode
+ * post: Gallery element has been put in focus and css will take over
+ */ 
+function focusArticle(){
+    
+    buttons = document.getElementsByClassName("sub-container");
+    buttons.forEach(element => {
+        element.focus()
+    });
+
+    for( let i = 0; i < buttons.length; i++){
+        buttons[i].focus = true
+    }
+
+}
