@@ -11,145 +11,83 @@
         <meta HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <title>WP Wagner News</title>
-       <link rel="stylesheet" href="my_styles.css?refreshcss=37" type="text/css">
+       <link rel="stylesheet" href="my_styles.css?refreshcss=38" type="text/css">
        <script src="https://kit.fontawesome.com/7fa1774645.js" crossorigin="anonymous"></script>
+       <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
        <link rel="icon" href="images/favicon.ico">
+       <script>document.write('<script src="gallery.js?dev=0'+ Math.floor(Math.random() * 1000) +'"\><\/script>');</script>
    </head>
 
-
    <body>
-        <div>
-            <script>
-            function openAdmin(){
-                let url = window.location.href
-                let leftSlash = 0;
-                for (let i = 0; i < url.length; i++) {
-                    if(url[i] == "/"){
-                        leftSlash = i;
-                    }
-                    
-                }
+        
+    
 
-                url = url.slice(0, leftSlash+1)
+        <div id="main">
 
-                adminPage = url + "admin/index.html"
-                window.location.assign(adminPage);
-                //document.location.reload(true)
-                }
-
-
-                function openArticle(a){
-                    let url = window.location.href
-                let leftSlash = 0;
-                    for (let i = 0; i < url.length; i++) {
-                        if(url[i] == "/"){
-                            leftSlash = i;
-                        }
-                    
-                    }
-
-                url = url.slice(0, leftSlash+1)
-
-                    switch(a){
-                        case 1:
-                            articlePage = url + "article.html#1"
-                            break;
-                        case 2:
-                            articlePage = url + "article.html#2"
-                            break;
-                        case 3:
-                            articlePage = url + "article.html#3"
-                            break
-                        case 4:
-                        articlePage = url + "article.html#4"
-                            break;
-                    }
-                    window.location.assign(articlePage);
-                }   
-                
-                </script>
-        </div>
-
-        <div>
             <header>
-
                 <div id="header-content">
                     <div id="title">
                     <h1 ondblclick="openAdmin()" oncontextmenu="openAdmin()">Wagner Press </h1>
                     <img src="images/favicon.png" alt="wagner logo" id="wpw-icon">  
                     </div>
-
                     <nav id="nav-text">
                         <a href="article.html#1" class="navigation">Sports</a>
                         <a href="article.html#2" class="navigation">Pop Culture</a>
                         <a href="article.html#3" class="navigation">Student Voices</a>  
                         <a href="article.html#4" class="navigation">Current Events</a>
+                        <a class="navigation" id="about">|</a>
+                        <a href="article.html#4" class="navigation" id="about">About Us</a>
                     </nav>
                 </div>
             </header>
-        </div>
 
-        <div id="main" >
-
+            <script>
+                gallery();
+            </script>
+            
             <div id="gal-wrapper">
                 <div class="gallery-container">
-    
-                <div class="sub-container" id="sports"  onclick="openArticle(1)">
-                    <img src="images/sports2.jpg" id="sports2">
-                    <div class="section-text">
-                        <a class="section-text" href="article.html#1">Cheer tournament and Wrestling championships</a>
-                    </div>
-                    
-                </div>
 
-                <div class="sub-container" id="culture" onclick="openArticle(2)">
-                    <img src="images/culture2.jpg" id="culture2">
-                    <div class="sub-content">
-                        <div class=" section-text">
-                            <a class="section-text" href="article.html#2">Spring break ideas</a>
-                        </div>
-                    </div>
-                </div>
+                    <button class="sub-container" id="events" onclick="openArticle(4)">
+                        <div id="events2"></div>
+                            <p class="section-text">A Black History Month retrospective</p>
+                    </button>
 
+                    <button class="sub-container" id="sports"  onclick="openArticle(1)">
+                        <div id="sports2"></div>
+                        <p class="section-text">Cheer tournament and Wrestling championships</p>
+                    </button>
             
-            <div id="mid" onclick="newsReel()" class="sub-container">
-                
-            </div>
-
-
-                <div class="sub-container" id="voices" onclick="openArticle(3)">
-                    <img src="images/voices.jpg" id="voices2">
-                    <div class="sub-content">
-                        <div class=" section-text">
-                            <a class="section-text" href="article.html#3">Vandalism in school bathrooms</a>
-                        </div>
+                    <div id="mid"  class="sub-container">
+                        <button id="left-button" onclick="changeImage('left')"> <i class="fa-solid fa-angle-left"></i></button>
+                        <button id="right-button" onclick="changeImage('right')"> <i class="fa-solid fa-angle-right"></i></button>
+                        <div id="gallery2"></div>
+                        <p class="section-text">place holder text</p>
                     </div>
-                </div>
 
-            <div class="sub-container" id="events" onclick="openArticle(4)">
-                <img src="images/events.jpg" id="events2">
-                <div class="sub-content">
-                    <div class=" section-text">
-                        <a class="section-text" href="article.html#4">A Black History Month retrospective</a>
-                    </div>
+                    <button class="sub-container" id="voices" onclick="openArticle(3)">
+                        <div id="voices2"></div>
+                        <p class="section-text">Vandalism in school bathrooms</p>
+                    </button>
+
+                    <button class="sub-container" id="culture" onclick="openArticle(2)">
+                        <div id="culture2"></div>
+                        <p class="section-text">Spring break ideas</p>
+                    </button>
+
                 </div>
             </div>
-                
 
-                </div>
-            </div>
-        
-            
+
+            <footer id="main-footer">
+                <nav id="footer">
+                    <a href="https://www.instagram.com/wagnerwarriors/?hl=en"  target="_blank" class="socials"> <i class="fa-brands fa-instagram"></i> </a><!--<img id="icon"src="icons/iconIG.png" alt="instagram icon">-->
+                    <a href="https://twitter.com/WagnerWarriors" target="_blank"  class="socials"><i class="fa-brands fa-twitter" ></i> </a><!--<img id="icon" src="icons/iconTW.png" alt="twitter icon">-->
+                    <a href="https://www.youtube.com/c/WagnerNewsNetwork" target="_blank"  class="socials"><i class="fa-brands fa-youtube" ></i></a><!--<img id="wnn" src="icons/iconWNN.png" alt="Wagner News Network Icon">--> 
+                </nav>
+            </footer>
 
         </div>
-
-        <footer id="footer1">
-            <nav id="footer">
-                <a href="https://www.instagram.com/wagnerwarriors/?hl=en"  target="_blank" class="socials"> <i class="fa-brands fa-instagram"></i> </a><!--<img id="icon"src="icons/iconIG.png" alt="instagram icon">-->
-                <a href="https://twitter.com/WagnerWarriors" target="_blank"  class="socials"><i class="fa-brands fa-twitter" ></i> </a><!--<img id="icon" src="icons/iconTW.png" alt="twitter icon">-->
-                <a href="https://www.youtube.com/c/WagnerNewsNetwork" target="_blank"  class="socials"><i class="fa-brands fa-youtube" ></i></a><!--<img id="wnn" src="icons/iconWNN.png" alt="Wagner News Network Icon">--> 
-            </nav>
-        </footer>
 
    </body>
 
