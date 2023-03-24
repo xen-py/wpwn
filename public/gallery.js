@@ -45,16 +45,44 @@ require(['requirejs', 'fs'], function (requirejs, fs) {
 });
 */
 
+/*
 function gallery(){
     let location = "images/gallery/"
-    
+
     for(let i = 1; i < 7; i++){
         images[i] = location+"gal"+(i+1) + ".jpg"
     }
-    console.log(images)
+
+    images.forEach(url =>{
+        
+        if(UrlExists(url)){
+            console.log(url + ": exists")
+            images.add
+        } 
+        
+    })
+    
+
+    /*
+    images.forEach(checkValid);
+
+    function checkValid(url){
+        console.log(url);
+    }
+    */
+
+    //console.log(images)
     //var fs = requirejs(['fs'])
     //var files = fs.readdirSync('/images/gallery/');
     //console.log(fs.readdir("images/gallery/", callback_function));
+//}
+
+function UrlExists(url) {
+    $('<img src="'+ url +'">').load(function() {
+        return true;
+    }).bind('error', function() {
+        return false;
+    });
 }
 
 function doesFileExist(urlToFile)
@@ -76,7 +104,7 @@ function ImageExist(url)
 {
    var img = new Image();
    img.src = url;
-   return img.height != 0;
+   console.log(img.height != 0);
 }
 
 function setBackgroundImage(location){
@@ -190,3 +218,5 @@ function focusArticle(){
     }
 
 }
+
+

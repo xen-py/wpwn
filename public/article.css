@@ -1,14 +1,20 @@
 
 
+#header-content{
+    max-width: 900px;
+}
+
 
 div#background{
     min-height: 100vh;
     background-color: white;
+    width: 100%;
 }
 
 img#article-photo{
     width: 600px;
-    object-fit: contain;
+    max-height:540px ;
+    object-fit: cover;
     border-radius: 1%;
     padding-bottom: 6%;
     margin: auto;
@@ -52,7 +58,7 @@ div#foreground{
     min-height: 100vh;
     margin: auto;
     background-color: white;
-    padding-top: 13vh;
+    padding-top: 10vh;
     padding-bottom: 8%;
 }
 
@@ -66,26 +72,29 @@ div#article-main{
     width: 100vw;
 }
 
-footer#footer2{
-    background-color: rgba(31, 35, 43, 0.875);
-    width: 100%;
-    padding: 0.5%;
+
+
+.scroll{
+    display: none;
+}
+
+.footer2{
     display: flex;
-    justify-content: space-around;
+    background-color: rgba(0, 11, 33, 0.875);
 }
 
-.gray{
-    font-size:medium;
-    margin: auto;
+#main-footer{
+    position: relative;
+    filter: drop-shadow(0px -2px 3px #25253700);
 }
 
 
-@media ((any-pointer: coarse) or (hover: none)) or ((handheld) or (max-width: 707px)){
+@media ((any-pointer: coarse) or (hover: none)) or ((handheld) or (max-width: 760px) or (orientation:portrait)){
 
     html {zoom: 100%;} 
 
     div#foreground{
-        padding-top: 9vh;
+        padding-top: 14vh;
     }
 
     img#article-photo{
@@ -106,8 +115,13 @@ footer#footer2{
         display: none;
     }
 
-    .gray{
+    .scroll{
+        padding-top: 13%;
+        display: block;
         font-size:small;
+        font-size:small;
+        margin: auto;
+        color: rgba(89, 89, 89, 0.647);
     }
     .date{
         font-size: 1.15rem;
@@ -132,6 +146,11 @@ footer#footer2{
         padding-top: 3.5%;
         padding-bottom: 3.5%;
      }
+
+     #main-footer{
+        position: relative;
+        
+    }
 }
 
 @supports (-webkit-touch-callout: none) {
