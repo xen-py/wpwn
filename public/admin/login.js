@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js";
+import { getAuth, signOut, signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js";
 //import {getAuth} from 'firebase/auth';
 
 const firebaseConfig = {
@@ -21,37 +21,71 @@ const app = initializeApp(firebaseConfig);
 // init services
 const auth = getAuth()
 
+//login and logout stuff
+let title = document.getElementById('title')
+const loginForm = document.getElementById('login')
+const loginButton = document.getElementById('login-btn')
+const logoutButton = document.getElementById('logout-btn')
+const resetButton = document.getElementById('reset-btn')
+const email = loginForm.email
+const password = loginForm.password
 
-
-function toggleVis(){
-
-    var password = document.getElementById("password-input")
-    var hide = document.getElementById("hide")
-    var unhide = document.getElementById("unhide")
-
-        if(password==="text")
-        {
-            password.type='password';
-            hide.style.display="block";
-            unhide.style.display="none";
-        }
-        else{
+loginButton.addEventListener('click', ()=>{
+    signInWithEmailAndPassword(auth, email.value, password.value)
+        .then((cred) =>{
+            //console.log('user logged in:', cred.user)
             
-            password.type="text";
-            hide.style.display="none";
-            unhide.style.display="block";
-        }
-    }
+            switch(cred.user.email){
+                case 'austinkabanda@gmail.com':
+                    title.textContent = 'Welcome Austin'
+                    break;
+                case'amonaikoriegie@gmail.com':
+                    title.textContent = 'Welcome Amon'
+                    break;
+                case 'dillon.sabo-bassett@epsb.ca':
+                    title.textContent = 'Welcome Mr. Bassett'
+                    break;
+            }
+        })
+        .catch((err) =>{
+            console.log(err.message)
+            title.textContent = 'Error: Try Again'
+        })
 
-var loginfo = [];
 
-function login(){
-    
-    var user = document.getElementById('admin-input').value
-    var password = document.getElementById('password-input').value
-    
-    verifyLoginfo()
-}
+} )
+
+logoutButton.addEventListener('click', ()=>{
+    //console.log('Logging out')
+    signOut(auth)
+        .then(()=>{
+            //console.log('Logged out')
+            title.textContent = 'Logged Out'
+        })
+        .catch((err) => {
+            console.log(err.message)
+        })
+} )
+
+
+
+
+
+resetButton.addEventListener('click', () => {
+    sendPasswordResetEmail(auth, email.value)
+        .then(()=>{
+            title.textContent = 'Reset email Sent'
+        })
+        .catch(error => {
+            console.log(error);
+            title.textContent = 'Error: Invalid email'
+        })
+})
+
+onAuthStateChanged(auth, (user)=>{
+    console.log('status changed', user)
+})
+
 
 function changeCurrentLocation(target){
     let url = window.location.href
@@ -69,24 +103,5 @@ function changeCurrentLocation(target){
     window.location.assign(targetPage);
 
 }
-
-function verifyLoginfo(){
-    
-    var user = document.getElementById('admin-input').value
-    var password = document.getElementById('password-input').value
-
-    var input = user + password + ''
-    storedData = loadFile('users.txt')
-    let arr = storedData.split(',')
-
-    for(let i = 0; i < arr.length; i++){
-        let pass = arr[i]
-        if(pass == input){
-           // changeCurrentLocation("admin.html")
-        }
-    } 
-
-}
-
 
 
