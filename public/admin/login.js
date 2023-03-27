@@ -63,6 +63,7 @@ function login(){
     verifyLoginfo()
 }
 
+//test
 function changeCurrentLocation(target){
     let url = window.location.href
     let leftSlash = 0;
