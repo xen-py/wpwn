@@ -1,13 +1,25 @@
-/*const fs = require('fs');
+// Import the functions you need from the SDKs you need
+// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js";
+//import {getAuth} from 'firebase/auth';
 
-fs.readFile('users.txt', 'utf-8', (err,data) =>{
-    if(err){
-        console.error(err);
-        return;
-    }
-    console.log(data)
-});
-*/
+const firebaseConfig = {
+  apiKey: "AIzaSyCFCUlo4WIOF10Z37lFDSeUsDqYy7MF7oM",
+  authDomain: "wpwnewspaper.firebaseapp.com",
+  databaseURL: "https://wpwnewspaper-default-rtdb.firebaseio.com",
+  projectId: "wpwnewspaper",
+  storageBucket: "wpwnewspaper.appspot.com",
+  messagingSenderId: "51596774612",
+  appId: "1:51596774612:web:9ffe54fa5066889bf1bf41",
+  measurementId: "G-B6GQMF1S9D"
+};
+
+// init firebase app
+const app = initializeApp(firebaseConfig);
+
+// init services
+const auth = getAuth()
 
 
 
@@ -37,29 +49,7 @@ function login(){
     
     var user = document.getElementById('admin-input').value
     var password = document.getElementById('password-input').value
-
-    if(loginfo.length > 0){
-       loginfo.pop(user)
-        loginfo.pop(password) 
-    }else{
-        loginfo.push(user) //[0]
-        loginfo.push(password) //[1] 
-    }
-
-    //var string_data = JSON.stringify(loginfo)
-    //var file = new Blob([string_data], {type: "text"})
-
-    /*
-    const link = document.createElement("a");
-         
-         //const file = new Blob([string_data], { type: 'text/plain' });
-         link.href = URL.createObjectURL(file);
-         link.download = "sample.txt";
-         link.click();
-    URL.revokeObjectURL(link.href);
-    */
     
-    //alert(loginfo)
     verifyLoginfo()
 }
 
@@ -81,20 +71,6 @@ function changeCurrentLocation(target){
 }
 
 function verifyLoginfo(){
-    /*
-    //var file = File "user.txt"
-    var reader = new FileReader();
-    console.log(file.length)
-
-    reader.onloadend = function(){
-        
-        var load = JSON.parse(reader.result)[0];
-        var load = JSON.parse(reader.result)[1];
-        alert(load)
-    }
-
-    reader.readAsText(load)
-    */
     
     var user = document.getElementById('admin-input').value
     var password = document.getElementById('password-input').value
@@ -103,40 +79,14 @@ function verifyLoginfo(){
     storedData = loadFile('users.txt')
     let arr = storedData.split(',')
 
-    //console.log(storedData)
-    //console.log(input)
-    //console.log(arr)
-
-
     for(let i = 0; i < arr.length; i++){
         let pass = arr[i]
         if(pass == input){
-            changeCurrentLocation("admin.html")
+           // changeCurrentLocation("admin.html")
         }
     } 
 
-    //s1 = JSON.parse(storedData)[0];
-    //s2 = JSON.parse(storedData)[1]
-    
-    //  console.log(s1,s2)
-    //if((user == s1) && (password == s2)){
-        //changeCurrentLocation("admin.html")
-    //}
-
-
 }
 
-function loadFile(filePath) {
-    var result = null;
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", filePath, false);
-    xmlhttp.send();
-    if (xmlhttp.status==200) {
-      result = xmlhttp.responseText;
-    }
-    return result;
-  }
 
-function formatText(){
 
-}

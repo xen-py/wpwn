@@ -1,7 +1,7 @@
 
 
 #header-content{
-    max-width: 900px;
+    max-width: 1000px;
 }
 
 
@@ -11,14 +11,27 @@ div#background{
     width: 100%;
 }
 
-img#article-photo{
-    width: 600px;
+#article-title, #article-title2{
+    font-size: 30px;
+    font-family: Montserrat, sans-serif;
+    color: darkblue;
+    font-weight: bold;
+}
+
+#article-photo, #article-photo2{
+    width: 800px;
     max-height:540px ;
     object-fit: cover;
     border-radius: 1%;
     padding-bottom: 6%;
     margin: auto;
 
+}
+
+.article-text{
+    line-height: 28pt;
+    margin: 2px 0px 15px;
+    max-width: 100%;
 }
 
 html {
@@ -35,12 +48,16 @@ h1:hover{
 }
 
 h2{
-    max-width: 600px;
+    max-width: 800px;
     word-wrap: break-word;
     white-space: normal;
 }
 
 .spacer{
+    padding-top: 20%;
+}
+
+#spacer2{
     padding-top: 20%;
 }
 
@@ -63,16 +80,17 @@ div#foreground{
 }
 
 div#article-main{
-    
+    max-width: 800px;
     padding-top: 5%;
-    max-width: 600px;
+}
+
+p{
+    font-size: 1.5rem;
 }
 
 #background{
     width: 100vw;
 }
-
-
 
 .scroll{
     display: none;
@@ -89,15 +107,14 @@ div#article-main{
 }
 
 
-@media ((any-pointer: coarse) or (hover: none)) or ((handheld) or (max-width: 760px) or (orientation:portrait)){
 
-    html {zoom: 100%;} 
+@media ((any-pointer: coarse) or (hover: none)) or ((handheld) or (max-width: 760px) or (orientation:portrait)){
 
     div#foreground{
         padding-top: 14vh;
     }
 
-    img#article-photo{
+    img#article-photo, #article-photo2{
         max-width: 90vw;
         object-fit: contain;
         border-radius: 1%;
@@ -106,6 +123,10 @@ div#article-main{
     
     }
 
+    h2{
+        font-size: 26px;
+    }
+    
     div#article-main{
         width: 100%;
         margin: 0%;
@@ -113,6 +134,10 @@ div#article-main{
 
     #nav-text{
         display: none;
+    }
+
+    p{
+        font-size: 1.1rem;
     }
 
     .scroll{
@@ -123,7 +148,7 @@ div#article-main{
         margin: auto;
         color: rgba(89, 89, 89, 0.647);
     }
-    .date{
+    #editors{
         font-size: 1.15rem;
     }
 
@@ -155,14 +180,11 @@ div#article-main{
 
 @supports (-webkit-touch-callout: none) {
     /* CSS specific to iOS devices */ 
-    
-    html {zoom: 100%;} 
-
     div#foreground{
-        padding-top: 9vh;
+        padding-top: 14vh;
     }
 
-    img#article-photo{
+    img#article-photo, #article-photo2{
         max-width: 90vw;
         object-fit: contain;
         border-radius: 1%;
@@ -171,6 +193,10 @@ div#article-main{
     
     }
 
+    h2{
+        font-size: 26px;
+    }
+    
     div#article-main{
         width: 100%;
         margin: 0%;
@@ -180,10 +206,19 @@ div#article-main{
         display: none;
     }
 
-    .gray{
-        font-size:small;
+    p{
+        font-size: 1.1rem;
     }
-    .date{
+
+    .scroll{
+        padding-top: 13%;
+        display: block;
+        font-size:small;
+        font-size:small;
+        margin: auto;
+        color: rgba(89, 89, 89, 0.647);
+    }
+    #editors{
         font-size: 1.15rem;
     }
 
@@ -206,26 +241,12 @@ div#article-main{
         padding-top: 3.5%;
         padding-bottom: 3.5%;
      }
-  }
 
-  @media screen and (min-width: 1000px) {
-    /*this css will only be used when the screen size is min 1000px*/
-    div#article-main{
-        max-width: 800px;
+     #main-footer{
+        position: relative;
+        
     }
-    img#article-photo{
-        width: 800px;
-    
-    }
-
-    h2{
-        max-width: 800px;
-        word-wrap: break-word;
-        white-space: normal;
-    }
-
-    p{
-        font-size: 1.5rem;
-    }
-    
 }
+
+    
+    

@@ -2,7 +2,6 @@
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
 import { getFirestore, doc, getDoc, collection, getDocs, onSnapshot} from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js";
 //import {getAuth} from 'firebase/auth';
 
 const firebaseConfig = {
@@ -21,27 +20,27 @@ const app = initializeApp(firebaseConfig);
 
 // init services
 const db = getFirestore(app);
-const auth = getAuth()
 
 // collection ref
 const colRef = collection(db, 'articles')
 
 // get realtime collection data
 
-function getRealtimeData(){
-    let articles = [] 
-    onSnapshot(colRef, (snapshot) => {
-        snapshot.docs.forEach(doc => {
-            articles.push({
-                ...doc.data(), id: doc.id})
-        });
-        console.log(articles);
-    })
+let culture = document.getElementById('cultureTitle')
+let events = document.getElementById('eventsTitle')
+let sports = document.getElementById('sportsTitle')
+let voices = document.getElementById('voicesTitle')
 
-}
+let articles = [] 
+onSnapshot(colRef, (snapshot) => {
+    snapshot.docs.forEach(doc => {
+        articles.push({
+            ...doc.data(), id: doc.id})
+    });
+    culture.textContent = articles[0].fpTitle
+    events.textContent = articles[1].fpTitle
+    sports.textContent = articles[2].fpTitle
+    voices.textContent = articles[3].fpTitle
+})
 
-getRealtimeData()
 
-function formatText(){
-
-}

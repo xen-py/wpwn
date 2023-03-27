@@ -14,7 +14,7 @@ html{
     overflow-y: hidden;
 }
 
-.date{
+p#editors{
     color: gray;
     padding-bottom: 4%;
     align-self: flex-start  ;
@@ -170,12 +170,11 @@ p {
     margin: auto;
     align-self: center;
     align-items: center;
-    width: 100%;
-    max-width: 90.729vw;
+    width: 90vw;
     height: 73vh;
     position: relative;
     max-width: 1550px;
-
+    animation: fadeIn 1s; 
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(1, 1fr 1.5fr 1fr);
@@ -187,7 +186,6 @@ p {
     width: 100%;
     align-self: stretch;
     transition: all .2s ease-in-out;
-    animation: fadeIn 1s; 
     position: relative;
     text-align: center;
     
@@ -224,7 +222,6 @@ p {
     width: 100%;
     background-color: black;
     align-items: center;
-    
 }
 
 .swiper-slide img{
@@ -493,7 +490,7 @@ nav#footer{
         font-size:xx-large;
         align-self: center;
     }
-    .date{
+    #editors{
         font-size: 0.8rem;
         padding-top: 6%;
         padding-bottom: 7%;
@@ -639,7 +636,7 @@ nav#footer{
         font-size:xx-large;
         align-self: center;
     }
-    .date{
+    #editors{
         font-size: 0.8rem;
         padding-top: 6%;
         padding-bottom: 7%;
@@ -737,6 +734,7 @@ nav#footer{
         bottom: 0;
         width: 100%;
         padding: 0.5% 0%;
+        filter: drop-shadow(0px -2px 3px #0000009c);
     }
 
    
