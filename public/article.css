@@ -1,21 +1,46 @@
 
+
+#header-content{
+    max-width: 1000px;
+}
+
+
 div#background{
     min-height: 100vh;
     background-color: white;
+    width: 100%;
 }
 
-img#article-photo{
-    width: 600px;
-    object-fit: contain;
+#article-title, #article-title2{
+    font-size: 30px;
+    font-family: Montserrat, sans-serif;
+    color: darkblue;
+    font-weight: bold;
+}
+
+#article-photo, #article-photo2{
+    width: 800px;
+    max-height:540px ;
+    object-fit: cover;
     border-radius: 1%;
     padding-bottom: 6%;
     margin: auto;
 
 }
 
+.article-text{
+    line-height: 28pt;
+    margin: 2px 0px 15px;
+    max-width: 100%;
+}
+
 html {
     scroll-behavior: smooth;
-  }
+    position: static;
+    top: 0%;
+    height: 100%;
+    overflow-y: scroll;
+}
   
 
 h1:hover{
@@ -23,12 +48,16 @@ h1:hover{
 }
 
 h2{
-    max-width: 600px;
+    max-width: 800px;
     word-wrap: break-word;
     white-space: normal;
 }
 
 .spacer{
+    padding-top: 20%;
+}
+
+#spacer2{
     padding-top: 20%;
 }
 
@@ -46,45 +75,46 @@ div#foreground{
     min-height: 100vh;
     margin: auto;
     background-color: white;
-    padding-top: 13vh;
+    padding-top: 10vh;
     padding-bottom: 8%;
 }
 
-div#title{
-    margin-left: auto;
-    margin-right: auto;
+div#article-main{
+    max-width: 800px;
+    padding-top: 5%;
 }
 
-div#article-main{
-    
-    padding-top: 5%;
-    max-width: 600px;
+p{
+    font-size: 1.5rem;
 }
 
 #background{
     width: 100vw;
 }
 
-footer#footer2{
-    background-color: rgba(31, 35, 43, 0.875);
-    width: 100%;
-    padding: 0.5%;
+.scroll{
+    display: none;
 }
 
-.gray{
-    font-size:medium;
-    margin: auto;
+.footer2{
+    display: flex;
+    background-color: rgba(0, 11, 33, 0.875);
 }
 
-@media ((any-pointer: coarse) or (hover: none)) or ((handheld) or (max-width: 707px)){
+#main-footer{
+    position: relative;
+    filter: drop-shadow(0px -2px 3px #25253700);
+}
 
-    html {zoom: 100%;} 
+
+
+@media ((any-pointer: coarse) or (hover: none)) or ((handheld) or (max-width: 760px) or (orientation:portrait)){
 
     div#foreground{
-        padding-top: 9vh;
+        padding-top: 14vh;
     }
 
-    img#article-photo{
+    img#article-photo, #article-photo2{
         max-width: 90vw;
         object-fit: contain;
         border-radius: 1%;
@@ -93,6 +123,10 @@ footer#footer2{
     
     }
 
+    h2{
+        font-size: 26px;
+    }
+    
     div#article-main{
         width: 100%;
         margin: 0%;
@@ -102,10 +136,19 @@ footer#footer2{
         display: none;
     }
 
-    .gray{
-        font-size:small;
+    p{
+        font-size: 1.1rem;
     }
-    .date{
+
+    .scroll{
+        padding-top: 13%;
+        display: block;
+        font-size:small;
+        font-size:small;
+        margin: auto;
+        color: rgba(89, 89, 89, 0.647);
+    }
+    #editors{
         font-size: 1.15rem;
     }
 
@@ -128,81 +171,82 @@ footer#footer2{
         padding-top: 3.5%;
         padding-bottom: 3.5%;
      }
-}
-/*
-@supports (-webkit-touch-callout: none) {
-    / CSS specific to iOS devices / 
-    
-    #article-head2, header{
-        padding: 7px, 3%;
-     }
- 
-     img#article-photo{
-         max-width: 600px;
-         object-fit: contain;
-         border-radius: 1%;
-         padding-bottom: 6%;
-         margin: auto;
-     
-     }
-     html {zoom: 100%;} 
-     #my{ zoom: 100%; }
-     div#article-main{
-         width: 100%;
-         margin: 0%;
-     }
-     #navigation{
-         padding: 10px 5px;
-         font-size: 13px;
-     }
-     img#icon{
-         width: 25px;
-     }
-     
-     img#wnn{
-         width: 50px;
-         height: 50;
-         object-fit: contain;
-     }
- 
-     img#article-photo{
-         max-width: 90vw;
-         }
- 
-     .gray{
-         font-size:small;
-     }
-     .date{
-         font-size: 1.15rem;
-     }
- 
-     h1{
-         font-size:xx-large;
-     }
-  }
-*/
-  @media screen and (min-width: 1000px) {
-    /*this css will only be used when the screen size is min 1000px*/
-    div#article-main{
-        max-width: 800px;
+
+     #main-footer{
+        position: relative;
+        
     }
-    img#article-photo{
-        width: 800px;
+}
+
+@supports (-webkit-touch-callout: none) {
+    /* CSS specific to iOS devices */ 
+    div#foreground{
+        padding-top: 14vh;
+    }
+
+    img#article-photo, #article-photo2{
+        max-width: 90vw;
+        object-fit: contain;
+        border-radius: 1%;
+        padding-bottom: 6%;
+        margin: auto;
     
     }
 
     h2{
-        max-width: 800px;
-        word-wrap: break-word;
-        white-space: normal;
+        font-size: 26px;
+    }
+    
+    div#article-main{
+        width: 100%;
+        margin: 0%;
+    }
+
+    #nav-text{
+        display: none;
     }
 
     p{
-        font-size: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .scroll{
+        padding-top: 13%;
+        display: block;
+        font-size:small;
+        font-size:small;
+        margin: auto;
+        color: rgba(89, 89, 89, 0.647);
+    }
+    #editors{
+        font-size: 1.15rem;
     }
 
     h1{
-        font-size: 2.7rem;
+        font-size:xx-large;
     }
-    
+
+    /*Footer and Icons*/
+    a.socials{
+        padding-left: 7%;
+        padding-right: 7%;
+        display: inline-block;
+    }
+
+     #icon{
+        font-size: 25px;
+    }
+
+     footer{
+        padding-top: 3.5%;
+        padding-bottom: 3.5%;
+     }
+
+     #main-footer{
+        position: relative;
+        
+    }
 }
+
+    
+    

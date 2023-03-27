@@ -11,7 +11,7 @@ body{
     font-family: sans-serif;
 }
 
-.form-box{
+#login{
     width: 450px;
     background-color: rgba( 0, 0, 0, 0.94);
     margin:12% auto;
@@ -19,11 +19,12 @@ body{
     color:#fff;
     box-shadow: 0 0 20px rgba(0,0,0.5);
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 h1{
     text-align: center;
-    margin-bottom: 40px;
 }
 
 .input-box{
@@ -46,24 +47,8 @@ h1{
     color: #ccc;
 }
 
-.fa{
-    margin-right:10px ;
-}
-
-.eye{
-    position: absolute;
-}
-
-#unhide{
-    display: none;
-}
-
-#hide{
-    display:block;
-}
-
-.login-btn{
-    margin: 40px auto 20px;
+#login-btn, #reset-btn, #logout-btn{
+    margin: 20px auto 20px;
     width: 80%;
     display: block;
     outline: none;
@@ -75,15 +60,28 @@ h1{
     font-size: 15px;
 }
 
+#login-btn, #logout-btn{
+    width: 40%;
+}
+
+#log-buttons{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+
+}
+
 @media (any-pointer: coarse) or (hover: none) or (handheld){
-    .form-box{
+    #login{
         width: 90%;
     }
 }
 
 @supports (-webkit-touch-callout: none) {
     /* CSS specific to iOS devices */ 
-    .form-box{
+    #login{
         width: 90%;
     }
     

@@ -1,67 +1,91 @@
-/*const fs = require('fs');
+// Import the functions you need from the SDKs you need
+// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
+import { getAuth, signOut, signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js";
+//import {getAuth} from 'firebase/auth';
 
-fs.readFile('users.txt', 'utf-8', (err,data) =>{
-    if(err){
-        console.error(err);
-        return;
-    }
-    console.log(data)
-});
-*/
+const firebaseConfig = {
+  apiKey: "AIzaSyCFCUlo4WIOF10Z37lFDSeUsDqYy7MF7oM",
+  authDomain: "wpwnewspaper.firebaseapp.com",
+  databaseURL: "https://wpwnewspaper-default-rtdb.firebaseio.com",
+  projectId: "wpwnewspaper",
+  storageBucket: "wpwnewspaper.appspot.com",
+  messagingSenderId: "51596774612",
+  appId: "1:51596774612:web:9ffe54fa5066889bf1bf41",
+  measurementId: "G-B6GQMF1S9D"
+};
 
+// init firebase app
+const app = initializeApp(firebaseConfig);
 
+// init services
+const auth = getAuth()
 
-function toggleVis(){
+//login and logout stuff
+let title = document.getElementById('title')
+const loginForm = document.getElementById('login')
+const loginButton = document.getElementById('login-btn')
+const logoutButton = document.getElementById('logout-btn')
+const resetButton = document.getElementById('reset-btn')
+const email = loginForm.email
+const password = loginForm.password
 
-    var password = document.getElementById("password-input")
-    var hide = document.getElementById("hide")
-    var unhide = document.getElementById("unhide")
-
-        if(password==="text")
-        {
-            password.type='password';
-            hide.style.display="block";
-            unhide.style.display="none";
-        }
-        else{
+loginButton.addEventListener('click', ()=>{
+    signInWithEmailAndPassword(auth, email.value, password.value)
+        .then((cred) =>{
+            //console.log('user logged in:', cred.user)
             
-            password.type="text";
-            hide.style.display="none";
-            unhide.style.display="block";
-        }
-    }
+            switch(cred.user.email){
+                case 'austinkabanda@gmail.com':
+                    title.textContent = 'Welcome Austin'
+                    break;
+                case'amonaikoriegie@gmail.com':
+                    title.textContent = 'Welcome Amon'
+                    break;
+                case 'dillon.sabo-bassett@epsb.ca':
+                    title.textContent = 'Welcome Mr. Bassett'
+                    break;
+            }
+        })
+        .catch((err) =>{
+            console.log(err.message)
+            title.textContent = 'Error: Try Again'
+        })
 
-var loginfo = [];
 
-function login(){
-    
-    var user = document.getElementById('admin-input').value
-    var password = document.getElementById('password-input').value
+} )
 
-    if(loginfo.length > 0){
-       loginfo.pop(user)
-        loginfo.pop(password) 
-    }else{
-        loginfo.push(user) //[0]
-        loginfo.push(password) //[1] 
-    }
+logoutButton.addEventListener('click', ()=>{
+    //console.log('Logging out')
+    signOut(auth)
+        .then(()=>{
+            //console.log('Logged out')
+            title.textContent = 'Logged Out'
+        })
+        .catch((err) => {
+            console.log(err.message)
+        })
+} )
 
-    //var string_data = JSON.stringify(loginfo)
-    //var file = new Blob([string_data], {type: "text"})
 
-    /*
-    const link = document.createElement("a");
-         
-         //const file = new Blob([string_data], { type: 'text/plain' });
-         link.href = URL.createObjectURL(file);
-         link.download = "sample.txt";
-         link.click();
-    URL.revokeObjectURL(link.href);
-    */
-    
-    //alert(loginfo)
-    verifyLoginfo()
-}
+
+
+
+resetButton.addEventListener('click', () => {
+    sendPasswordResetEmail(auth, email.value)
+        .then(()=>{
+            title.textContent = 'Reset email Sent'
+        })
+        .catch(error => {
+            console.log(error);
+            title.textContent = 'Error: Invalid email'
+        })
+})
+
+onAuthStateChanged(auth, (user)=>{
+    console.log('status changed', user)
+})
+
 
 //test
 function changeCurrentLocation(target){
@@ -81,63 +105,4 @@ function changeCurrentLocation(target){
 
 }
 
-function verifyLoginfo(){
-    /*
-    //var file = File "user.txt"
-    var reader = new FileReader();
-    console.log(file.length)
 
-    reader.onloadend = function(){
-        
-        var load = JSON.parse(reader.result)[0];
-        var load = JSON.parse(reader.result)[1];
-        alert(load)
-    }
-
-    reader.readAsText(load)
-    */
-    
-    var user = document.getElementById('admin-input').value
-    var password = document.getElementById('password-input').value
-
-    var input = user + password + ''
-    storedData = loadFile('users.txt')
-    let arr = storedData.split(',')
-
-    //console.log(storedData)
-    //console.log(input)
-    //console.log(arr)
-
-
-    for(let i = 0; i < arr.length; i++){
-        let pass = arr[i]
-        if(pass == input){
-            changeCurrentLocation("admin.html")
-        }
-    } 
-
-    //s1 = JSON.parse(storedData)[0];
-    //s2 = JSON.parse(storedData)[1]
-    
-    //  console.log(s1,s2)
-    //if((user == s1) && (password == s2)){
-        //changeCurrentLocation("admin.html")
-    //}
-
-
-}
-
-function loadFile(filePath) {
-    var result = null;
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", filePath, false);
-    xmlhttp.send();
-    if (xmlhttp.status==200) {
-      result = xmlhttp.responseText;
-    }
-    return result;
-  }
-
-function formatText(){
-
-}

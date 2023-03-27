@@ -10,35 +10,32 @@
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
     <title>WP Admin Site</title>
-    <link rel="stylesheet" href="login.css?v4">
+    <link rel="stylesheet" href="login.css?v9">
     <script src="https://kit.fontawesome.com/7fa1774645.js" crossorigin="anonymous"></script>
-    <script src="login.js?v1"></script>
+    <script src="login.js?v5" type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
     
 </head>
     <body>
 
-        <div class="form-box">
+        <form id="login">
 
-            <h1>Login</h1>
+            <h1 id = 'title'>ADMIN</h1>
 
             <div class="input-box">
-                <i class="fa fa-user-o" aria-hidden="true"></i>
-                <input type="Admin" placeholder="Admin" id="admin-input">
+                <input type="email" placeholder="Email" name="email" id="admin-input">
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" name="password" id="password-input">
+            </div>
+            <div id="log-buttons">
+                <button type="button" id="login-btn">LOGIN</button>
+                <button type="button" id="logout-btn">LOGOUT</button>
             </div>
             
-            <div class="input-box">
-                <i class="fa fa-key" aria-hidden="true"></i>
+            <button type="button" id="reset-btn">RESET PASSWORD</button>
 
-                <input type="password" placeholder="Password" id="password-input">
-
-                <!-- <span class="eye" onclick="toggleVis()">
-                     <i class="fa-solid fa-eye" id="hide"></i>
-                     <i class="fa-solid fa-eye-slash" id="unhide"></i>
-                </span -->
-            </div>
-            <button type="button" class="login-btn" onclick="login()">SUBMIT</button>
-        </div>
-        
+        </form>
+            
     </body>
 </html>

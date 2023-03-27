@@ -13,44 +13,60 @@
     <meta http-equiv='pragma' content='no-cache'>
 
     <!--<script src = "manager.js"></script>-->
-    <script>document.write('<script src="manager.js?dev=19'+ Math.floor(Math.random() * 1000) +'"\><\/script>');</script>
+    <script src="manager.js?dev=28" type="module"></script>
 
-    <link rel="stylesheet" href="my_styles.css?refreshcss=15" type="text/css"> <!-- Don't Touch -->
+    <link rel="stylesheet" href="my_styles.css?refreshcss=23" type="text/css"> <!-- Don't Touch -->
 
     <!--<link rel="stylesheet" href="article.css?refreshcss=10" type="text/css">  -->
-    <script>document.write('<link rel="stylesheet" href="article.css?dev=21' + Math.floor(Math.random() * 1000) + 'type="text/css">');</script>
+    <script>document.write('<link rel="stylesheet" href="article.css?dev=26' + Math.floor(Math.random() * 1000) + 'type="text/css">');</script>
     <script src="https://kit.fontawesome.com/7fa1774645.js" crossorigin="anonymous"></script>
 
+
+    <script defer src="/__/firebase/9.18.0/firebase-app-compat.js"></script>
+
+
     <link rel="icon" href="images/favicon.ico">
-    <title id = 'title'>JavaScript Error</title>
+    <title id = 'title'></title>
+    
         
 </head>
 
     <body>
 
-
         <div>
-            <header id="header">
-                <div>
-                 <h1 onclick="home()" >Wagner Press</h1>   
+            <header>
+
+                <div id="header-content">
+                    <div id="title">
+                    <h1 onclick="home()">Wagner Press </h1>
+                    <img src="images/favicon.png" alt="wagner logo" id="wpw-icon">  
+                    </div>
+
+                    <script>
+                        function home(){
+                            let url = window.location.href
+                            let leftSlash = 0;
+                            for (let i = 0; i < url.length; i++) {
+                                if(url[i] == "/"){
+                                    leftSlash = i;
+                                }
+                                
+                            }
+
+                            url = url.slice(0, leftSlash+1)
+
+                            targetPage = url + 'index.html'
+                            window.location.assign(targetPage);
+                        }
+                    </script>
+
+                    <nav id="nav-text">
+                        <a href="article.html#1" class="navigation">Sports</a>
+                        <a href="article.html#2" class="navigation">Pop Culture</a>
+                        <a href="article.html#3" class="navigation">Student Voices</a>
+                        <a href="article.html#4" class="navigation">Current Events</a>
+                    </nav>
                 </div>
-                
-            </header>
-        </div>
-
-        <div>
-            <header id="article-head2">
-                <nav id="nav-text">
-                    <a href="article.html#1"onclick="reloadPage(150)" class="navigation">Sports</a>
-                    <a href="article.html#2"onclick="reloadPage(150)" class="navigation">Pop Culture</a>
-                    <a href="article.html#3"onclick="reloadPage(150)" class="navigation">Student Voices</a>
-                    <a href="article.html#4"onclick="reloadPage(150)" class="navigation">Current Events</a>
-                </nav>
-
-                    <a href="article.html#1" id="nav-icons"><img src="images/SportsIcon.png" alt="Sports" class="nav-icons"></a>
-                    <a href="article.html#2" id="nav-icons"><img src="images/PopIcon.png" alt="Pop Culture" class="nav-icons"></a>
-                    <a href="article.html#3" id="nav-icons"><img src="images/VoiceIcon.png" alt="Student Voices" class="nav-icons"></a>
-                    <a href="article.html#4" id="nav-icons"><img src="images/EventsIcon.png" alt="Current Events" class="nav-icons"></a>
             </header>
         </div>
 
@@ -60,32 +76,41 @@
             <div id="foreground">
 
                 <div >
-                    <h2 id="article-title">Title</h2>
+                    <h2 id="article-title">Loading...</h2>
                 </div>
                 
                 <div id="article-main">
-                    <script>changeTitles();content()</script>
-                </div>
 
+                    <h2 id="blue"></h2>
+                    <img id="article-photo">
+                    <div id="spacer2" style="display: none;"></div>
+                    <h2 id="red"></h2>
+                    <img id="article-photo2">
+                    <div class = "spacer"></div>
+                    <p id = 'editors'></p>
+                </div>
+                <script>
+                    function jump(){
+                        window.scrollTo(0, 0);
+                        }
+                </script>
+                <a class="scroll" onclick="jump()">Scroll to Top</a>
             </div>
             
         </div>
 
         
-        
         <div>
-            <footer id="footer2">
-                <div>
-                    <a class="gray" onclick="jump()">Scroll to Top</a>
-                </div>
+            
+            <footer id="main-footer">
+                <nav id="footer">
+                    <a href="https://www.instagram.com/wagnerwarriors/?hl=en"  target="_blank" class="socials"> <i class="fa-brands fa-instagram"></i> </a><!--<img id="icon"src="icons/iconIG.png" alt="instagram icon">-->
+                    <a href="https://twitter.com/WagnerWarriors" target="_blank"  class="socials"><i class="fa-brands fa-twitter" ></i> </a><!--<img id="icon" src="icons/iconTW.png" alt="twitter icon">-->
+                    <a href="https://www.youtube.com/c/WagnerNewsNetwork" target="_blank"  class="socials"><i class="fa-brands fa-youtube" ></i></a><!--<img id="wnn" src="icons/iconWNN.png" alt="Wagner News Network Icon">--> 
+                    <a href="About.html" target="_blank"  class="socials"><i class="fa-solid fa-question"></i></a><!--<img id="wnn" src="icons/iconWNN.png" alt="Wagner News Network Icon">--> 
+                </nav>
             </footer>
-            <div>
-                <footer>
-                        <a href="https://www.instagram.com/wagnerwarriors/?hl=en" target="_blank" class="socials" > <i class="fa-brands fa-instagram" id="icon"></i> </a><!--<img id="icon"src="images/iconIG.png" alt="instagram icon">-->
-                        <a href="https://twitter.com/WagnerWarriors" target="_blank" class="socials"><i class="fa-brands fa-twitter" id="icon"></i> </a><!--<img id="icon" src="images/iconTW.png" alt="twitter icon">-->
-                        <a href="https://www.youtube.com/c/WagnerNewsNetwork" target="_blank" class="socials"><i class="fa-brands fa-youtube" id="icon"></i></a><!--<img id="wnn" src="images/iconWNN.png" alt="Wagner News Network Icon">-->
-                </footer>
-            </div>
         </div>
+
     </body>
 </html>
