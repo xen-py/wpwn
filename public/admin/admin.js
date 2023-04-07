@@ -42,6 +42,28 @@ function getRealtimeData(){
 
 getRealtimeData()
 
+/*
+class Article {
+
+    
+    constructor(fpTitle, articleTitle, articleText, editors) {
+      fpTitle = articles[0].
+      this.width = width;
+    }
+
+    constructor(fpTitle, articleTitle, boysArticle, girlsArticle, editors) {
+        this.height = height;
+        this.width = width;
+    }
+    
+
+
+
+}
+*/
+
 function formatText(){
 
 }
+var user = auth.currentUser;
+console.log(user)

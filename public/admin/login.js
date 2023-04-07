@@ -15,6 +15,7 @@ const firebaseConfig = {
   measurementId: "G-B6GQMF1S9D"
 };
 
+
 // init firebase app
 const app = initializeApp(firebaseConfig);
 
@@ -29,6 +30,9 @@ const logoutButton = document.getElementById('logout-btn')
 const resetButton = document.getElementById('reset-btn')
 const email = loginForm.email
 const password = loginForm.password
+
+//auth.setPersistence(auth.Auth.Persistence.LOCAL);
+
 
 loginButton.addEventListener('click', ()=>{
     signInWithEmailAndPassword(auth, email.value, password.value)
@@ -67,10 +71,6 @@ logoutButton.addEventListener('click', ()=>{
         })
 } )
 
-
-
-
-
 resetButton.addEventListener('click', () => {
     sendPasswordResetEmail(auth, email.value)
         .then(()=>{
@@ -83,11 +83,14 @@ resetButton.addEventListener('click', () => {
 })
 
 onAuthStateChanged(auth, (user)=>{
-    console.log('status changed', user)
+    //console.log('status changed', user)
+    if(user != null){
+        signOut(auth)
+        //loginForm.style.display = 'none'
+        changeCurrentLocation('admin.html')
+    }
 })
 
-
-//test
 function changeCurrentLocation(target){
     let url = window.location.href
     let leftSlash = 0;
@@ -100,8 +103,9 @@ function changeCurrentLocation(target){
 
     url = url.slice(0, leftSlash+1)
 
-    targetPage = url + target
+    let targetPage = url + target
     window.location.assign(targetPage);
+    console.log(targetPage)
 
 }
 

@@ -254,7 +254,7 @@ p {
 }
 
 .sub-container#events{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.826) 0%, rgba(0, 0, 0, 0) 70%, rgba(0,0,0,0) 100%),url(images/events.jpg);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.826) 0%, rgba(0, 0, 0, 0) 70%, rgba(0,0,0,0) 100%),url(images/eventsArticle.jpg);
     grid-column: 1;
     grid-row-start: 1;
     grid-row-end: 2;
@@ -318,7 +318,7 @@ p {
 }
 
 #events2{
-    background-image: url(images/events.jpg);
+    background-image: url(images/eventsArticle.jpg);
 }
 
 #sports2:hover, #voices2:hover, #culture2:hover, #events2:hover,

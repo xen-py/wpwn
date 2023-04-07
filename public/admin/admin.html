@@ -6,31 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <link rel="stylesheet" href="admin.css?2">
+    <link rel="stylesheet" href="admin.css?4">
+    <link rel="stylesheet" href="../my_styles.css">
     <script src="https://kit.fontawesome.com/7fa1774645.js" crossorigin="anonymous"></script>
     
-    <script type="module" src="admin.js"></script>
+    <script type="module" src="admin.js?v=2"></script>
 
 </head>
 
 <body>
 
-    <div id="container">
-        
-        <div id="sidebar"> 
-                <div id="title"><h1>Admin Panel</h1></div>
-            <hr class="sidepanel-div">
-        </div>
-
-        <div id="background">
-            
-            <div id="content">
-                
+    <header>
+        <div id="header-content">
+            <div id="title">
+            <h1 onclick="home()">Admin Site</h1>
+            <img src="../images/favicon.png" alt="wagner logo" id="wpw-icon">  
             </div>
-            <script>
-                alert('UNDER DEVELOPMENT')
-            </script>
 
+            <nav id="nav-text">
+                <a href="article.html#1" class="navigation">Sports</a>
+                <a href="article.html#2" class="navigation">Pop Culture</a>
+                <a href="article.html#3" class="navigation">Student Voices</a>
+                <a href="article.html#4" class="navigation">Current Events</a>
+            </nav>
+        </div>
+    </header>
+
+    <div id="background">
+        
+        <div id="content">
+            
         </div>
 
     </div>
