@@ -34,16 +34,16 @@ h1{
     background-color:#f5f7f8;
 }
 
-.forms{
+#inputArea{
 
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-self: center;
     width: 88%;
     min-height: 10%; /*THIS IS WHY ITS HIDDEN*/
     background-color: white;
     margin-bottom: 5%;
-    border-radius: 0.7%;
+    border-radius:2%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.348);
 
     

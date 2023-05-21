@@ -28,7 +28,7 @@ async function getCities(db) {
 
 //document.addEventListener
 
-let images = ["images/gallery/gal1.jpg"]
+let images = ["images/gallery/gall1.jpg"]
 
 /*
 requirejs.config({

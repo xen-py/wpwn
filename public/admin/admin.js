@@ -26,8 +26,19 @@ const auth = getAuth()
 // collection ref
 const colRef = collection(db, 'articles')
 
-// get realtime collection data
 
+
+//get url and initalize other global variables
+let url = window.location.href
+let end = url.substring(url.length-1)
+let currentArticle = parseInt(end)
+let form = document.getElementById('input')
+let articleText = document.getElementById('article')
+let articleText2 = document.getElementById('article2')
+console.log(end)
+
+// get realtime collection data
+var databaseArticles = 'error'
 function getRealtimeData(){
     let articles = [] 
     onSnapshot(colRef, (snapshot) => {
@@ -35,35 +46,82 @@ function getRealtimeData(){
             articles.push({
                 ...doc.data(), id: doc.id})
         });
-        console.log(articles);
+        
+        function changeArticle(){
+
+            url = window.location.href
+            end = url.substring(url.length-1)
+            end = parseInt(end)
+            console.log(end)
+            loadArticles(articles, end)
+         }
+        
+        const articleButtons = document.getElementsByClassName('navigation')
+        
+        articleButtons[0].addEventListener('click', ()=>{
+            setTimeout(function(){
+                changeArticle()
+            }, 5); 
+        } )
+        articleButtons[1].addEventListener('click', ()=>{
+            setTimeout(function(){
+                changeArticle()
+            }, 5); 
+        } )
+        articleButtons[2].addEventListener('click', ()=>{
+            setTimeout(function(){
+                changeArticle()
+            }, 5); 
+        } )
+        articleButtons[3].addEventListener('click', ()=>{
+            setTimeout(function(){
+                changeArticle()
+            }, 5); 
+        } )
+
     })
 
 }
 
+function loadArticles(db, article){
+
+    switch (article) {
+        case 1:
+            //sports
+            articleText.textContent = db[2].boys
+            articleText2.textContent = db[2].girls
+            break;
+        case 2:
+            //pop culture
+            articleText.textContent = db[0].article
+            articleText2.textContent = db[2].article2
+            break;
+        case 3:
+            //student voices
+            articleText.textContent = db[3].article
+            articleText2.textContent = db[2].article2
+            break;
+        case 4:
+            //current events
+            articleText.textContent = db[1].article
+            articleText2.textContent = db[2].article2
+            break;
+    
+        default:
+            articleText.textContent = 'error fetching data  '
+            break;
+    }
+}
+
 getRealtimeData()
 
-/*
-class Article {
 
-    
-    constructor(fpTitle, articleTitle, articleText, editors) {
-      fpTitle = articles[0].
-      this.width = width;
-    }
-
-    constructor(fpTitle, articleTitle, boysArticle, girlsArticle, editors) {
-        this.height = height;
-        this.width = width;
-    }
-    
+//var user = auth.currentUser;
+//console.log(user)
 
 
 
-}
-*/
 
 function formatText(){
 
 }
-var user = auth.currentUser;
-console.log(user)

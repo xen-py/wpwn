@@ -74,19 +74,19 @@ onSnapshot(colRef, (snapshot) => {
                 //titles
                 title.textContent = TITLES[0]
                 firstArticleTitle.style.color = 'blue'
-                firstArticleTitle.textContent = 'BOYS'
+                //firstArticleTitle.textContent = 'BOYS'
                 //photos
                 articleTitle.textContent = articles[2].title
-                articlePhoto.src = "images/sportsBoys.jpg"
+                articlePhoto.src = "images/sportsBoys2.0.jpg"
                 //text
                 firstArticleText = articles[2].boys;
                 //spacer
-                spacer2.style.display = 'block'
+                //spacer2.style.display = 'block'
                 //titles
                 secArticleTitle.style.color = 'red'
-                secArticleTitle.textContent = 'GIRLS'
+                //secArticleTitle.textContent = 'GIRLS'
                 //photos
-                articlePhoto2.src = "images/sportsGirls.jpg"
+                //articlePhoto2.src = "images/sportsGirls.jpg"
                 //text
                 secondArticleText = articles[2].girls;
                 //editors
@@ -101,6 +101,14 @@ onSnapshot(colRef, (snapshot) => {
                 articlePhoto.src = "images/culture.jpg"
                 //text
                 firstArticleText = articles[0].article;
+                //spacer
+                spacer2.style.display = 'block'
+                //title2
+                secArticleTitle.textContent = articles[0].title2
+                //photos
+                articlePhoto2.src = "images/culture2.jpg?v2"
+                //text
+                secondArticleText = articles[0].article2;
                 //editors
                 editorCredit.textContent = "Editors: " + editors[2]
                 contentLoaded = 2
@@ -113,6 +121,14 @@ onSnapshot(colRef, (snapshot) => {
                 articlePhoto.src = "images/voices.jpg"
                 //text
                 firstArticleText = articles[3].article;
+                //spacer
+                spacer2.style.display = 'block'
+                //title2
+                secArticleTitle.textContent = articles[3].title2
+                //photos
+                articlePhoto2.src = "images/voices2.jpg"
+                //text
+                secondArticleText = articles[3].article2;
                 //editors
                 editorCredit.textContent = "Editors: " + editors[3]
                 contentLoaded = 3
@@ -131,7 +147,8 @@ onSnapshot(colRef, (snapshot) => {
                 break;
         }
         document.body.height = 'fit-content'
-    
+        
+        //clear page on snapshot
         if(!hasText){
             articlePhoto.insertAdjacentHTML('afterend', firstArticleText)
             articlePhoto2.insertAdjacentHTML('afterend', secondArticleText)

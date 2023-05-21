@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="stylesheet" href="../my_styles.css">
-    <link rel="stylesheet" href="admin.css?6">
+    <link rel="stylesheet" href="admin.css?7">
     <script src="https://kit.fontawesome.com/7fa1774645.js" crossorigin="anonymous"></script>
     
-    <script type="module" src="admin.js?v=2"></script>
+    <script type="module" src="admin.js?v=4"></script>
     <script src="forms.js"></script>
 
 </head>
@@ -25,32 +25,42 @@
             </div>
 
             <nav id="nav-text">
-                <a href="#" class="navigation">Sports</a>
-                <a href="#" class="navigation">Pop Culture</a>
-                <a href="#" class="navigation">Student Voices</a>
-                <a href="#" class="navigation">Current Events</a>
+                <a href="#1" class="navigation">Sports</a>
+                <a href="#2" class="navigation">Pop Culture</a>
+                <a href="#3" class="navigation">Student Voices</a>
+                <a href="#4" class="navigation">Current Events</a>
             </nav>
         </div>
     </header>
 
     <div id="background">
-        
-        <div class="forms">
-            <form id="titles">
-                <label for="fp">Main Page Article Title</label>
-                <input type="text" placeholder="Eye Catching Title" name="fp">
-                <label for="title">Article Title</label>
-                <input type="text" placeholder="Article Title" name="title">
+
+        <div id="inputArea">
+            <form id="input">
+
+                <!-- Titles -->
+                <label for="fp">Front Page Article Title</label>
+                <input type="fpTitle" placeholder="Eye Catching Title" name="fp" id="fp">
+
+                <label for="title">Article Title One</label>
+                <input type="title" placeholder="Article Title" name="title" id="title">
+
+                <label for="title2">Article Title Two</label>
+                <input type="title2" placeholder="Optional" name="title2" id="title2">
+
+
+                <!--Articles -->
+                <label for="article">Article One</label>
+                <textarea type="article" name="article" id="article" cols="30" rows="10" placeholder=""></textarea>
+
+                <label for="article2">Article Two</label>
+                <textarea type="article2" name="article2" id="article2" cols="30" rows="10" placeholder=""></textarea>
+                 <!--Editors -->
+                 <label for="title">Editors</label>
+                <input type="text" placeholder="Editors" id="editors">
             </form>
-            <button>wgw</button>
         </div>
-        
-        <div class="forms">
-            <form id="editors">
-                <label for="title">Editors</label>
-                <input type="text" placeholder="Editors">
-            </form>
-        </div>
+
     </div>
 
 </body>
