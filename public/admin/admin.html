@@ -6,11 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <link rel="stylesheet" href="../my_styles.css">
-    <link rel="stylesheet" href="admin.css?7">
+    <link rel="stylesheet" href="admin.css?7.4">
     <script src="https://kit.fontawesome.com/7fa1774645.js" crossorigin="anonymous"></script>
     
-    <script type="module" src="admin.js?v=4"></script>
+    <script type="module" src="admin.js?v=4.4"></script>
     <script src="forms.js"></script>
 
 </head>
@@ -33,35 +32,86 @@
         </div>
     </header>
 
-    <div id="background">
+        <div id="background">
 
-        <div id="inputArea">
-            <form id="input">
+            <div id="rules">
 
+                <ul>
+                    <p>Tips:</p>
+                    <li>Remember not to switch articles before saving your edits:</li>
+                    <li>Sign in first in order to enable edits (you have to sign in everytime)</li>
+                    <li>Uploading pictures is still in a WIP so for now send article pictures <a href="mailto: austinkabanda@gmail.com" id="email">here</a> with labels</li>
+                    <li>Any aethetic or functional ideas can be emailed to the above address</li>
+                    <li>With great power comes great responsiblity, the rest is in your hands Admin</li>
+                </ul>
+
+                <button id="signIn">sign in</button>
+
+            </div>
+
+            <div id="popup">
+                <div class="popup-content">
+                    <form id="loginForm">
+                    <img src="../images/close.png" alt="close" id="close">
+                    <input type="email" placeholder="Email" name="email" id="admin-input">
+                    <input type="password" placeholder="Password" name="password" id="password-input">
+                    <button type="button" id="login">LOGIN</button>
+                    </form>
+                    
+                </div>
+            </div>
+
+            <div id="foreground">
                 <!-- Titles -->
-                <label for="fp">Front Page Article Title</label>
-                <input type="fpTitle" placeholder="Eye Catching Title" name="fp" id="fp">
+                <div class="inputArea" id="fpInput">
+                    <form class="input">
+                        <h2 >Front Page Title</h2>
+                        <input type="text" placeholder="Eye Catching Title" readonly="true" name="fp" id="fp">
+                    </form>
+                </div>
 
-                <label for="title">Article Title One</label>
-                <input type="title" placeholder="Article Title" name="title" id="title">
+                <div class="inputArea">
+                    <form class="input">
+                        <h2>Title One</h2>
+                        <input type="title" placeholder="Article Title" readonly="true" name="title" id="title1">
+                    </form>
+                </div>
 
-                <label for="title2">Article Title Two</label>
-                <input type="title2" placeholder="Optional" name="title2" id="title2">
-
+                <div class="inputArea">
+                    <form class="input">
+                        <h2>Title Two</h2>
+                        <input type="title2" placeholder="Optional: Leave this blank if you wish" readonly="true" name="title2" id="title2">
+                    </form>
+                </div>
 
                 <!--Articles -->
-                <label for="article">Article One</label>
-                <textarea type="article" name="article" id="article" cols="30" rows="10" placeholder=""></textarea>
+                <div class="inputArea">
+                    <form class="input">
+                        <h2 >Article One</h2>
+                        <textarea type="article" name="article" id="article1" cols="70" rows="20" readonly="true" ></textarea>
+                    </form>
+                </div>
+                
+                <div class="inputArea">
+                    <form class="input">
+                        <h2 >Article Two</h2>
+                        <textarea type="article2" name="article2" id="article2" cols="70" rows="20" readonly="true" placeholder="Optional: Leave this blank and no second article text will be made"></textarea>
+                    </form>
+                </div>
+                        
+                <!--Editors -->
+                <div class="inputArea" id="edInput">
+                    <form class="input">
+                        
+                        <h2 > Editors </h2>
+                        <input type="text" placeholder="Editors" readonly="true" id="editors">
+                    </form>
+                </div>
 
-                <label for="article2">Article Two</label>
-                <textarea type="article2" name="article2" id="article2" cols="30" rows="10" placeholder=""></textarea>
-                 <!--Editors -->
-                 <label for="title">Editors</label>
-                <input type="text" placeholder="Editors" id="editors">
-            </form>
+            </div>
+            
         </div>
 
-    </div>
+    </body>
 
-</body>
 </html>
