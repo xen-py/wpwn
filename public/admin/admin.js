@@ -197,3 +197,16 @@ loginbtn.addEventListener('click', ()=>{
 function formatText(){
     
 }
+
+function textAreaAdjust(element) {
+    element.style.height = "1px";
+    element.style.height = (25+element.scrollHeight)+"px";
+}
+
+articleText.addEventListener('onkeyup', ()=>{
+    textAreaAdjust(articleText)
+} )  
+
+articleText2.addEventListener('onkeyup', ()=>{
+    textAreaAdjust(articleText2)
+} )
