@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    <!-- Austin Kabanda May 25th 2023 -->
+    <!-- Touch grass? whats grass? -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <link rel="stylesheet" href="admin.css?7.4">
-    <script src="https://kit.fontawesome.com/7fa1774645.js" crossorigin="anonymous"></script>
-    
-    <script type="module" src="admin.js?v=4.4"></script>
+    <link rel="stylesheet" href="admin.css?7.6">
+    <script type="module" src="admin.js?v=4.5"></script>
     <script src="forms.js"></script>
 
 </head>
@@ -38,10 +37,11 @@
 
                 <ul>
                     <p>Tips:</p>
-                    <li>Remember not to switch articles before saving your edits:</li>
+                    <li>Remember to save changes before switching articles</li>
                     <li>Sign in first in order to enable edits (you have to sign in everytime)</li>
-                    <li>Uploading pictures is still in a WIP so for now send article pictures <a href="mailto: austinkabanda@gmail.com" id="email">here</a> with labels</li>
-                    <li>Any aethetic or functional ideas can be emailed to the above address</li>
+                    <li>Uploading pictures is still a WIP so for now send article pictures <a href="mailto: austinkabanda@gmail.com" id="email">here</a> with labels</li>
+                    <li>Any Ideas, questions, problems or general concerns can be emailed to the above address</li>
+                    <li>If a letter/character/number is acting weird find it <a href="https://www.html.am/reference/html-special-characters.cfm" id="email">here</a> and use its entity number/name instead</li>
                     <li>With great power comes great responsiblity, the rest is in your hands Admin</li>
                 </ul>
 
@@ -64,48 +64,72 @@
             <div id="foreground">
                 <!-- Titles -->
                 <div class="inputArea" id="fpInput">
-                    <form class="input">
+                    <div class="input">
                         <h2 >Front Page Title</h2>
-                        <input type="text" placeholder="Eye Catching Title" readonly="true" name="fp" id="fp">
-                    </form>
+                        <div class="inputDiv">
+                            <input type="text" placeholder="Eye Catching Title" readonly="true" name="fp" id="fp">
+                            <button class="submitChanges">upload</button>
+                            <button class="cancelChanges">revert</button> 
+                        </div>
+                        
+                    </div>
                 </div>
 
                 <div class="inputArea">
-                    <form class="input">
+                    <div class="input">
                         <h2>Article One Title</h2>
-                        <input type="title" placeholder="Article Title" readonly="true" name="title" id="title1">
-                    </form>
+                        <div class="inputDiv">
+                            <input type="title" placeholder="Article Title" readonly="true" name="title" id="title1">
+                            <button class="submitChanges">upload</button>
+                            <button class="cancelChanges">revert</button> 
+                        </div>
+                    </div>
                 </div>
 
                 <div class="inputArea">
-                    <form class="input">
+                    <div class="input">
                         <h2>Article Two Title</h2>
-                        <input type="title2" placeholder="Optional: Leave this blank if you wish" readonly="true" name="title2" id="title2">
-                    </form>
+                        <div class="inputDiv">
+                            <input type="title2" placeholder="Optional: Leave this blank if you wish" readonly="true" name="title2" id="title2">
+                            <button class="submitChanges">upload</button>
+                            <button class="cancelChanges">revert</button> 
+                        </div>
+                    </div>
                 </div>
 
                 <!--Articles -->
                 <div class="inputArea">
-                    <form class="input">
+                    <div class="input">
                         <h2 >Article One</h2>
-                        <textarea type="article" name="article" id="article1" cols="70" rows="20" readonly="true" ></textarea>
-                    </form>
+                        <textarea type="article" name="article" id="article1" cols="70" rows="30" readonly="true" placeholder="Write here"></textarea>
+                        <div class="inputDiv">    
+                            <button class="submitChanges">upload</button>
+                            <button class="cancelChanges">revert</button> 
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="inputArea">
-                    <form class="input">
+                    <div class="input">
                         <h2 >Article Two</h2>
-                        <textarea type="article2" name="article2" id="article2" cols="70" rows="20" readonly="true" placeholder="Optional: Leave this blank and no second article text will be made"></textarea>
-                    </form>
+                            <textarea type="article2" name="article2" id="article2" cols="70" rows="30" readonly="true" placeholder="Optional: Leave this blank and no second article text will be made"></textarea>
+                        <div class="inputDiv">    
+                            <button class="submitChanges">upload</button>
+                            <button class="cancelChanges">revert</button> 
+                        </div>
+                    </div>
                 </div>
                         
                 <!--Editors -->
                 <div class="inputArea" id="edInput">
-                    <form class="input">
-                        
+                    <div class="input">
                         <h2 > Editors </h2>
-                        <input type="text" placeholder="Editors" readonly="true" id="editors">
-                    </form>
+                        <div class="inputDiv">
+                            <input type="text" placeholder="Editors" readonly="true" id="editors">
+                            <button class="submitChanges">upload</button>
+                            <button class="cancelChanges">revert</button> 
+                        </div>
+                    </div>
                 </div>
 
             </div>

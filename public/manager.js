@@ -79,7 +79,7 @@ onSnapshot(colRef, (snapshot) => {
                 articleTitle.textContent = articles[2].title
                 articlePhoto.src = "images/sportsBoys2.0.jpg"
                 //text
-                firstArticleText = articles[2].boys;
+                firstArticleText = articles[2].article;
                 //spacer
                 //spacer2.style.display = 'block'
                 //titles
@@ -88,7 +88,7 @@ onSnapshot(colRef, (snapshot) => {
                 //photos
                 //articlePhoto2.src = "images/sportsGirls.jpg"
                 //text
-                secondArticleText = articles[2].girls;
+                secondArticleText = articles[2].article2;
                 //editors
                 editorCredit.textContent = "Editors: " + editors[1]
                 contentLoaded = 1
