@@ -746,3 +746,18 @@ submit[5].addEventListener('click', ()=>{
     }
     
 })
+
+var mobileMenu = window.getElementById("mobile-genre-selection");
+var genreMenu = window.getElementById('genre-menu-popup')
+
+mobileMenu.addEventListener('click', ()=>{
+    genreMenu.style.display = 'block'
+    genreMenu.style.display = 'flex';
+  window.scrollTo({ top: 0 });
+  genreMenu.style.opacity = '1';
+  document.body.style.overflow = 'hidden';
+})
+
+/*To-do*/
+//Fix the realtime snapshot, because the input values don't reflect the changes unless refreshed
+//Fix that thing were the input value wont change after its edited 

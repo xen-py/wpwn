@@ -50,6 +50,7 @@ header{
     padding-top: 1%;
     padding-bottom: 1%;
 }
+
 .navigation:hover{
     color: #0088a9;
 }
@@ -66,7 +67,9 @@ a, button{
     color: #edf0f1;
     text-decoration: none;
 }
-
+#mobile-genre-selection{
+    display: none;
+}
 a#email{
     all: unset;
     color: blue;
@@ -259,7 +262,7 @@ div.input{
     color: #fff;
 }
 
-#popup{
+#popup, #genre-menu-popup{
     background: rgba(0,0,0,0.6);
     opacity: 0;
     width: 100%;
@@ -285,7 +288,7 @@ div.input{
 
 
 
-@media ((any-pointer: coarse) or (hover: none)) or ((handheld) or (max-width: 760px) or (orientation:portrait)){
+@media ((any-pointer: coarse) or (hover: none) or (orientation:portrait)) /*or ((handheld) or (max-width: 760px) or )*/{
     #background{
         padding-top: 30%;
     }
@@ -296,6 +299,26 @@ div.input{
 
     #nav-text{
         display: none;
+    }
+    #mobile-genre-selection{
+        display: inline;
+        background-size: contain;
+        background-color: #ad545400;
+        color: #ad545400;
+        border: none;
+        height: fit-content;
+        transition:0.25s ;
+        
+    }
+    #menu-button{
+        background-size: contain;
+        height: 40px;
+        width: auto;
+    }
+
+    #mobile-genre-selection:hover{
+        color: #000000;
+        opacity: 0.7;
     }
     header{
         position: fixed;
