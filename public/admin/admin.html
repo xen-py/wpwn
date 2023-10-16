@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <link rel="stylesheet" href="admin.css?8">
-    <script type="module" src="admin.js?v=5"></script>
+    <link rel="stylesheet" href="admin.css?8.6">
+    <script type="module" src="admin.js?v=5.7"></script>
     <script src="forms.js"></script>
 
 </head>
@@ -28,7 +28,7 @@
                 <a href="#3" class="navigation">Student Voices</a>
                 <a href="#4" class="navigation">Current Events</a>
             </nav>
-            <button id="mobile-genre-selection"><img src="../icons/MenuButton.png" alt="menu button" id="menu-button"></button>
+            <button id="mobile-menu-button"><img src="../icons/MenuButton.png" alt="menu button" id="menu-button"></button>
         </div>
     </header>
 
@@ -37,16 +37,17 @@
             <div id="rules">
 
                 <ul>
-                    <p>Tips:</p>
+                    <p>Notes:</p>
                     <li>Remember to save changes before switching articles</li>
-                    <li>Sign in first in order to enable edits (you have to sign in everytime)</li>
+                    <li>Sign in first in order to enable edits (you have to sign in everytime you enter)</li>
                     <li>Uploading pictures is still a WIP so for now send article pictures <a href="mailto: austinkabanda@gmail.com" id="email">here</a> with labels</li>
                     <li>Any Ideas, questions, problems or general concerns can be emailed to the above address</li>
                     <li>If a letter/character/number is acting weird find it <a href="https://www.html.am/reference/html-special-characters.cfm" id="email">here</a> and use its entity number/name instead</li>
-                    <li>With great power comes great responsiblity, the rest is in your hands Admin</li>
+                    <li>Change don't show after hitting submit yet, so refresh the page</li>
+                    <li>With great power comes great responsiblity, the rest is in your hands</li>
                 </ul>
 
-                <button id="signIn">sign in</button>
+                <button id="signIn"> sign in </button>
 
             </div>
 
@@ -62,13 +63,13 @@
                 </div>
             </div>
 
-            <div id="genre-menu-popup">
-                <div class="popup-content">
-                    <nav id="nav-text">
-                        <a href="#1" class="navigation">Sports</a>
-                        <a href="#2" class="navigation">Pop Culture</a>
-                        <a href="#3" class="navigation">Student Voices</a>
-                        <a href="#4" class="navigation">Current Events</a>
+            <div id="mobile-menu-popup">
+                <div id="popup-content">
+                    <nav id="mobile-nav-text">
+                        <a href="#1" class="mobile-navigation">Sports</a>
+                        <a href="#2" class="mobile-navigation">Pop Culture</a>
+                        <a href="#3" class="mobile-navigation">Student Voices</a>
+                        <a href="#4" class="mobile-navigation">Current Events</a>
                     </nav>
                 </div>
             </div>

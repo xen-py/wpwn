@@ -67,6 +67,7 @@ onSnapshot(colRef, (snapshot) => {
     * 3 = Student Voices
     * 4 = Current Events
     */
+    var time = Date.now()
     function content(){
 
         switch(article){
@@ -77,7 +78,7 @@ onSnapshot(colRef, (snapshot) => {
                 //firstArticleTitle.textContent = 'BOYS'
                 //photos
                 articleTitle.textContent = articles[2].title
-                articlePhoto.src = "images/sportsBoys2.0.jpg"
+                articlePhoto.src = "images/sportsBoys2.0.jpg?"+time
                 //text
                 firstArticleText = articles[2].article;
                 //spacer
@@ -98,7 +99,7 @@ onSnapshot(colRef, (snapshot) => {
                 title.textContent = TITLES[1]
                 articleTitle.textContent = articles[0].title
                 //photos
-                articlePhoto.src = "images/culture.jpg"
+                articlePhoto.src = "images/culture.jpg?"+time
                 //text
                 firstArticleText = articles[0].article;
                 //spacer
@@ -106,7 +107,7 @@ onSnapshot(colRef, (snapshot) => {
                 //title2
                 secArticleTitle.textContent = articles[0].title2
                 //photos
-                articlePhoto2.src = "images/culture2.jpg?v2"
+                articlePhoto2.src = "images/culture2.jpg?"+time
                 //text
                 secondArticleText = articles[0].article2;
                 //editors
@@ -118,7 +119,7 @@ onSnapshot(colRef, (snapshot) => {
                 title.textContent = TITLES[2]
                 articleTitle.textContent = articles[3].title
                 //photos
-                articlePhoto.src = "images/voices.jpg"
+                articlePhoto.src = "images/voices.jpg?"+time
                 //text
                 firstArticleText = articles[3].article;
                 //spacer
@@ -126,7 +127,7 @@ onSnapshot(colRef, (snapshot) => {
                 //title2
                 secArticleTitle.textContent = articles[3].title2
                 //photos
-                articlePhoto2.src = "images/voices2.jpg"
+                articlePhoto2.src = "images/voices2.jpg?"+time
                 //text
                 secondArticleText = articles[3].article2;
                 //editors
@@ -138,13 +139,19 @@ onSnapshot(colRef, (snapshot) => {
                 title.textContent = TITLES[3]
                 articleTitle.textContent = articles[1].title
                 //photos
-                articlePhoto.src = "images/eventsArticle.jpg"
+                articlePhoto.src = "images/eventsArticle.jpg?"+time
                 //text
                 firstArticleText = articles[1].article;
                 //editors
                 editorCredit.textContent = "Editors: " + editors[4]
                 contentLoaded = 4
                 break;
+        }
+        var emptyText = '<p class="article-text"></p>'
+        articlePhoto2.style.display = "block"
+
+        if(secArticleTitle == "" && secondArticleText == emptyText){
+            articlePhoto2.style.display = "none"
         }
         document.body.height = 'fit-content'
         
@@ -167,7 +174,6 @@ onSnapshot(colRef, (snapshot) => {
     content()
     
 })
-
 
 
 let changingPage = false;

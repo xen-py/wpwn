@@ -50,6 +50,7 @@ let updateArticle2 = false;
 let editors = document.getElementById('editors');
 let updateEditors = false;
 const articleButtons = document.getElementsByClassName('navigation');
+const articleButtons2 = document.getElementsByClassName('mobile-navigation');
 const email = form.email;
 const password = form.password;
 
@@ -78,6 +79,15 @@ function getRealtimeData() {
         });
     });
 
+    articleButtons2[0].addEventListener('click', () => {
+        setTimeout(() => {
+          changeArticle();
+        }, 5);
+        submit.forEach(element => {
+          element.style.background = '#cdcdcd'
+          });
+      });
+
     articleButtons[1].addEventListener('click', () => {
       setTimeout(() => {
         changeArticle();
@@ -86,6 +96,15 @@ function getRealtimeData() {
         element.style.background = '#cdcdcd'
         });
     });
+
+    articleButtons2[1].addEventListener('click', () => {
+        setTimeout(() => {
+          changeArticle();
+        }, 5);
+        submit.forEach(element => {
+          element.style.background = '#cdcdcd'
+          });
+      });
 
     articleButtons[2].addEventListener('click', () => {
       setTimeout(() => {
@@ -96,6 +115,16 @@ function getRealtimeData() {
         });
     });
 
+    articleButtons2[2].addEventListener('click', () => {
+        setTimeout(() => {
+          changeArticle();
+        }, 5);
+        submit.forEach(element => {
+          element.style.background = '#cdcdcd'
+          });
+      });
+  
+
     articleButtons[3].addEventListener('click', () => {
       setTimeout(() => {
         changeArticle();
@@ -104,6 +133,15 @@ function getRealtimeData() {
         element.style.background = '#cdcdcd'
         });
     });
+
+    articleButtons2[3].addEventListener('click', () => {
+        setTimeout(() => {
+          changeArticle();
+        }, 5);
+        submit.forEach(element => {
+          element.style.background = '#cdcdcd'
+          });
+      });
     
     //front page title
     fpTitle.addEventListener('keyup', () => {
@@ -692,7 +730,7 @@ submit[4].addEventListener('click', ()=>{
             case 3:
                 var docRef = doc(db, 'articles', 'Voices')
                 updateDoc(docRef, {
-                    artiarticle2cle: parseTextToHTML(articleText2.value)
+                    article2: parseTextToHTML(articleText2.value)
                 })
                 break;
             case 4:
@@ -747,17 +785,36 @@ submit[5].addEventListener('click', ()=>{
     
 })
 
-var mobileMenu = window.getElementById("mobile-genre-selection");
-var genreMenu = window.getElementById('genre-menu-popup')
-
-mobileMenu.addEventListener('click', ()=>{
-    genreMenu.style.display = 'block'
-    genreMenu.style.display = 'flex';
-  window.scrollTo({ top: 0 });
-  genreMenu.style.opacity = '1';
-  document.body.style.overflow = 'hidden';
+var genreMenu = document.getElementById('mobile-menu-popup')
+var mobileMenuButton = document.getElementById('mobile-menu-button')
+mobileMenuButton.addEventListener('click', ()=>{
+    if(genreMenu.style.opacity == '0'){
+        genreMenu.style.display = 'flex';
+        genreMenu.style.flexDirection = 'column'
+        window.scrollTo({ top: 0 });
+        genreMenu.style.opacity = '1';
+        document.body.style.overflow = 'hidden';
+        
+    }else{
+        //genreMenu.style.display = 'none'
+        genreMenu.style.opacity = '0';
+        document.body.style.overflow = 'auto';
+        setTimeout(() => {
+            hidePopup();
+          }, 600);
+    }
+    
 })
+
+function hidePopup(){
+    genreMenu.style.display = 'none';
+}
+
+
+
 
 /*To-do*/
 //Fix the realtime snapshot, because the input values don't reflect the changes unless refreshed
-//Fix that thing were the input value wont change after its edited 
+//Fix that thing were the input value wont change until after its edited 
+//Add a feature to allow admin change
+//Add a way to upload pictures to firebase

@@ -39,6 +39,18 @@ header{
 .navigation{
     padding: 5px;
 }
+.mobile-navigation{
+    padding: 5px;
+    color: black;
+    transition-duration: 0.5ms;
+    transition: all;
+}
+
+.mobile-navigation:hover{
+    color: grey;
+}
+
+
 #nav-text{
     display: flex;
     width:100%;
@@ -49,6 +61,19 @@ header{
     height: fit-content;
     padding-top: 1%;
     padding-bottom: 1%;
+}
+
+#mobile-nav-text{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    max-width: 600px;
+    justify-content: space-around;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 90%;
+    padding: auto;
+    margin: auto;
 }
 
 .navigation:hover{
@@ -67,7 +92,8 @@ a, button{
     color: #edf0f1;
     text-decoration: none;
 }
-#mobile-genre-selection{
+
+#mobile-menu-button{
     display: none;
 }
 a#email{
@@ -79,6 +105,9 @@ button{
     margin-top: 1%;
     color: #313131;
     border-width: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 2px;
 }
 
 button:hover{
@@ -109,6 +138,8 @@ h2{
     width: 100%;
     min-height: 200vh; /*change back to 100%*/
     background-color:#f5f7f8;
+    background-image: url("../images/Admin2.jpg");
+    background-attachment: fixed;
     
 }
 
@@ -123,7 +154,8 @@ h2{
 }
 
 #rules{
-    background-color: rgba(211, 211, 211, 0);
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(255, 255, 255);
     margin: auto;
     width: 88%;
     margin-bottom: 3%;
@@ -262,7 +294,7 @@ div.input{
     color: #fff;
 }
 
-#popup, #genre-menu-popup{
+#popup{
     background: rgba(0,0,0,0.6);
     opacity: 0;
     width: 100%;
@@ -277,6 +309,21 @@ div.input{
     transition: 0.7s;
 }
 
+#mobile-menu-popup{
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.7s;
+}
+
 .popup-content{
     height: 300px;
     width: 500px;
@@ -284,6 +331,17 @@ div.input{
     padding: 20px;
     border-radius: 5px;
     position: relative;
+}
+
+#popup-content{
+    height: 300px;
+    width: 500px;
+    max-width: 90%;
+    background: #fff;
+    padding: auto;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
 }
 
 
@@ -300,7 +358,7 @@ div.input{
     #nav-text{
         display: none;
     }
-    #mobile-genre-selection{
+    #mobile-menu-button{
         display: inline;
         background-size: contain;
         background-color: #ad545400;
@@ -308,7 +366,6 @@ div.input{
         border: none;
         height: fit-content;
         transition:0.25s ;
-        
     }
     #menu-button{
         background-size: contain;
@@ -316,7 +373,7 @@ div.input{
         width: auto;
     }
 
-    #mobile-genre-selection:hover{
+    #mobile-menu-button:hover{
         color: #000000;
         opacity: 0.7;
     }

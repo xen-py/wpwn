@@ -198,7 +198,7 @@ p {
 
 /* Gallery Container Normal*/
 .sub-container#sports{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.826) 0%, rgba(0, 0, 0, 0) 70%, rgba(0,0,0,0) 100%), url(images/sports1.jpg);   
+    /*background: linear-gradient(0deg, rgba(0, 0, 0, 0.826) 0%, rgba(0, 0, 0, 0) 70%, rgba(0,0,0,0) 100%), url(images/sports1.jpg);*/   
     grid-column: 1;
     grid-row-start: 2;
     grid-row-end: 3;
@@ -206,7 +206,7 @@ p {
 }
 
 .sub-container#culture{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.826) 0%, rgba(0, 0, 0, 0) 70%, rgba(0,0,0,0) 100%),url(images/culture.jpg);
+    /*background: linear-gradient(0deg, rgba(0, 0, 0, 0.826) 0%, rgba(0, 0, 0, 0) 70%, rgba(0,0,0,0) 100%),url(images/culture.jpg);*/
     grid-column: 3;
     grid-row-start: 2;
     grid-row-end: 3;
@@ -246,7 +246,7 @@ p {
 }
 
 .sub-container#voices{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.826) 0%, rgba(0, 0, 0, 0) 70%, rgba(0,0,0,0) 100%),url(images/voices.jpg);
+    /*background: linear-gradient(0deg, rgba(0, 0, 0, 0.826) 0%, rgba(0, 0, 0, 0) 70%, rgba(0,0,0,0) 100%),url(images/voices.jpg);*/
     grid-column: 3;
     grid-row-start: 1;
     grid-row-end: 2;
@@ -254,7 +254,7 @@ p {
 }
 
 .sub-container#events{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.826) 0%, rgba(0, 0, 0, 0) 70%, rgba(0,0,0,0) 100%),url(images/eventsArticle.jpg);
+    /*background: linear-gradient(0deg, rgba(0, 0, 0, 0.826) 0%, rgba(0, 0, 0, 0) 70%, rgba(0,0,0,0) 100%),url(images/Events.jpg);*/
     grid-column: 1;
     grid-row-start: 1;
     grid-row-end: 2;
@@ -305,21 +305,9 @@ p {
     background-size: cover;
 }
 
-#sports2{
-    background-image: url(images/sports2.0.jpg);
-}
+    
 
-#culture2{
-    background-image: url(images/culture2.jpg);
-}
 
-#voices2{
-    background-image: url(images/voices.jpg);
-}
-
-#events2{
-    background-image: url(images/eventsArticle.jpg);
-}
 
 #sports2:hover, #voices2:hover, #culture2:hover, #events2:hover,
 #sports2:focus, #voices2:focus, #culture2:focus, #events2:focus{
