@@ -78,7 +78,7 @@ onSnapshot(colRef, (snapshot) => {
                 //firstArticleTitle.textContent = 'BOYS'
                 //photos
                 articleTitle.textContent = articles[2].title
-                articlePhoto.src = "images/sportsBoys2.0.jpg?"+time
+                articlePhoto.src = "images/sportsArticle.jpg?"+time
                 //text
                 firstArticleText = articles[2].article;
                 //spacer
@@ -87,7 +87,7 @@ onSnapshot(colRef, (snapshot) => {
                 secArticleTitle.style.color = 'red'
                 //secArticleTitle.textContent = 'GIRLS'
                 //photos
-                //articlePhoto2.src = "images/sportsGirls.jpg"
+                //articlePhoto2.src = "images/sports2.jpg"
                 //text
                 secondArticleText = articles[2].article2;
                 //editors
@@ -99,7 +99,7 @@ onSnapshot(colRef, (snapshot) => {
                 title.textContent = TITLES[1]
                 articleTitle.textContent = articles[0].title
                 //photos
-                articlePhoto.src = "images/culture.jpg?"+time
+                articlePhoto.src = "images/cultureArticle.jpg?"+time
                 //text
                 firstArticleText = articles[0].article;
                 //spacer
@@ -119,7 +119,7 @@ onSnapshot(colRef, (snapshot) => {
                 title.textContent = TITLES[2]
                 articleTitle.textContent = articles[3].title
                 //photos
-                articlePhoto.src = "images/voices.jpg?"+time
+                articlePhoto.src = "images/voicesArticle.jpg?"+time
                 //text
                 firstArticleText = articles[3].article;
                 //spacer
@@ -148,10 +148,11 @@ onSnapshot(colRef, (snapshot) => {
                 break;
         }
         var emptyText = '<p class="article-text"></p>'
-        articlePhoto2.style.display = "block"
+        articlePhoto2.style.display = "none"
+        articlePhoto2.src = ""
 
-        if(secArticleTitle == "" && secondArticleText == emptyText){
-            articlePhoto2.style.display = "none"
+        if(secArticleTitle != "" && secondArticleText != emptyText){
+            articlePhoto2.style.display = "block"
         }
         document.body.height = 'fit-content'
         

@@ -154,6 +154,15 @@ function changeImage(direction){
         console.log(img2.opacity)
 
 }
+/*
+var time = Date.now()
+let galleryImages = document.getElementsByClassName("swiper-slide")
+
+galleryImages.forEach(element => {
+    element.src = element.src+"?"+time
+});
+*/
+
 
 function openAdmin(){
     let url = window.location.href
