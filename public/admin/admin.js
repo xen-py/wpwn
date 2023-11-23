@@ -75,6 +75,7 @@ function getRealtimeData() {
       end = url.substring(url.length - 1);
       end = parseInt(end);
       loadArticles(articles, end);
+      hidePopup();
     }
 
     /***************************************************************************************************************/
@@ -1080,18 +1081,17 @@ mobileMenuButton.addEventListener('click', ()=>{
         document.body.style.overflow = 'hidden';
         
     }else{
-        //genreMenu.style.display = 'none'
-        genreMenu.style.opacity = '0';
-        document.body.style.overflow = 'auto';
-        setTimeout(() => {
-            hidePopup();
-          }, 600);
+        hidePopup();
     }
     
 })
 
 function hidePopup(){
-    genreMenu.style.display = 'none';
+    genreMenu.style.opacity = '0';
+    document.body.style.overflow = 'auto';
+    setTimeout(() => {
+        genreMenu.style.display = 'none';
+    }, 600);
 }
 
 
