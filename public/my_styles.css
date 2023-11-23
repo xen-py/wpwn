@@ -474,7 +474,7 @@ nav#footer{
         width: 50px;
     }
     h1{
-        font-size:xx-large;
+        font-size:38px;
         align-self: center;
     }
     #editors{
@@ -494,7 +494,7 @@ nav#footer{
 
     body{
         background: rgb(25, 25, 25);
-        background: radial-gradient(circle, rgb(0, 0, 207) 0%, rgb(8, 7, 36) 100%);
+        background: radial-gradient(circle, rgb(188, 184, 178) 0%, rgba(100, 96, 88, 0.621) 100%);
         /*background: url("images/MobileBackground.jpg");*/
         background-position: center;
         background-size: cover;
@@ -620,7 +620,7 @@ nav#footer{
         width: 50px;
     }
     h1{
-        font-size:xx-large;
+        font-size:38px;
         align-self: center;
     }
     #editors{
@@ -640,7 +640,7 @@ nav#footer{
 
     body{
         background: rgb(25, 25, 25);
-        background: radial-gradient(circle, rgb(0, 0, 207) 0%, rgb(8, 7, 36) 100%);
+        background: radial-gradient(circle, rgb(188, 184, 178) 0%, rgba(100, 96, 88, 0.621) 100%);
         /*background: url("images/MobileBackground.jpg");*/
         background-position: center;
         background-size: cover;

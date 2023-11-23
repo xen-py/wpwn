@@ -50,7 +50,6 @@ header{
     color: grey;
 }
 
-
 #nav-text{
     display: flex;
     width:100%;
@@ -131,7 +130,6 @@ h2{
     font-size: x-large;
     padding-bottom: 15px;
 }
-
 
 #background{
     padding-top: 9%;
@@ -353,6 +351,23 @@ div.input{
 
     #foreground{
         margin: auto;
+        width: 88%;
+        height: fit-content;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, fit-content);
+        gap: 7px;
+    }
+
+    #fpInput{
+        grid-column-start:1 ;
+        grid-column-end: 2;
+    }
+    
+    #edInput{
+        grid-column-start:1 ;
+        grid-column-end: 2;
     }
 
     #nav-text{

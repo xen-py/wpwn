@@ -16,6 +16,7 @@ div#background{
     font-family: Montserrat, sans-serif;
     color: darkblue;
     font-weight: bold;
+    text-align: center;
 }
 
 #article-photo, #article-photo2{
@@ -23,9 +24,27 @@ div#background{
     max-height:540px ;
     object-fit: cover;
     border-radius: 1%;
-    padding-bottom: 6%;
     margin: auto;
 }   
+#article-info{
+    padding-bottom: 6%;
+    display: flex;
+    justify-content: space-between;
+}
+#subInfo{
+    display: flex;
+}
+#date{
+    margin-top: 0px;
+    font-size: 20px;
+    justify-self: right;
+}
+#writer{
+    font-size: 20px;
+    justify-self: right;
+    margin-right: 5px;
+}
+
 
 .article-text{
     line-height: 28pt;
@@ -109,6 +128,9 @@ li{
     filter: drop-shadow(0px -2px 3px #25253700);
 }
 
+#date{
+    color: gray;
+}
 
 
 @media ((any-pointer: coarse) or (hover: none)) or ((handheld) or (max-width: 760px) or (orientation:portrait)){
@@ -117,17 +139,24 @@ li{
         padding-top: 14vh;
     }
 
+    #article-title{
+        text-align: center;
+    }
+
     img#article-photo, #article-photo2{
         max-width: 90vw;
         object-fit: contain;
         border-radius: 1%;
-        padding-bottom: 6%;
+        padding-bottom: 0;
         margin: auto;
     
     }
 
     h2{
         font-size: 26px;
+        padding: auto;
+        margin: auto;
+        justify-self: center;
     }
     
     div#article-main{
@@ -179,6 +208,19 @@ li{
         position: relative;
         
     }
+
+    #subInfo{
+        display: flex;
+    }
+    #writer{
+        font-size: 15px;
+        white-space: nowrap;
+    }
+    #date{
+        font-size: 15px;
+        white-space: nowrap;
+    }
+    
 }
 
 @supports (-webkit-touch-callout: none) {

@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <link rel="stylesheet" href="admin.css?8.6">
-    <script type="module" src="admin.js?v=5.7"></script>
+    <link rel="stylesheet" href="admin.css?8.9">
+    <script type="module" src="admin.js?v=6"></script>
     <script src="forms.js"></script>
 
 </head>
@@ -45,6 +45,7 @@
                     <li>If a letter/character/number is acting weird find it <a href="https://www.html.am/reference/html-special-characters.cfm" id="email">here</a> and use its entity number/name instead</li>
                     <li>Change don't show after hitting submit yet, so refresh the page</li>
                     <li>With great power comes great responsiblity, the rest is in your hands</li>
+                    
                 </ul>
 
                 <button id="signIn"> sign in </button>
@@ -99,6 +100,7 @@
                     </div>
                 </div>
 
+
                 <div class="inputArea">
                     <div class="input">
                         <h2>Article Two Title</h2>
@@ -132,13 +134,35 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="inputArea">
+                    <div class="input">
+                        <h2>Article One Date</h2>
+                        <div class="inputDiv">
+                            <input type="date" id="date" name="article1-date" readonly="true"/>
+                            <button class="submitChanges">upload</button>
+                            <button class="cancelChanges">revert</button> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inputArea">
+                    <div class="input">
+                        <h2>Article Two Date</h2>
+                        <div class="inputDiv">
+                            <input type="date" id="date2" name="article2-date" readonly="true"/>
+                            <button class="submitChanges">upload</button>
+                            <button class="cancelChanges">revert</button> 
+                        </div>
+                    </div>
+                </div>
                         
                 <!--Editors -->
                 <div class="inputArea" id="edInput">
                     <div class="input">
                         <h2 > Editors </h2>
                         <div class="inputDiv">
-                            <input type="text" placeholder="Editors" readonly="true" id="editors">
+                            <input type="text" placeholder="Editors" readonly="true" id="editors"/>
                             <button class="submitChanges">upload</button>
                             <button class="cancelChanges">revert</button> 
                         </div>

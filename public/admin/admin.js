@@ -32,23 +32,27 @@ setPersistence(auth, browserSessionPersistence)
 let url = window.location.href;
 let end = url.substring(url.length - 1);
 let currentArticle = parseInt(end);
-let signInButton = document.getElementById('signIn');
-let popup = document.getElementById('popup');
-let exitBtn = document.getElementById('close');
-let loginbtn = document.getElementById('login');
-let form = document.getElementById('loginForm');
-let fpTitle = document.getElementById('fp');
+const signInButton = document.getElementById('signIn');
+const popup = document.getElementById('popup');
+const exitBtn = document.getElementById('close');
+const loginbtn = document.getElementById('login');
+const form = document.getElementById('loginForm');
+const fpTitle = document.getElementById('fp');
 let updateFp = false;
-let title = document.getElementById('title1');
+const title = document.getElementById('title1');
 let updateTitle = false;
-let title2 = document.getElementById('title2');
+const title2 = document.getElementById('title2');
 let updateTitle2 = false;
-let articleText = document.getElementById('article1');
+const articleText = document.getElementById('article1');
 let updateArticle1 = false;
-let articleText2 = document.getElementById('article2');
+const articleText2 = document.getElementById('article2');
 let updateArticle2 = false;
-let editors = document.getElementById('editors');
+const editors = document.getElementById('editors');
 let updateEditors = false;
+const articleDate = document.getElementById('date')
+let updateDate = false;
+const articleDate2 = document.getElementById('date2')
+let updateDate2 = false;
 const articleButtons = document.getElementsByClassName('navigation');
 const articleButtons2 = document.getElementsByClassName('mobile-navigation');
 const email = form.email;
@@ -63,6 +67,9 @@ function getRealtimeData() {
       articles.push({ ...doc.data(), id: doc.id });
     });
 
+    /**
+     * Changes article by add a number to the end of the url 
+     */
     function changeArticle() {
       url = window.location.href;
       end = url.substring(url.length - 1);
@@ -70,359 +77,504 @@ function getRealtimeData() {
       loadArticles(articles, end);
     }
 
-    articleButtons[0].addEventListener('click', () => {
-      setTimeout(() => {
-        changeArticle();
-      }, 5);
-      submit.forEach(element => {
-        element.style.background = '#cdcdcd'
-        });
-    });
+    /***************************************************************************************************************/
 
-    articleButtons2[0].addEventListener('click', () => {
+    /**
+     * Adds Event listeners to Navigation Buttons
+     */
+    function addListenersToArticleNav(){
+
+        articleButtons[0].addEventListener('click', () => {
         setTimeout(() => {
-          changeArticle();
+            changeArticle();
         }, 5);
         submit.forEach(element => {
-          element.style.background = '#cdcdcd'
-          });
-      });
-
-    articleButtons[1].addEventListener('click', () => {
-      setTimeout(() => {
-        changeArticle();
-      }, 5);
-      submit.forEach(element => {
-        element.style.background = '#cdcdcd'
+            element.style.background = '#cdcdcd'
+            });
         });
-    });
 
-    articleButtons2[1].addEventListener('click', () => {
+        articleButtons2[0].addEventListener('click', () => {
+            setTimeout(() => {
+            changeArticle();
+            }, 5);
+            submit.forEach(element => {
+            element.style.background = '#cdcdcd'
+            });
+        });
+
+        articleButtons[1].addEventListener('click', () => {
         setTimeout(() => {
-          changeArticle();
+            changeArticle();
         }, 5);
         submit.forEach(element => {
-          element.style.background = '#cdcdcd'
-          });
-      });
-
-    articleButtons[2].addEventListener('click', () => {
-      setTimeout(() => {
-        changeArticle();
-      }, 5);
-      submit.forEach(element => {
-        element.style.background = '#cdcdcd'
+            element.style.background = '#cdcdcd'
+            });
         });
-    });
 
-    articleButtons2[2].addEventListener('click', () => {
+        articleButtons2[1].addEventListener('click', () => {
+            setTimeout(() => {
+            changeArticle();
+            }, 5);
+            submit.forEach(element => {
+            element.style.background = '#cdcdcd'
+            });
+        });
+
+        articleButtons[2].addEventListener('click', () => {
         setTimeout(() => {
-          changeArticle();
+            changeArticle();
         }, 5);
         submit.forEach(element => {
-          element.style.background = '#cdcdcd'
-          });
-      });
-  
-
-    articleButtons[3].addEventListener('click', () => {
-      setTimeout(() => {
-        changeArticle();
-      }, 5);
-      submit.forEach(element => {
-        element.style.background = '#cdcdcd'
+            element.style.background = '#cdcdcd'
+            });
         });
-    });
 
-    articleButtons2[3].addEventListener('click', () => {
-        setTimeout(() => {
-          changeArticle();
-        }, 5);
-        submit.forEach(element => {
-          element.style.background = '#cdcdcd'
-          });
-      });
+        articleButtons2[2].addEventListener('click', () => {
+            setTimeout(() => {
+            changeArticle();
+            }, 5);
+            submit.forEach(element => {
+            element.style.background = '#cdcdcd'
+            });
+        });
     
-    //front page title
-    fpTitle.addEventListener('keyup', () => {
-        
-        switch (end) {
-            case 1:
-                if(fpTitle.value != articles[2].fpTitle){
-                    submit[0].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateFp = true;
-                } else {
-                    submit[0].style.background = '#cdcdcd'
-                    updateFp = false;
-                }
-                break;
-            case 2:
-                if(fpTitle.value != articles[0].fpTitle){
-                    submit[0].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateFp = true;
-                } else {
-                    submit[0].style.background = '#cdcdcd'
-                    updateFp = false;
-                }
-                break;
-            case 3:
-                if(fpTitle.value != articles[3].fpTitle){
-                    submit[0].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateFp = true;
-                } else {
-                    submit[0].style.background = '#cdcdcd'
-                    updateFp = false;
-                }
-                break;
-            case 4:
-                if(fpTitle.value != articles[1].fpTitle){
-                    submit[0].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateFp = true;
-                } else {
-                    submit[0].style.background = '#cdcdcd'
-                    updateFp = false;
-                }
-                break;
-            default:
-                submit[0].style.background = '#cdcdcd'
-                break;
-        }
-        
-    });
-    //title one
-    title.addEventListener('keyup', () => {
-        
-        switch (end) {
-            case 1:
-                if(title.value != articles[2].title){
-                    submit[1].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateTitle = true;
-                } else {
-                    submit[1].style.background = '#cdcdcd'
-                    updateTitle = false;
-                }
-                break;
-            case 2:
-                if(title.value != articles[0].title){
-                    submit[1].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateTitle = true;
-                } else {
-                    submit[1].style.background = '#cdcdcd'
-                    updateTitle = false;
-                }
-                break;
-            case 3:
-                if(title.value != articles[3].title){
-                    submit[1].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateTitle = true;
-                } else {
-                    submit[1].style.background = '#cdcdcd'
-                    updateTitle = false;
-                }
-                break;
-            case 4:
-                if(title.value != articles[1].title){
-                    submit[1].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateTitle = true;
-                } else {
-                    submit[1].style.background = '#cdcdcd'
-                    updateTitle = false;
-                }
-                break;
-            default:
-                submit[0].style.background = '#cdcdcd'
-                break;
-        }
-        
-    });
-    //title two
-    title2.addEventListener('keyup', () => {
-        
-        switch (end) {
-            case 1:
-                if(title2.value != articles[2].title2){
-                    submit[2].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateTitle2 = true;
-                } else {
-                    submit[2].style.background = '#cdcdcd'
-                    updateTitle2 = false;
-                }
-                break;
-            case 2:
-                if(title2.value != articles[0].title2){
-                    submit[2].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateTitle2 = true;
-                } else {
-                    submit[2].style.background = '#cdcdcd'
-                    updateTitle2 = false;
-                }
-                break;
-            case 3:
-                if(title2.value != articles[3].title2){
-                    submit[2].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateTitle2 = true;
-                } else {
-                    submit[2].style.background = '#cdcdcd'
-                    updateTitle2 = false;
-                }
-                break;
-            case 4:
-                if(title2.value != articles[1].title2){
-                    submit[2].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateTitle2 = true;
-                } else {
-                    submit[2].style.background = '#cdcdcd'
-                    updateTitle2 = false;
-                }
-                break;
-            default:
-                submit[2].style.background = '#cdcdcd'
-                break;
-        }
-        
-    });
-    //article one
-    articleText.addEventListener('keyup', () => {
-        
-        switch (end) {
-            case 1:
-                if(articleText.value != reverseHTMLToText(articles[2].article)){
-                    submit[3].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateArticle1 = true;
-                } else {
-                    submit[3].style.background = '#cdcdcd'
-                    updateArticle1 = false;
-                }
-                break;
-            case 2:
-                if(articleText.value != reverseHTMLToText(articles[0].article)){
-                    submit[3].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateArticle1 = true;
-                } else {
-                    submit[3].style.background = '#cdcdcd'
-                    updateArticle1 = false;
-                }
-                break;
-            case 3:
-                if(articleText.value != reverseHTMLToText(articles[3].article)){
-                    submit[3].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateArticle1 = true;
-                } else {
-                    submit[3].style.background = '#cdcdcd'
-                    updateArticle1 = false;
-                }
-                break;
-            case 4:
-                if(articleText.value != reverseHTMLToText(articles[1].article)){
-                    submit[3].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateArticle1 = true;
-                } else {
-                    submit[3].style.background = '#cdcdcd'
-                    updateArticle1 = false;
-                }
-                break;
-            default:
-                submit[3].style.background = '#cdcdcd'
-                break;
-        }
-        
-        });
-    //article two
-    articleText2.addEventListener('keyup', () => {
-        
-        switch (end) {
-            case 1:
-                if(articleText2.value != reverseHTMLToText(articles[2].article2)){
-                    submit[4].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateArticle2 = true;
-                } else {
-                    submit[4].style.background = '#cdcdcd'
-                    updateArticle2 = false;
-                }
-                break;
-            case 2:
-                if(articleText2.value != reverseHTMLToText(articles[0].article2)){
-                    submit[4].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateArticle2 = true;
-                } else {
-                    submit[4].style.background = '#cdcdcd'
-                    updateArticle2 = false;
-                }
-                break;
-            case 3:
-                if(articleText2.value != reverseHTMLToText(articles[3].article2)){
-                    submit[4].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateArticle2 = true;
-                } else {
-                    submit[4].style.background = '#cdcdcd'
-                    updateArticle2 = false;
-                }
-                break;
-            case 4:
-                if(articleText2.value != reverseHTMLToText(articles[1].article2)){
-                    submit[4].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateArticle2 = true;
-                } else {
-                    submit[4].style.background = '#cdcdcd'
-                    updateArticle2 = false;
-                }
-                break;
-            default:
-                submit[4].style.background = '#cdcdcd'
-                break;
-        }
-        });
-    //editors
-    editors.addEventListener('keyup', () => {
-        
-        switch (end) {
-            case 1:
-                if(editors.value != articles[2].editors){
-                    submit[5].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateEditors = true;
-                } else {
-                    submit[5].style.background = '#cdcdcd'
-                    updateEditors = false;
-                }
-                break;
-            case 2:
-                if(editors.value != articles[0].editors){
-                    submit[5].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateEditors = true;
-                } else {
-                    submit[5].style.background = '#cdcdcd'
-                    updateEditors = false;
-                }
-                break;
-            case 3:
-                if(editors.value != articles[3].editors){
-                    submit[5].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateEditors = true;
-                } else {
-                    submit[5].style.background = '#cdcdcd'
-                    updateEditors = false;
-                }
-                break;
-            case 4:
-                if(editors.value != articles[1].editors){
-                    submit[5].style.background = 'rgba(0, 255, 98, 0.7)'
-                    updateEditors = true;
-                } else {
-                    submit[5].style.background = '#cdcdcd'
-                    updateEditors = false;
-                }
-                break;
-            default:
-                submit[5].style.background = '#cdcdcd'
-                break;
-        }
-        
+
+        articleButtons[3].addEventListener('click', () => {
+        setTimeout(() => {
+            changeArticle();
+        }, 5);
+        submit.forEach(element => {
+            element.style.background = '#cdcdcd'
+            });
         });
 
+        articleButtons2[3].addEventListener('click', () => {
+            setTimeout(() => {
+            changeArticle();
+            }, 5);
+            submit.forEach(element => {
+            element.style.background = '#cdcdcd'
+            });
+        });
+    }
+    
+    /**
+     * Highlight Submit button if front page title input doesn't match already existing text
+     */
+    function fpHighlightButton(){
+        fpTitle.addEventListener('keyup', () => {
+            
+            switch (end) {
+                case 1:
+                    if(fpTitle.value != articles[2].fpTitle){
+                        submit[0].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateFp = true;
+                    } else {
+                        submit[0].style.background = '#cdcdcd'
+                        updateFp = false;
+                    }
+                    break;
+                case 2:
+                    if(fpTitle.value != articles[0].fpTitle){
+                        submit[0].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateFp = true;
+                    } else {
+                        submit[0].style.background = '#cdcdcd'
+                        updateFp = false;
+                    }
+                    break;
+                case 3:
+                    if(fpTitle.value != articles[3].fpTitle){
+                        submit[0].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateFp = true;
+                    } else {
+                        submit[0].style.background = '#cdcdcd'
+                        updateFp = false;
+                    }
+                    break;
+                case 4:
+                    if(fpTitle.value != articles[1].fpTitle){
+                        submit[0].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateFp = true;
+                    } else {
+                        submit[0].style.background = '#cdcdcd'
+                        updateFp = false;
+                    }
+                    break;
+                default:
+                    submit[0].style.background = '#cdcdcd'
+                    break;
+            }
+            
+        });
 
+    }
+
+    /**
+     * Highlight Submit button if article title input doesn't match already existing text
+     */
+    function titleHighlightButton(){
+        title.addEventListener('keyup', () => {
+            
+            switch (end) {
+                case 1:
+                    if(title.value != articles[2].title){
+                        submit[1].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateTitle = true;
+                    } else {
+                        submit[1].style.background = '#cdcdcd'
+                        updateTitle = false;
+                    }
+                    break;
+                case 2:
+                    if(title.value != articles[0].title){
+                        submit[1].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateTitle = true;
+                    } else {
+                        submit[1].style.background = '#cdcdcd'
+                        updateTitle = false;
+                    }
+                    break;
+                case 3:
+                    if(title.value != articles[3].title){
+                        submit[1].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateTitle = true;
+                    } else {
+                        submit[1].style.background = '#cdcdcd'
+                        updateTitle = false;
+                    }
+                    break;
+                case 4:
+                    if(title.value != articles[1].title){
+                        submit[1].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateTitle = true;
+                    } else {
+                        submit[1].style.background = '#cdcdcd'
+                        updateTitle = false;
+                    }
+                    break;
+                default:
+                    submit[0].style.background = '#cdcdcd'
+                    break;
+            }
+            
+        });
+    }
+
+    /**
+     * Highlight Submit button if title2 input doesn't match already existing text
+     */
+    function title2HighlightButton(){
+        title2.addEventListener('keyup', () => {
+            
+            switch (end) {
+                case 1:
+                    if(title2.value != articles[2].title2){
+                        submit[2].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateTitle2 = true;
+                    } else {
+                        submit[2].style.background = '#cdcdcd'
+                        updateTitle2 = false;
+                    }
+                    break;
+                case 2:
+                    if(title2.value != articles[0].title2){
+                        submit[2].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateTitle2 = true;
+                    } else {
+                        submit[2].style.background = '#cdcdcd'
+                        updateTitle2 = false;
+                    }
+                    break;
+                case 3:
+                    if(title2.value != articles[3].title2){
+                        submit[2].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateTitle2 = true;
+                    } else {
+                        submit[2].style.background = '#cdcdcd'
+                        updateTitle2 = false;
+                    }
+                    break;
+                case 4:
+                    if(title2.value != articles[1].title2){
+                        submit[2].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateTitle2 = true;
+                    } else {
+                        submit[2].style.background = '#cdcdcd'
+                        updateTitle2 = false;
+                    }
+                    break;
+                default:
+                    submit[2].style.background = '#cdcdcd'
+                    break;
+            }
+            
+        });
+    }
+    
+    /**
+     * Highlight Submit button if article text input doesn't match already existing text
+     */
+    function articleTextHighlightButton(){
+        articleText.addEventListener('keyup', () => {
+            
+            switch (end) {
+                case 1:
+                    if(articleText.value != reverseHTMLToText(articles[2].article)){
+                        submit[3].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateArticle1 = true;
+                    } else {
+                        submit[3].style.background = '#cdcdcd'
+                        updateArticle1 = false;
+                    }
+                    break;
+                case 2:
+                    if(articleText.value != reverseHTMLToText(articles[0].article)){
+                        submit[3].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateArticle1 = true;
+                    } else {
+                        submit[3].style.background = '#cdcdcd'
+                        updateArticle1 = false;
+                    }
+                    break;
+                case 3:
+                    if(articleText.value != reverseHTMLToText(articles[3].article)){
+                        submit[3].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateArticle1 = true;
+                    } else {
+                        submit[3].style.background = '#cdcdcd'
+                        updateArticle1 = false;
+                    }
+                    break;
+                case 4:
+                    if(articleText.value != reverseHTMLToText(articles[1].article)){
+                        submit[3].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateArticle1 = true;
+                    } else {
+                        submit[3].style.background = '#cdcdcd'
+                        updateArticle1 = false;
+                    }
+                    break;
+                default:
+                    submit[3].style.background = '#cdcdcd'
+                    break;
+            }
+            
+        });
+    }
+
+    /**
+    * Highlight Submit button if article text2 input doesn't match already existing text
+    */
+    function articleText2HighlightButton(){
+        articleText2.addEventListener('keyup', () => {
+            
+            switch (end) {
+                case 1:
+                    if(articleText2.value != reverseHTMLToText(articles[2].article2)){
+                        submit[4].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateArticle2 = true;
+                    } else {
+                        submit[4].style.background = '#cdcdcd'
+                        updateArticle2 = false;
+                    }
+                    break;
+                case 2:
+                    if(articleText2.value != reverseHTMLToText(articles[0].article2)){
+                        submit[4].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateArticle2 = true;
+                    } else {
+                        submit[4].style.background = '#cdcdcd'
+                        updateArticle2 = false;
+                    }
+                    break;
+                case 3:
+                    if(articleText2.value != reverseHTMLToText(articles[3].article2)){
+                        submit[4].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateArticle2 = true;
+                    } else {
+                        submit[4].style.background = '#cdcdcd'
+                        updateArticle2 = false;
+                    }
+                    break;
+                case 4:
+                    if(articleText2.value != reverseHTMLToText(articles[1].article2)){
+                        submit[4].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateArticle2 = true;
+                    } else {
+                        submit[4].style.background = '#cdcdcd'
+                        updateArticle2 = false;
+                    }
+                    break;
+                default:
+                    submit[4].style.background = '#cdcdcd'
+                    break;
+            }
+        });
+    }
+
+    /**
+    * Highlight Submit button if date input doesn't match already existing text
+    */
+    function dateHighlightButton(){
+        articleDate.addEventListener('change', () => {
+            
+            switch (end) {
+                case 1:
+                    if(articleDate.value != articles[2].date1){
+                        submit[5].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateDate = true;
+                    } else {
+                        submit[5].style.background = '#cdcdcd'
+                        updateDate = false;
+                    }
+                    break;
+                case 2:
+                    if(articleDate.value != articles[0].date1){
+                        submit[5].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateDate = true;
+                    } else {
+                        submit[5].style.background = '#cdcdcd'
+                        updateDate = false;
+                    }
+                    break;
+                case 3:
+                    if(articleDate.value != articles[3].date1){
+                        submit[5].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateDate = true;
+                    } else {
+                        submit[5].style.background = '#cdcdcd'
+                        updateDate = false;
+                    }
+                    break;
+                case 4:
+                    if(articleDate.value != articles[1].date1){
+                        submit[5].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateDate = true;
+                    } else {
+                        submit[5].style.background = '#cdcdcd'
+                        updateDate = false;
+                    }
+                    break;
+                default:
+                    submit[5].style.background = '#cdcdcd'
+                    break;
+            }
+        });
+    }
+    /**
+    * Highlight Submit button if date2 doesn't match already existing text
+    */
+    function date2HighlightButton(){
+        articleDate2.addEventListener('change', () => {
+            
+            switch (end) {
+                case 1:
+                    if(articleDate2.value != articles[2].date2){
+                        submit[6].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateDate2 = true;
+                    } else {
+                        submit[6].style.background = '#cdcdcd'
+                        updateDate2 = false;
+                    }
+                    break;
+                case 2:
+                    if(articleDate2.value != articles[0].date2){
+                        submit[6].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateDate2 = true;
+                    } else {
+                        submit[6].style.background = '#cdcdcd'
+                        updateDate2 = false;
+                    }
+                    break;
+                case 3:
+                    if(articleDate2.value != articles[3].date2){
+                        submit[6].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateDate2 = true;
+                    } else {
+                        submit[6].style.background = '#cdcdcd'
+                        updateDate2 = false;
+                    }
+                    break;
+                case 4:
+                    if(articleDate2.value != articles[1].date2){
+                        submit[6].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateDate2 = true;
+                    } else {
+                        submit[6].style.background = '#cdcdcd'
+                        updateDate2 = false;
+                    }
+                    break;
+                default:
+                    submit[6].style.background = '#cdcdcd'
+                    break;
+            }
+        });
+    }
+
+    /**
+     * Highlight Submit button if editors input doesn't match already existing text
+     */
+    function editorHighlightButton(){
+        editors.addEventListener('keyup', () => {
+            
+            switch (end) {
+                case 1:
+                    if(editors.value != articles[2].editors){
+                        submit[7].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateEditors = true;
+                    } else {
+                        submit[7].style.background = '#cdcdcd'
+                        updateEditors = false;
+                    }
+                    break;
+                case 2:
+                    if(editors.value != articles[0].editors){
+                        submit[7].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateEditors = true;
+                    } else {
+                        submit[7].style.background = '#cdcdcd'
+                        updateEditors = false;
+                    }
+                    break;
+                case 3:
+                    if(editors.value != articles[3].editors){
+                        submit[7].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateEditors = true;
+                    } else {
+                        submit[7].style.background = '#cdcdcd'
+                        updateEditors = false;
+                    }
+                    break;
+                case 4:
+                    if(editors.value != articles[1].editors){
+                        submit[7].style.background = 'rgba(0, 255, 98, 0.7)'
+                        updateEditors = true;
+                    } else {
+                        submit[7].style.background = '#cdcdcd'
+                        updateEditors = false;
+                    }
+                    break;
+                    default:
+                    submit[7].style.background = '#cdcdcd'
+                    break;  
+                }
+            
+            });
+
+    }
+
+    addListenersToArticleNav();
+    fpHighlightButton();
+    titleHighlightButton();
+    title2HighlightButton();
+    articleTextHighlightButton();
+    articleText2HighlightButton();
+    dateHighlightButton();
+    date2HighlightButton();
+    editorHighlightButton();
 
     });
-
 }
 
 var submit = Array.from(document.getElementsByClassName('submitChanges'));
@@ -435,10 +587,15 @@ function initialize() {
 
 initialize();
 
+/**
+ * Based on number assigned, load article 
+ */
 function loadArticles(db, article) {
   fpTitle.value = '';
   title.value = '';
   title2.value = '';
+  articleDate.value = '';
+  articleDate2.value = '';
   articleText.textContent = '';
   articleText2.textContent = '';
   editors.value = '';
@@ -448,32 +605,48 @@ function loadArticles(db, article) {
       fpTitle.value = db[2].fpTitle;
       title.value = db[2].title;
       title2.value = db[2].title2;
+      articleDate.value = db[2].date1;
+      articleDate2.value = db[2].date2;
       articleText.textContent = reverseHTMLToText(db[2].article);
+      articleText.value = reverseHTMLToText(db[2].article);
       articleText2.textContent = reverseHTMLToText(db[2].article2);
+      articleText2.value = reverseHTMLToText(db[2].article2);
       editors.value = db[2].editors;
       break;
     case 2:
       fpTitle.value = db[0].fpTitle;
       title.value = db[0].title;
       title2.value = db[0].title2;
+      articleDate.value = db[0].date1;
+      articleDate2.value = db[0].date2;
       articleText.textContent = reverseHTMLToText(db[0].article);
+      articleText.value = reverseHTMLToText(db[0].article);
       articleText2.textContent = reverseHTMLToText(db[0].article2);
+      articleText2.value = reverseHTMLToText(db[0].article2);
       editors.value = db[0].editors;
       break;
     case 3:
       fpTitle.value = db[3].fpTitle;
       title.value = db[3].title;
       title2.value = db[3].title2;
+      articleDate.value = db[3].date1;
+      articleDate2.value = db[3].date2;
       articleText.textContent = reverseHTMLToText(db[3].article);
+      articleText.value = reverseHTMLToText(db[3].article);
       articleText2.textContent = reverseHTMLToText(db[3].article2);
+      articleText2.value = reverseHTMLToText(db[3].article2);
       editors.value = db[3].editors;
       break;
     case 4:
       fpTitle.value = db[1].fpTitle;
       title.value = db[1].title;
       title2.value = db[1].title2;
+      articleDate.value = db[1].date1;
+      articleDate2.value = db[1].date2;
       articleText.textContent = reverseHTMLToText(db[1].article);
+      articleText.value = reverseHTMLToText(db[1].article);
       articleText2.textContent = reverseHTMLToText(db[1].article2);
+      articleText2.value = reverseHTMLToText(db[1].article2);
       editors.value = db[1].editors;
       break;
     default:
@@ -501,6 +674,9 @@ function exit() {
   document.body.style.overflow = 'unset';
 }
 
+/**
+ * Once Logged in enable inputs
+ */
 loginbtn.addEventListener('click', () => {
   signInWithEmailAndPassword(auth, email.value, password.value)
     .then((cred) => {
@@ -509,6 +685,8 @@ loginbtn.addEventListener('click', () => {
       fpTitle.removeAttribute('readonly');
       title.removeAttribute('readonly');
       title2.removeAttribute('readonly');
+      articleDate.removeAttribute('readonly');
+      articleDate2.removeAttribute('readonly');
       articleText.removeAttribute('readonly');
       articleText2.removeAttribute('readonly');
       editors.removeAttribute('readonly');
@@ -544,6 +722,9 @@ submit.forEach(button => {
     });
 });
 
+/**
+ * Take Text and Turn it into HTML
+ */
 function parseTextToHTML(text) {
     const paragraphs = text.split('\n'); // Split the text into paragraphs based on line breaks
     const parsedParagraphs = paragraphs.map(paragraph => `<p class="article-text">${paragraph}</p>`); // Wrap each paragraph with the HTML tags
@@ -552,20 +733,29 @@ function parseTextToHTML(text) {
     return parsedText;
   }
 
+/**
+ * Take HTML and Turn it into Text
+ */
 function reverseHTMLToText(html) {
 
-    var reversedText = html;
-
-    if(html != ''){
-        const paragraphRegex = /<p\s+class="article-text">([^<]+)<\/p>/g; // Regular expression to match <p class="article-text"> tags
-        const matches = html.match(paragraphRegex); // Extract all <p class="article-text"> tags and their content
-        const paragraphs = matches.map(match => match.replace(/<\/?p[^>]*>/g, '')); // Remove <p> tags from each match
-        reversedText = paragraphs.join('\n\n'); // Join the paragraphs with double line breaks for a new line
+    try {
+        var reversedText = html;
+        if(html != ''){
+            const paragraphRegex = /<p\s+class="article-text">([^<]+)<\/p>/g; // Regular expression to match <p class="article-text"> tags
+            const matches = html.match(paragraphRegex); // Extract all <p class="article-text"> tags and their content
+            const paragraphs = matches.map(match => match.replace(/<\/?p[^>]*>/g, '')); // Remove <p> tags from each match
+            reversedText = paragraphs.join('\n\n'); // Join the paragraphs with double line breaks for a new line
+        }
+    } catch (error) {
+        
     }
     
     return reversedText;
 }
 
+/**
+ * Update Backend: fpTitle
+ */
 submit[0].addEventListener('click', ()=>{
 
     if(updateFp){
@@ -602,6 +792,9 @@ submit[0].addEventListener('click', ()=>{
     
 })
 
+/**
+ * Update Backend: title
+ */
 submit[1].addEventListener('click', ()=>{
 
     if(updateTitle){
@@ -638,6 +831,9 @@ submit[1].addEventListener('click', ()=>{
     
 })
 
+/**
+ * Update Backend: title2
+ */
 submit[2].addEventListener('click', ()=>{
 
     if(updateTitle2){
@@ -674,6 +870,9 @@ submit[2].addEventListener('click', ()=>{
     
 })
     
+/**
+ * Update Backend: article
+ */
 submit[3].addEventListener('click', ()=>{
 
     if(updateArticle1){
@@ -711,6 +910,9 @@ submit[3].addEventListener('click', ()=>{
 
 })
 
+/**
+ * Update Backend: article2
+ */
 submit[4].addEventListener('click', ()=>{
 
     if(updateArticle2){
@@ -748,8 +950,90 @@ submit[4].addEventListener('click', ()=>{
 
 })
 
-
+/**
+ * Update Backend: date
+ */
 submit[5].addEventListener('click', ()=>{
+
+    if(updateDate){
+        switch (end) {
+            case 1:
+                //2
+                var docRef = doc(db, 'articles', 'Sports')
+                updateDoc(docRef, {
+                    date1: articleDate.value
+                })
+                break;
+            case 2:
+                var docRef = doc(db, 'articles', 'Culture')
+                updateDoc(docRef, {
+                    date1: articleDate.value
+                })
+            case 3:
+                var docRef = doc(db, 'articles', 'Voices')
+                updateDoc(docRef, {
+                    date1: articleDate.value
+                })
+                break;
+            case 4:
+                var docRef = doc(db, 'articles', 'Events')
+                updateDoc(docRef, {
+                    date1: articleDate.value
+                })
+                break;
+        }
+
+        updateDate = false;
+        submit[5].style.background = '#cdcdcd'
+        alert('Article Date One Updated!')
+    }
+
+})
+
+/**
+ * Update Backend: date2
+ */
+submit[6].addEventListener('click', ()=>{
+
+    if(updateDate){
+        switch (end) {
+            case 1:
+                //2
+                var docRef = doc(db, 'articles', 'Sports')
+                updateDoc(docRef, {
+                    date2: articleDate2.value
+                })
+                break;
+            case 2:
+                var docRef = doc(db, 'articles', 'Culture')
+                updateDoc(docRef, {
+                    date2: articleDate2.value
+                })
+            case 3:
+                var docRef = doc(db, 'articles', 'Voices')
+                updateDoc(docRef, {
+                    date2: articleDate2.value
+                })
+                break;
+            case 4:
+                var docRef = doc(db, 'articles', 'Events')
+                updateDoc(docRef, {
+                    date2: articleDate2.value
+                })
+                break;
+        }
+
+        updateDate = false;
+        submit[6].style.background = '#cdcdcd'
+        alert('Article Date Two Updated!')
+    }
+
+})
+
+/**
+ * Update Backend: editors
+ */
+submit[7].addEventListener('click', ()=>{
 
     if(updateEditors){
         switch (end) {
@@ -779,7 +1063,7 @@ submit[5].addEventListener('click', ()=>{
                 break;
         }
         updateEditors = false;
-        submit[5].style.background = '#cdcdcd'
+        submit[7].style.background = '#cdcdcd'
         alert('Editors Updated!')
     }
     
@@ -815,6 +1099,5 @@ function hidePopup(){
 
 /*To-do*/
 //Fix the realtime snapshot, because the input values don't reflect the changes unless refreshed
-//Fix that thing were the input value wont change until after its edited 
 //Add a feature to allow admin change
 //Add a way to upload pictures to firebase

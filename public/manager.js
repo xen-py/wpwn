@@ -40,6 +40,9 @@ const articlePhoto = document.getElementById('article-photo')
 const articlePhoto2 = document.getElementById('article-photo2')
 const secArticleTitle = document.getElementById('red')
 const firstArticleTitle = document.getElementById('blue')
+const subInfo = document.getElementById("article-info");
+const date = document.getElementById("date");
+const date2 = document.getElementById("date2");
 const spacer2 = document.getElementById('spacer2')
 const editorCredit = document.getElementById('editors')
 var firstArticleText = ''
@@ -79,6 +82,8 @@ onSnapshot(colRef, (snapshot) => {
                 //photos
                 articleTitle.textContent = articles[2].title
                 articlePhoto.src = "images/sportsArticle.jpg?"+time
+                //date
+                date.textContent = "Published: " +  articles[2].date1
                 //text
                 firstArticleText = articles[2].article;
                 //spacer
@@ -100,6 +105,8 @@ onSnapshot(colRef, (snapshot) => {
                 articleTitle.textContent = articles[0].title
                 //photos
                 articlePhoto.src = "images/cultureArticle.jpg?"+time
+                //date
+                date.textContent = "Published: " +  articles[0].date1
                 //text
                 firstArticleText = articles[0].article;
                 //spacer
@@ -120,6 +127,8 @@ onSnapshot(colRef, (snapshot) => {
                 articleTitle.textContent = articles[3].title
                 //photos
                 articlePhoto.src = "images/voicesArticle.jpg?"+time
+                //date
+                date.textContent = "Published: " +  articles[3].date1
                 //text
                 firstArticleText = articles[3].article;
                 //spacer
@@ -138,6 +147,8 @@ onSnapshot(colRef, (snapshot) => {
                 //titles
                 title.textContent = TITLES[3]
                 articleTitle.textContent = articles[1].title
+                //date
+                date.textContent = "Published: " +  articles[1].date1
                 //photos
                 articlePhoto.src = "images/eventsArticle.jpg?"+time
                 //text
@@ -155,19 +166,18 @@ onSnapshot(colRef, (snapshot) => {
             articlePhoto2.style.display = "block"
         }
         document.body.height = 'fit-content'
-        
         //clear page on snapshot
         if(!hasText){
-            articlePhoto.insertAdjacentHTML('afterend', firstArticleText)
-            articlePhoto2.insertAdjacentHTML('afterend', secondArticleText)
+            subInfo.insertAdjacentHTML('afterend', firstArticleText)
+            date2.insertAdjacentHTML('afterend', secondArticleText)
             hasText = true
         }else{
             text = document.getElementsByClassName('article-text');
             text.forEach(element => {
                 element.remove()
             });
-            articlePhoto.insertAdjacentHTML('afterend', firstArticleText)
-            articlePhoto2.insertAdjacentHTML('afterend', secondArticleText)
+            subInfo.insertAdjacentHTML('afterend', firstArticleText)
+            date2.insertAdjacentHTML('afterend', secondArticleText)
             hasText = false
         }
 
