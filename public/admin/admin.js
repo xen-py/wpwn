@@ -741,7 +741,7 @@ function reverseHTMLToText(html) {
 
     try {
         var reversedText = html;
-        if(html != ''){
+        if(html != '' || html != null){
             const paragraphRegex = /<p\s+class="article-text">([^<]+)<\/p>/g; // Regular expression to match <p class="article-text"> tags
             const matches = html.match(paragraphRegex); // Extract all <p class="article-text"> tags and their content
             const paragraphs = matches.map(match => match.replace(/<\/?p[^>]*>/g, '')); // Remove <p> tags from each match
@@ -773,6 +773,7 @@ submit[0].addEventListener('click', ()=>{
                 updateDoc(docRef, {
                     fpTitle: fpTitle.value
                 })
+                break;
             case 3:
                 var docRef = doc(db, 'articles', 'Voices')
                 updateDoc(docRef, {
@@ -788,11 +789,17 @@ submit[0].addEventListener('click', ()=>{
         }
         updateFp = false;
         submit[0].style.background = '#cdcdcd'
-        alert('Front Page Title Updated!')
+        alert('Front Page Title Updated! Page will now be reloaded to reflect changes')
+        reloadPage(1000)
     }
     
 })
 
+ function reloadPage(time){
+    setTimeout('document.location.reload(true)', time);
+ }
+
+ 
 /**
  * Update Backend: title
  */
@@ -812,6 +819,7 @@ submit[1].addEventListener('click', ()=>{
                 updateDoc(docRef, {
                     title: title.value
                 })
+                break;
             case 3:
                 var docRef = doc(db, 'articles', 'Voices')
                 updateDoc(docRef, {
@@ -827,7 +835,8 @@ submit[1].addEventListener('click', ()=>{
         }
         updateTitle = false;
         submit[1].style.background = '#cdcdcd'
-        alert('Title One Updated!')
+        alert('Title One Updated! Page will now be reloaded to reflect changes')
+        reloadPage(1000)
     }
     
 })
@@ -851,6 +860,7 @@ submit[2].addEventListener('click', ()=>{
                 updateDoc(docRef, {
                     title2: title2.value
                 })
+                break;
             case 3:
                 var docRef = doc(db, 'articles', 'Voices')
                 updateDoc(docRef, {
@@ -866,7 +876,8 @@ submit[2].addEventListener('click', ()=>{
         }
         updateTitle2 = false;
         submit[2].style.background = '#cdcdcd'
-        alert('Title Two Updated!')
+        alert('Title Two Updated! Page will now be reloaded to reflect changes')
+        reloadPage(1000)
     }
     
 })
@@ -890,6 +901,7 @@ submit[3].addEventListener('click', ()=>{
                 updateDoc(docRef, {
                     article: parseTextToHTML(articleText.value)
                 })
+                break;
             case 3:
                 var docRef = doc(db, 'articles', 'Voices')
                 updateDoc(docRef, {
@@ -906,7 +918,8 @@ submit[3].addEventListener('click', ()=>{
 
         updateArticle1 = false;
         submit[3].style.background = '#cdcdcd'
-        alert('Article One Updated!')
+        alert('Article One Updated! Page will now be reloaded to reflect changes')
+        reloadPage(1000)
     }
 
 })
@@ -930,6 +943,7 @@ submit[4].addEventListener('click', ()=>{
                 updateDoc(docRef, {
                     article2: parseTextToHTML(articleText2.value)
                 })
+                break;
             case 3:
                 var docRef = doc(db, 'articles', 'Voices')
                 updateDoc(docRef, {
@@ -946,7 +960,8 @@ submit[4].addEventListener('click', ()=>{
 
         updateArticle2 = false;
         submit[4].style.background = '#cdcdcd'
-        alert('Article Two Updated!')
+        alert('Article Two Updated! Page will now be reloaded to reflect changes')
+        reloadPage(1000)
     }
 
 })
@@ -970,6 +985,7 @@ submit[5].addEventListener('click', ()=>{
                 updateDoc(docRef, {
                     date1: articleDate.value
                 })
+                break;
             case 3:
                 var docRef = doc(db, 'articles', 'Voices')
                 updateDoc(docRef, {
@@ -986,7 +1002,8 @@ submit[5].addEventListener('click', ()=>{
 
         updateDate = false;
         submit[5].style.background = '#cdcdcd'
-        alert('Article Date One Updated!')
+        alert('Article Date One Updated! Page will now be reloaded to reflect changes')
+        reloadPage(1000)
     }
 
 })
@@ -1010,6 +1027,7 @@ submit[6].addEventListener('click', ()=>{
                 updateDoc(docRef, {
                     date2: articleDate2.value
                 })
+                break;
             case 3:
                 var docRef = doc(db, 'articles', 'Voices')
                 updateDoc(docRef, {
@@ -1026,7 +1044,8 @@ submit[6].addEventListener('click', ()=>{
 
         updateDate = false;
         submit[6].style.background = '#cdcdcd'
-        alert('Article Date Two Updated!')
+        alert('Article Date Two Updated! Page will now be reloaded to reflect changes')
+        reloadPage(1000)
     }
 
 })
@@ -1050,6 +1069,7 @@ submit[7].addEventListener('click', ()=>{
                 updateDoc(docRef, {
                     editors: editors.value
                 })
+                break;
             case 3:
                 var docRef = doc(db, 'articles', 'Voices')
                 updateDoc(docRef, {
@@ -1065,7 +1085,8 @@ submit[7].addEventListener('click', ()=>{
         }
         updateEditors = false;
         submit[7].style.background = '#cdcdcd'
-        alert('Editors Updated!')
+        alert('Editors Updated! Page will now be reloaded to reflect changes')
+        reloadPage(1000)
     }
     
 })
